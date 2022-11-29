@@ -8,11 +8,18 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
 
-  <body><%= render "shared/navbar" %>
-  <%= render "shared/flashes" %>
 
-    <%= yield %>
+  <body>
+    <div class="application-wrapper">
+      <div class="content">
+        <%= yield %>
+        <% unless current_page?(root_path) %>
+          <%= render "shared/navbar" %>
+        <% end %>
+      </div>
+    </div>
   </body>
 </html>
