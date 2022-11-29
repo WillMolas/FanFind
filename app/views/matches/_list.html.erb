@@ -1,0 +1,17 @@
+<div data-search-movies-target="list">
+  <p class="match-subheader">
+    <% if params[:query].blank? %>
+      <%= pluralize matches.count, "match" %> available
+    <% else %>
+      <%= pluralize matches.count, "result" %> for <code><%= params[:query] %></code>
+    <% end %>
+  </p>
+  <div class= "matches">
+    <% @matches.each do |match| %>
+    <div class="match-card">
+      <p><%= match.match_time %></p>
+      <p><%= match.team_one %> VS <%= match.team_one %> </p>
+    </div>
+    <% end %>
+  </div>
+</div>
