@@ -29,3 +29,8 @@ Event.destroy_all
     match_id: 12
   )
 end
+
+# 3.times do
+#   Location.create!(
+
+#   )
