@@ -1,18 +1,22 @@
 <div class="events-index-container">
 
-  <h1><%= "#{@match.team_one.upcase} VS #{@match.team_two.upcase}" %></h1>
+  <h1 class="upcase-header"><%= "#{@match.team_one.upcase} VS #{@match.team_two.upcase}" %></h1>
 
-  <i class="fa-solid fa-circle-plus plus-button"></i>
+    <i class="fa-solid fa-circle-plus plus-button"></i>
 
   <div>
     <div>
       <% @match.events.each do |event| %>
+          <%= link_to event_path(event) do %>
           <div class="event-card">
-            <li><%= event.name.upcase %></li>
+            <li class="black-upcase-subheader"><%= event.name.upcase %></li>
             <li class=""><%= "proportion of supporters" %></li>
             <li><%= event.description %></li>
-            <li><%= event.date_time.strftime("%d %B %Y | %l:%M%P") %></li>
+            <li><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= event.date_time.strftime("%d %B %Y | %l:%M%P") %></li>
+            <li><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= event.location.name %></li>
+          <% end %>
           </div>
+
       <% end %>
     </div>
   </div>

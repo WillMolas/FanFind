@@ -6,22 +6,24 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Match.destroy_all
+# Match.destroy_all
 
-20.times do
+# 20.times do
 
-  Match.create!(
-    team_one: %w[germany iran england france canada japan ecuador senegal netherlands].sample,
-    team_two: %w[argentina mexico US spain poland brazil portugal belgium croatia].sample,
-    stadium: %w[al_janoub al_thumama khalifa_international ahmad_bin_ali education_city al_bayt lusail stadium974].sample,
-    match_time: "09/01/2022 16:00"
-  )
-end
-
-# 3.times do
-#   Location.create!(
-
+#   Match.create!(
+#     team_one: %w[germany iran england france canada japan ecuador senegal netherlands].sample,
+#     team_two: %w[argentina mexico US spain poland brazil portugal belgium croatia].sample,
+#     stadium: %w[al_janoub al_thumama khalifa_international ahmad_bin_ali education_city al_bayt lusail stadium974].sample,
+#     match_time: "09/01/2022 16:00"
 #   )
+# end
+
+  Location.create!(
+    name: "Le Wagon Barcelona",
+    address: "Carrer del Bruc, 149",
+    longitude: 2.163460,
+    latitude: 41.398760
+  )
 
 # Event.destroy_all
 
