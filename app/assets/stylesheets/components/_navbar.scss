@@ -1,12 +1,37 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar-container {
+  background-color: #0DFDCC;
+  position: sticky;
+  bottom: 0;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar {
+  margin-left: 12%;
+  margin-right: 12%;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.circleimage {
+  border-radius: 50%;
+  width: 76.19px;
+  height: 72px;
+  background-color:#0DFDCC;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  margin-top: -27px;
+}
+
+.community-icon {
+  width: 50.13px;
+}
+
+.navbar-matches {
+  padding-top: 10px;
+}
+
+.matches-icon {
+  width: 63.15px;
+}
+
+.profile-icon {
+  width: 36.42px;
 }
