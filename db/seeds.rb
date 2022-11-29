@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Match.destroy_all
+10.times do
+
+  Match.create!(
+    team_one: %w[germany iran england france canada japan ecuador senegal netherlands].sample,
+    team_two: %w[argentina mexico US spain poland brazil portugal belgium croatia].sample,
+    stadium: %w[al_janoub al_thumama khalifa_international ahmad_bin_ali education_city al_bayt lusail stadium974].sample,
+    match_time: "09/01/2022 16:00"
+  )
+end
