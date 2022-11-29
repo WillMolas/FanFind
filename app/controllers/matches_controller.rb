@@ -7,7 +7,7 @@ class MatchesController < ApplicationController
 
     if params[:query].present?
       sql_query = 'team_one ILIKE :query OR team_two ILIKE :query'
-      @movies = @movies.where(sql_query, query: "%#{params[:query]}%")
+      @matches = @matches.where(sql_query, query: "%#{params[:query]}%")
     end
 
     respond_to do |format|
