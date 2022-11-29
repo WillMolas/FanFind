@@ -8,9 +8,13 @@
   </p>
   <div class= "matches">
     <% @matches.each do |match| %>
-    <div class="match-card">
-      <p><%= match.match_time %></p>
-      <p><%= match.team_one %> VS <%= match.team_one %> </p>
+    <div class="match-row">
+      <div class="match-card">
+        <p><%= match.match_time %>
+        <p><%= match.team_one.upcase %> VS <%= match.team_one.upcase %> </p>
+      </div>
+      <div class="match-triangle">
+      </div>
     </div>
     <% end %>
   </div>
