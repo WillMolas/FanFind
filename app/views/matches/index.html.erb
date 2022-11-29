@@ -1,0 +1,25 @@
+<div class="match-container">
+  <div class="match-row">
+    <div class="match-col">
+      <h1 class="match-header">MATCHES</h1>
+
+      <div data-controller="search-matches">
+        <%= form_with url: matches_path,
+          method: :get,
+          html: {class: "mb-4", data: {search_matches_target: "form"}} do |f|
+        %>
+          <%= f.text_field :query,
+            class: "form-control",
+            placeholder: "Look for a specific match",
+            value: params[:query],
+            data: {
+              search_matches_target: "input",
+              action: "keyup->search-matches#update"
+            }
+          %>
+        <% end %>
+        <%= render "list", matches: @matches %>
+      </div>
+    </div>
+  </div>
+</div>
