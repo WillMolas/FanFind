@@ -1,6 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-content">
+  <div class="landing-container">
 
-    <div><%= link_to 'Sign Up', new_user_registration_path, class: "signup-link" %></div>
+    <div class="slogan-container">
+      <div class="slogan">Find your place off the stands</div>
+    </div>
 
-    <div><%= link_to 'Login', new_user_session_path, class: "login-link" %></div>
+    <div class="home-title">
+      <div class="fan"><h1>FAN</h1></div>
+      <div class="find"><h1>FIND</h1></div>
+    </div>
+  </div>
+
+  <div class="login-container">
+    <div class="login-btns">
+      <div class="div-bar"></div>
+      <div class="signup-btn"><%= link_to 'SIGN UP', new_user_registration_path, class: "signup-link" %></div>
+      <div class="login-btn"><%= link_to 'I HAVE AN ACCOUNT', new_user_session_path, class: "login-link" %></div>
+    </div>
+  </div>
+</div>
