@@ -1,0 +1,15 @@
+<div class="events-show-container">
+  <h1><%= @event.name.upcase %></h1>
+
+  <p><%= @event.description %></p>
+  <p><%= @event.date_time.strftime("%d %B %Y | %l:%M%P") %><p>
+  <p><%= @event.location_id %>
+
+  <div class="locations-map"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+  <button>JOIN EVENT</button>
+</div>
