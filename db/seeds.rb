@@ -18,6 +18,11 @@ Match.destroy_all
   )
 end
 
+# 3.times do
+#   Location.create!(
+
+#   )
+
 # Event.destroy_all
 
 # 3.times do
