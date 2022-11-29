@@ -2,3 +2,54 @@
   color: #0DFDCC;
   font-size: 40px;
 }
+
+.turquiose-btn {
+  width: 143px;
+  height: 38px;
+  background-color: #0DFDCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.long-turquiose-btn {
+  width: 337px;
+  height: 38px;
+  background-color: #0DFDCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.green-btn {
+  width: 143px;
+  height: 38px;
+  background-color: #CFFF0F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+  }
+}
