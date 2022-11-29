@@ -1,0 +1,11 @@
+.locations-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.locations-map {
+  height: 320px;
+  width: 320px;
+  border-radius: 50%;
+}
