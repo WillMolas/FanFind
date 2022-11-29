@@ -1,10 +1,8 @@
-// .match-container{
+.match-container{
+  background: black;
+}
 
-// }
 
-// .match-row{
-
-// }
 
 // .match-col{
 
@@ -19,9 +17,24 @@ text-align: center;
 
 // }
 
+// .matches{}
+
+// }
+
+.match-row{
+display: flex;
+}
+
 .match-card{
   background: #FFFFFF;
   width: 326px;
-  height: 66px;
   left: 0px;
+  height: 66px;
+  text-decoration: none;
+
+}
+.match-triangle{
+  background: linear-gradient(to top left, #fff 0%, #fff 50%, blackwhite 50%, white 20%);
+  width: 100px;
+  height: 66px;
 }
