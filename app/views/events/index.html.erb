@@ -1,9 +1,20 @@
-<div>
+<div class="events-index-container">
 
-  <h1>TEAM VS TEAM</h1>
+  <h1><%= "#{@match.team_one.upcase} VS #{@match.team_two.upcase}" %></h1>
+
+  <i class="fa-solid fa-circle-plus plus-button"></i>
 
   <div>
-
+    <div>
+      <% @match.events.each do |event| %>
+          <div class="event-card">
+            <li><%= event.name.upcase %></li>
+            <li class=""><%= "proportion of supporters" %></li>
+            <li><%= event.description %></li>
+            <li><%= event.date_time.strftime("%d %B %Y | %l:%M%P") %></li>
+          </div>
+      <% end %>
+    </div>
   </div>
 
 </div>
