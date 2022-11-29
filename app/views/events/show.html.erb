@@ -1,9 +1,11 @@
 <div class="events-show-container">
-  <h1><%= @event.name.upcase %></h1>
+  <h1 class="upcase-header"><%= @event.name %></h1>
 
-  <p><%= @event.description %></p>
-  <p><%= @event.date_time.strftime("%d %B %Y | %l:%M%P") %><p>
-  <p><%= @event.location_id %>
+  <div class="temp-event-card">
+    <p><%= @event.description %></p>
+    <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= @event.date_time.strftime("%d %B %Y | %l:%M%P") %><p>
+    <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= @event.location.name %>
+  </div>
 
   <div class="locations-map"
     data-controller="map"
