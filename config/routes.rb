@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :events, only: [:new, :create, :index]
   end
   resources :events, only: [:show, :edit, :update, :destroy] do
-    resources :bookings, only: [:new, :create]
+    resources :event_bookings, only: [:new, :create]
   end
   resources :locations, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
