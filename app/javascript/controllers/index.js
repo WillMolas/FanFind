@@ -4,11 +4,14 @@
 
 import { application } from "./application"
 
+import DisableButtonController from "./disable_button_controller"
+application.register("disable-button", DisableButtonController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import SearchMatchesController from "./search_matches_controller"
-application.register("search-matches", SearchMatchesController)
-
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import SearchMatchesController from "./search_matches_controller"
+application.register("search-matches", SearchMatchesController)
