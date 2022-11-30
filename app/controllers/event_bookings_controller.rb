@@ -1,12 +1,12 @@
 class EventBookingsController < ApplicationController
-  def new
-    if current_user
-      @event = Event.find(params[:event_id])
-      @event_booking = EventBooking.new
-    else
-      redirect_to new_user_session_path
-    end
-  end
+  # def new
+  #   if current_user
+  #     @event = Event.find(params[:event_id])
+  #     @event_booking = EventBooking.new
+  #   else
+  #     redirect_to new_user_session_path
+  #   end
+  # end
 
   def create
     @event = Event.find(params[:event_id])
