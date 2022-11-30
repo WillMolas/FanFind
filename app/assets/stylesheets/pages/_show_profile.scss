@@ -1,5 +1,63 @@
-.profile_img {
-  border-radius: 50%;
-  display:flex;
-  position: flex right;
+.card {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 5px;
+  background-color: black;
+  z-index: -1;
+
+  .profile_img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 100px;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  }
+
+  .profile_info{
+    background-color: #CFFF0F;
+    width: 60%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: auto;
+    margin-right: 100px;
+    margin-left: -35px;
+    padding-left: 45px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: -1;
+  }
+}
+
+.profile_name {
+  color: #0DFDCC;
+  background-color: rgb(13, 104, 184);
+  width: 100%;
+}
+
+.notifications-icon{
+  background-color: #848686;
+  color: #0DFDCC;
+  width: 30px;
+  height: 30px;
+  margin-left: 650px;
+  margin-right: 5px;
+}
+
+button {
+  margin-left: 5px;
+}
+
+.downcase_header{
+  height: 30px;
+  color: #CFFF0F;
+}
+
+#bookings_card{
+  color: white
+}
+#created_events_card{
+  color: white
 }

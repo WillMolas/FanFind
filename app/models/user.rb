@@ -11,5 +11,5 @@ class User < ApplicationRecord
   has_many :post_likes
   has_many :location_reviews
 
-  has_one_attached :avatar
+  #has_one_attached :avatar
 end

@@ -1,23 +1,40 @@
-<h1><strong><%= @user.first_name %> <%= @user.last_name %></strong></h1>
-<div class="profile_img">
-  <% if current_user.avatar.attached? %>
-    <%= link_to image_tag(url_for(current_user.avatar), class: "avatar-large"), edit_user_path(current_user), class: "nav-link"%>
-  <% else %>
-    <%= link_to image_tag("https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg"), edit_user_path(current_user), class: "nav-link" %>
+<br>
+<div class="card">
+  <%= link_to "edit", class: "edit profile" do %>
+    <button><%= "Edit Profile" %></button>
+  <% end %>
+  <%= link_to "#", class: "notifications" do %>
+    <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
   <% end %>
 </div>
-<div class="profile_info">
-  <h3>biography</h3>
-  <p>explaining a bit my situation, the team i support and the why i am suporting this team</p>
+<br>
+<div class="card downcase-header">@user_name<%= current_user.first_name %> <%= current_user.last_name %></div>
+<br>
+<div class="card">
+  <%= link_to image_tag("https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg", class: "profile_img"), edit_user_path(current_user) %>
+
+  <div class="profile_info">
+    <h3>biography : </h3>
+    <p>explaining a bit my situation, the team i support and the why i am suporting this team</p>
+  </div>
+</div>
+<br>
+
+<div class="card" id="bookings_card">
+  upcoming matches(linked to bookings)
+  <%= link_to "#", class: "upcoming events" do %>
+    <button><%= "View all events" %></button>
+  <% end %>
 </div>
 
 <br>
 
-<div class="card">upcoming matches(linked to bookings)</div>
-
-<br>
-
-<div class="card">created events(linked to created events)</div>
+<div class="card" id="created_events_card">
+  created events(linked to created events)
+  <%= link_to "#", class: "events created" do %>
+    <button><%= "View all your events" %></button>
+  <% end %>
+</div>
 
 <br>
 <div class="navbar"></div>
