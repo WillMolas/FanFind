@@ -10,10 +10,10 @@
     <% @match.events.each do |event| %>
         <%= link_to event_path(event) do %>
         <div class="event-card">
-          <li class="black-upcase-subheader"><%= event.name.upcase %></li>
-          <li class=""><%= "proportion of supporters" %></li>
+          <li class="black-upcase-subheader event-card-header"><%= event.name.upcase %></li>
+          <li class="black-strip"><%= "proportion of supporters" %></li>
           <li><%= event.description %></li>
-          <li><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= event.match_time.strftime("%d %B %Y | %l:%M%P") %></li>
+          <li><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= event.match.match_time.strftime("%d %B %Y") %><%= event.match_time.strftime(" | %l:%M%P") %></li>
           <li><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= event.location.name %></li>
         <% end %>
         </div>

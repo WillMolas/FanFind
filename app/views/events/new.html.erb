@@ -9,16 +9,17 @@
       <%= f.input :description, label: "Enter description" %>
     </div>
     <div class="inline-form">
-      <div class="form-input">
+      <div class="form-input form-input-time">
         <%= f.input :match_time, label: "Time" %>
       </div>
-      <div class="form-input-inline">
+      <div class="form-input form-input-capacity">
         <%= f.input :capacity, label: "Capacity" %>
       </div>
     </div>
     <div class="form-input event-searchbar" data-controller="location-search">
       <%= f.association :location, label: "Choose location", input_html: { id: "drop", data: { location_search_target: "dropdown" } } %>
     </div>
+    <br>
     <div class="button-container">
       <%= f.submit "CREATE EVENT", class:"turquiose-btn" %>
     </div>

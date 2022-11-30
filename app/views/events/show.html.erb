@@ -1,10 +1,19 @@
 <div class="events-show-container">
   <h1 class="upcase-header"><%= @event.name %></h1>
 
-  <div class="event-container">
-    <p><%= @event.description %></p>
-    <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= @event.match_time.strftime("%d %B %Y | %l:%M%P") %><p>
-    <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= @event.location.name %>
+  <div class="event-show-card">
+    <div class="event-show-rectangle">
+      <p class="event-italic"><%= @event.description %></p>
+      <p ><%= "#{@event.capacity} people" %></p>
+      <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %><p>
+      <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= @event.location.name %>
+    </div>
+    <div class="event-show-triangle">
+    </div>
+  </div>
+
+  <div class="edit-btn-card">
+    <a class="edit-btn">Edit Details</a>
   </div>
 
   <div class="locations-map"
