@@ -25,15 +25,15 @@
     latitude: 41.398760
   )
 
-# Event.destroy_all
+Event.destroy_all
 
-# 3.times do
-#   Event.create!(
-#     name: ["England game", "Germany game", "Wales game", "France game"].sample,
-#     description: ["Come watch the game with us", "Watching the game in a pub", "Watching the game on an outdoor screen"].sample,
-#     date_time: "09/01/2022 15:00",
-#     location_id: 1,
-#     user_id: 1,
-#     match_id: 12
-#   )
-# end
+3.times do
+  Event.create!(
+    name: ["England game", "Germany game", "Wales game", "France game"].sample,
+    description: ["Come watch the game with us", "Watching the game in a pub", "Watching the game on an outdoor screen"].sample,
+    date_time: "09/01/2022 15:00",
+    location_id: 1,
+    user_id: 1,
+    match_id: 41
+  )
+end
