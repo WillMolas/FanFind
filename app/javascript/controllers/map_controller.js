@@ -18,19 +18,15 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
 
-    this.map.addControl(new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl }))
-
-    // const geocoder = new MapboxGeocoder({
-    //   accessToken: mapboxgl.accessToken,
-    //   mapboxgl: mapboxgl})
+    // this.map.addControl(new MapboxGeocoder({
+    // accessToken: mapboxgl.accessToken,
+    // mapboxgl: mapboxgl }))
   }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      new mapboxgl.Marker()
+      new mapboxgl.Marker({ "color": "black" })
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)
