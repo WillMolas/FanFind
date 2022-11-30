@@ -2,20 +2,39 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Roboto';
 }
 
-.events-container, .event-container {
+.event-italic {
+font-style: italic;
+}
+
+.events-container {
   width: 90%;
 }
 
-.event-container {
-  background-color: white;
-  padding: 8px;
+.event-show-card {
+  width: 100%;
+  height: 180px;
+  display: flex;
 }
 
-.new-event-container {
-  color: white;
-  padding: 16px;
+.event-show-rectangle {
+  padding: 8px;
+  background-color: white;
+  width: 340px;
+  margin-right: -0.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-show-triangle {
+  height: 100%;
+  width: 0;
+  border-top: 180px solid white;
+  border-right: 40px solid transparent;
+
 }
 
 .button-container {
@@ -28,6 +47,44 @@
   justify-content: space-between;
 }
 
-.form-input-inline {
+.form-input-capacity {
   padding-left: 16px;
+  width: 50%;
+}
+
+.form-input-capacity {
+  flex-grow: 1;
+}
+
+.edit-btn {
+  text-decoration: none;
+  color: #0DFDCC;
+  text-align: right;
+}
+
+.edit-btn-card {
+  margin-top: 8px;
+  width: 100%;
+  padding-right: 15%;
+  text-align: right;
+}
+
+.locations-map {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.black-strip {
+  // width: 360px;
+  // margin-left: -12px;
+  width: 100%;
+  background-color: black;
+  color: #0DFDCC;
+  text-align: center;
+  font-size: 24px;
+  font-style: italic;
+}
+
+.event-card-header {
+  margin-bottom: 8px;
 }
