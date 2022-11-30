@@ -1,40 +1,56 @@
-.match-container{
-  background: black;
+.matches{
+  a {
+    text-decoration: none;
+  }
+}
+.match-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
 }
 
-
-
-// .match-col{
-
-// }
-
-.match-header{
-color: #0DFDCC;
-text-align: center;
-}
-
-// .match-subheader{
-
-// }
-
-// .matches{}
-
-// }
-
-.match-row{
-display: flex;
-}
-
-.match-card{
-  background: #FFFFFF;
-  width: 326px;
+.match-card {
+  background-color: white;
+  width: 332px;
+  height: 82px;
   left: 0px;
-  height: 66px;
-  text-decoration: none;
-
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: -0.5px;
 }
-.match-triangle{
-  background: linear-gradient(to top left, #fff 0%, #fff 50%, blackwhite 50%, white 20%);
-  width: 100px;
-  height: 66px;
+
+.match-triangle {
+  height: 0;
+  width: 0;
+  border-top: 82px solid white;
+  border-right: 60px solid transparent;
+}
+
+.match-row:hover .match-triangle {
+  border-top: 82px solid #CFFF0F;
+};
+
+.match-row:hover .match-card {
+  background-color: #CFFF0F;
+}
+
+.match-info {
+  text-align: end;
+  margin-right: 10px;
+}
+
+.match-name-card {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 25px;
+  color: #000000;
+}
+
+.match-time-card {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 18px;
+  color: #000000;
 }
