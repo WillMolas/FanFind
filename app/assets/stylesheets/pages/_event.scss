@@ -4,7 +4,30 @@
   align-items: center;
 }
 
-.temp-event-card {
+.events-container, .event-container {
+  width: 90%;
+}
+
+.event-container {
   background-color: white;
   padding: 8px;
+}
+
+.new-event-container {
+  color: white;
+  padding: 16px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.inline-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-input-inline {
+  padding-left: 16px;
 }

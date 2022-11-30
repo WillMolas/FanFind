@@ -1,0 +1,28 @@
+<div class="new-event-container">
+  <h1 class="upcase-header">Create Event</h1>
+
+  <%= simple_form_for [@match, @event] do |f| %>
+    <div class="form-input">
+      <%= f.input :name, label: "Create a name for this event" %>
+    </div>
+    <div class="form-input">
+      <%= f.input :description, label: "Enter description" %>
+    </div>
+    <div class="inline-form">
+      <div class="form-input">
+        <%= f.input :match_time, label: "Time" %>
+      </div>
+      <div class="form-input-inline">
+        <%= f.input :capacity, label: "Capacity" %>
+      </div>
+    </div>
+    <div class="form-input event-searchbar" data-controller="location-search">
+      <%= f.association :location, label: "Choose location", input_html: { id: "drop", data: { location_search_target: "dropdown" } } %>
+    </div>
+    <div class="button-container">
+      <%= f.submit "CREATE EVENT", class:"turquiose-btn" %>
+    </div>
+  <% end %>
+
+
+</div>
