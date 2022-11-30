@@ -1,0 +1,23 @@
+<h1><strong><%= @user.first_name %> <%= @user.last_name %></strong></h1>
+<div class="profile_img">
+  <% if current_user.avatar.attached? %>
+    <%= link_to image_tag(url_for(current_user.avatar), class: "avatar-large"), edit_user_path(current_user), class: "nav-link"%>
+  <% else %>
+    <%= link_to image_tag("https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg"), edit_user_path(current_user), class: "nav-link" %>
+  <% end %>
+</div>
+<div class="profile_info">
+  <h3>biography</h3>
+  <p>explaining a bit my situation, the team i support and the why i am suporting this team</p>
+</div>
+
+<br>
+
+<div class="card">upcoming matches(linked to bookings)</div>
+
+<br>
+
+<div class="card">created events(linked to created events)</div>
+
+<br>
+<div class="navbar"></div>
