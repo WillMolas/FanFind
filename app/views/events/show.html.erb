@@ -13,5 +13,7 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <button class="turquiose-btn">JOIN EVENT</button>
+  <%= form_tag(event_event_bookings_path(@event), method: :post) do %>
+  <div><%= submit_tag 'JOIN EVENT', class: "turquiose-btn" %></div>
+  <% end %>
 </div>

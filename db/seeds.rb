@@ -25,7 +25,7 @@
 #   latitude: 41.398760
 # )
 
-# Event.destroy_all
+Event.destroy_all
 
 # 3.times do
 #   Event.create!(
@@ -53,3 +53,4 @@ Location.create(name: "Bar Lobo", address: "Carrer del Pintor Fortuny, 3, 08001 
 Location.create(name: "Bar Catalunya", address: "C. de Pere IV, 120, 08005 Barcelona")
 Location.create(name: "L'Ovella Negra Marina", address: "Carrer de Zamora, 78, 08018 Barcelona")
 # Location.create(name: "", address: "")
+

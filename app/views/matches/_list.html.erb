@@ -8,14 +8,17 @@
   </p>
   <div class= "matches">
     <% @matches.each do |match| %>
-    <div class="match-row">
-      <div class="match-card">
-        <p><%= match.match_time %>
-        <p><%= match.team_one.upcase %> VS <%= match.team_one.upcase %> </p>
+    <a href="<%= match_events_path(match) %>">
+      <div class="match-row">
+        <div class="match-card">
+          <div class="match-info">
+            <div class="match-name-card"><%= match.team_one.upcase %> VS <%= match.team_one.upcase %></div>
+            <div class="match-time-card"><%= match.match_time %></div>
+          </div>
+        </div>
+        <div class="match-triangle"></div>
       </div>
-      <div class="match-triangle">
-      </div>
-    </div>
+    </a>
     <% end %>
   </div>
 </div>
