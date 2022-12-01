@@ -15,5 +15,4 @@ class MatchesController < ApplicationController
       format.text { render partial: "matches/list", locals: { matches: @matches }, formats: [:html] }
     end
   end
-
 end
