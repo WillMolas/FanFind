@@ -5,10 +5,11 @@
     <div class="event-show-rectangle">
       <p class="event-italic"><%= @event.description %></p>
       <% if @event.capacity.present? %>
-        <p><%= "#{@event.capacity} people" %></p>
+        <p><strong>Capacity: </strong><%= "#{@event.capacity} people" %></p>
       <% end %>
       <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %></p>
       <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= @event.location.name %></p>
+      <p><i class="fa-solid fa-users"></i>&nbsp&nbsp<%= @event.event_bookings.count%></p>
     </div>
     <div class="event-show-triangle">
     </div>
@@ -24,13 +25,26 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <%= form_tag(event_event_bookings_path(@event), method: :post) do %>
+  <% if @event.event_bookings.map(&:user_id).include? current_user.id %>
   <div>
-    <%= submit_tag 'JOIN EVENT', class: "turquiose-btn" %>
+    <%= form_tag(event_booking_path(@event), method: :delete) do %>
+    <%= submit_tag 'UNJOIN EVENT', class: "turquiose-btn" %>
+    <% end %>
   </div>
+
   <div>
     <%= submit_tag 'CHATROOM', class: "turquiose-btn" %>
   </div>
+
+  <% else %>
+  <div>
+    <%= form_tag(event_event_bookings_path(@event), method: :post) do %>
+    <%= submit_tag 'JOIN EVENT', class: "turquiose-btn" %>
+    <% end %>
+  </div>
+  <% end %>
+
+  <% if @event.user == current_user%>
   <div id="delete-event">
     <%= link_to "Delete Event", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "tqse-link" %>
   </div>
