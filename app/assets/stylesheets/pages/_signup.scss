@@ -20,3 +20,62 @@
   color: #000000;
   text-transform: uppercase;
 }
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.avatar-image {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+
+.team-choice-list {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.team-choice-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-inline: 6px;
+  margin-block: 6px;
+  background-color: white;
+  border:3px solid black;
+  &:hover {
+    background-color: #CFFF0F;
+  }
+}
+
+.team-choice {
+  input {
+    visibility: hidden;
+  }
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.signup-btn-container {
+  display: flex;
+  justify-content: center;
+}

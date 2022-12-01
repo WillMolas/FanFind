@@ -21,3 +21,9 @@ application.register("map", MapController)
 
 import SearchMatchesController from "./search_matches_controller"
 application.register("search-matches", SearchMatchesController)
+
+import LocationSearchController from "./location_search_controller"
+application.register("location-search", LocationSearchController)
+
+import SignupVisibilityController from "./signup_visibility_controller"
+application.register("signup-visibility", SignupVisibilityController)
