@@ -1,6 +1,8 @@
 <br>
 <div class="container">
-  <div class="login_btn"><%= link_to 'EDIT', edit_user_registration_path %></div>
+  <button class="login_btn">
+    <%= link_to 'EDIT', edit_user_registration_path %>
+  </button>
   <div class="bell_icon">
     <%= link_to "#", class: "notifications" do %>
       <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
@@ -8,33 +10,34 @@
   </div>
 </div>
 <br>
-<div class="name_header">@username<%= current_user.first_name %></div>
+<div class="name_header">@<%= @user.username %></div>
 
 <div class="card profile">
   <%= link_to image_tag("https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg", class: "profile_img"), edit_user_path(current_user) %>
 
   <div class="profile_info">
-    <h3>real name </h3>
-    <p>you have to introduce yourself here , the team i support and the why i am suporting this team, </p>
+
+    <h3>biography : </h3>
+    <p>explaining a bit my situation, the team i support and the why i am suporting this team</p>
+
   </div>
 </div>
 <br>
 
 <div class="card" id="profile_card">
-  upcoming matches(linked to bookings)
+  <h3>upcoming matches</h3>
   <%= link_to "#", class: "upcoming events" do %>
-    <button><%= "View all:" %></button>
+    <button><%= "View all" %></button>
   <% end %>
 </div>
 
 <br>
 
 <div class="card" id="profile_card">
-  created events(linked to created events)
+  <h3>created events</h3>
   <%= link_to "#", class: "events created" do %>
-    <button><%= "View all:" %></button>
+    <button class="events_created"><%= "View all" %></button>
   <% end %>
 </div>
-
 <br>
 <div class="navbar"></div>
