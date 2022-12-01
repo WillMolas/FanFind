@@ -12,21 +12,25 @@
         <%= f.input :username,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "username" }%>
+                    input_html: { autocomplete: "username" },
+                    placeholder: "Username" %>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email" }%>
+                    input_html: { autocomplete: "email" },
+                    placeholder: "Email" %>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password" },
+                    placeholder: "Password" %>
         <%= f.input :password_confirmation,
                     required: true,
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password" },
+                    placeholder: "Confirm Password" %>
       </div>
 
-      <div class="long-turquiose-btn" data-action="click->signup-visibility#displayAvatar">
+      <div class="next-btn" data-action="click->signup-visibility#displayAvatar">
         Next
       </div>
     </div>
@@ -40,7 +44,7 @@
                         action: "change->signup-visibility#displayPhoto"
                       }}%>
 
-      <div class="long-turquiose-btn" data-action="click->signup-visibility#displayTeam">
+      <div class="next-btn" data-action="click->signup-visibility#displayTeam">
         Next
       </div>
     </div>
@@ -82,7 +86,7 @@
           <div class="team-choice"><%= f.radio_button :team, 'Wales' %>Wales</div>
         </div>
 
-      <div class="long-turquiose-btn">
+      <div class="submit-btn">
         <%= f.button :submit, "Submit" %>
       </div>
     </div>
