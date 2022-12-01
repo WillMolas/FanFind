@@ -55,3 +55,45 @@
     text-transform: uppercase;
   }
 }
+
+.next-btn {
+  margin-top: 25px;
+  width: 337px;
+  height: 38px;
+  background-color: #0DFDCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.submit-btn {
+  margin-top: 25px;
+<<<<<<< Updated upstream
+  width: 337px;
+=======
+  margin-bottom: 40px;
+  width: 326px;
+>>>>>>> Stashed changes
+  height: 38px;
+  background-color: #0DFDCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #CFFF0F;
+  }
+}
