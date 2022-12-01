@@ -1,6 +1,8 @@
 <br>
 <div class="container">
-  <div class="login_btn"><%= link_to 'EDIT', edit_user_registration_path %></div>
+  <button class="login_btn">
+    <%= link_to 'EDIT', edit_user_registration_path %>
+  </button>
   <div class="bell_icon">
     <%= link_to "#", class: "notifications" do %>
       <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
@@ -21,20 +23,19 @@
 <br>
 
 <div class="card" id="profile_card">
-  upcoming matches(linked to bookings)
+  <h3>upcoming matches</h3>
   <%= link_to "#", class: "upcoming events" do %>
-    <button><%= "View all:" %></button>
+    <button><%= "View all" %></button>
   <% end %>
 </div>
 
 <br>
 
 <div class="card" id="profile_card">
-  created events(linked to created events)
+  <h3>created events</h3>
   <%= link_to "#", class: "events created" do %>
-    <button><%= "View all:" %></button>
+    <button class="events_created"><%= "View all" %></button>
   <% end %>
 </div>
-
 <br>
 <div class="navbar"></div>
