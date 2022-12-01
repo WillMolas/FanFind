@@ -1,39 +1,49 @@
-<div class="signup-header">Create your profile</div>
+
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="user-info">
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
+  <div data-controller="signup-visibility">
+
+    <div class="user-credentials" data-signup-visbility-target="credentials">
+      <div class="signup-header">Create your profile</div>
+
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <button class="long-turquoise-btn" aria-label="Next" data-action="click->signup-visbility#displayAvatar">
+        Next
+      </button>
     </div>
 
-    <div class="long-turquiose-btn">
-      <%= f.button :submit, "Next" %>
+    <div class="avatar d-none" data-signup-visbility-target="avatar">
+      <div class="signup-header">Upload an image</div>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+        <%= f.input :avatar, as: :file %>
+      <% end %>
+      <button class="long-turquoise-btn" aria-label="Next" data-action="click->signup-visbility#displayTeam">
+        Next
+      </button>
     </div>
-  </div>
 
-
-  <div class="avatar d-none">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-      <%= f.input :avatar, as: :file %>
-    <% end %>
-  </div>
-
-  <div class="team d-none">
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+    <div class="team d-none" data-signup-visbility-target="team">
+      <div class="signup-header">Select your team</div>
+      <div class="form-actions">
+        <%= f.button :submit, "Finish sign up" %>
+      </div>
     </div>
+
   </div>
 
 <% end %>
