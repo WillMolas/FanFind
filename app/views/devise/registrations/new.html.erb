@@ -1,9 +1,7 @@
-
-
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
 
-  <div data-controller="signup-visibility">
+  <div class= "signup_simple_form" data-controller="signup-visibility">
 
     <div class="user-credentials" data-signup-visibility-target="credentials">
       <div class="signup-header">Create your profile</div>
@@ -18,26 +16,12 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" },
-<<<<<<< Updated upstream
                     placeholder: "Email" %>
-=======
-                    placeholder: "Email"  %>
->>>>>>> Stashed changes
+
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" },
-<<<<<<< Updated upstream
-                    placeholder: "Password" %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" },
-                    placeholder: "Confirm Password" %>
-      </div>
-
-      <div class="next-btn" data-action="click->signup-visibility#displayAvatar">
-        Next
-=======
                     placeholder: "Password"  %>
         <%= f.input :password_confirmation,
                     required: true,
@@ -49,7 +33,6 @@
         <div class="next-btn" data-action="click->signup-visibility#displayAvatar">
           Next
         </div>
->>>>>>> Stashed changes
       </div>
 
     </div>
@@ -63,15 +46,11 @@
                         action: "change->signup-visibility#displayPhoto"
                       }}%>
 
-<<<<<<< Updated upstream
-      <div class="next-btn" data-action="click->signup-visibility#displayTeam">
-        Next
-=======
+
       <div class="signup-btn-container">
         <div class="next-btn" data-action="click->signup-visibility#displayTeam">
           Upload
         </div>
->>>>>>> Stashed changes
       </div>
     </div>
 
@@ -176,16 +155,12 @@
           </div>
         </div>
 
-<<<<<<< Updated upstream
-      <div class="submit-btn">
-        <%= f.button :submit, "Submit" %>
-=======
       <div class="signup-btn-container">
         <div class="submit-btn">
           <%= f.button :submit, "Submit" %>
         </div>
->>>>>>> Stashed changes
       </div>
+
     </div>
 
   </div>
