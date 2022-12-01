@@ -1,39 +1,92 @@
-<div class="signup-header">Create your profile</div>
+
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="user-info">
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
+  <div data-controller="signup-visibility">
+
+    <div class="user-credentials" data-signup-visibility-target="credentials">
+      <div class="signup-header">Create your profile</div>
+
+      <div class="form-inputs">
+        <%= f.input :username,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "username" }%>
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="long-turquiose-btn" data-action="click->signup-visibility#displayAvatar">
+        Next
+      </div>
     </div>
 
-    <div class="long-turquiose-btn">
-      <%= f.button :submit, "Next" %>
+    <div class="avatar d-none" data-signup-visibility-target="avatar">
+      <div class="signup-header">Upload an image</div>
+
+      <div class="avatar-image" data-signup-visibility-target="photo"></div>
+
+      <%= f.input :avatar, as: :file, input_html: { data: {
+                        action: "change->signup-visibility#displayPhoto"
+                      }}%>
+
+      <div class="long-turquiose-btn" data-action="click->signup-visibility#displayTeam">
+        Next
+      </div>
     </div>
-  </div>
 
+    <div class="team d-none" data-signup-visibility-target="team">
+      <div class="signup-header">Select your team</div>
+        <div class="team-choice-list">
+          <div class="team-choice"><%= f.radio_button :team, 'Argentina' %>Argentina</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Australia' %>Australia</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Beligum' %>Belgium</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Brazil' %>Brazil</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Cameroom' %>Cameroon</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Canada' %>Canada</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Costa Rica' %>Costa Rica</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Croatia' %>Croatia</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Denmark' %>Denmark</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Ecuador' %>Ecuador</div>
+          <div class="team-choice"><%= f.radio_button :team, 'England' %>England</div>
+          <div class="team-choice"><%= f.radio_button :team, 'France' %>France</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Germany' %>Germany</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Ghana' %>Ghana</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Iran' %>Iran</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Japan' %>Japan</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Mexico' %>Mexico</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Morocco' %>Morocco</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Netherlands' %>Netherlands</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Poland' %>Poland</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Portugal' %>Portugal</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Qatar' %>Qatar</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Saudi Arabia' %>Saudia Arabia</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Senegal' %>Senegal</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Serbia' %>Serbia</div>
+          <div class="team-choice"><%= f.radio_button :team, 'South Korea' %>South Korea</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Spain' %>Spain</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Switzerland' %>Switzerland</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Tunisia' %>Tunisia</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Uruguay' %>Uruguay</div>
+          <div class="team-choice"><%= f.radio_button :team, 'USA' %>USA</div>
+          <div class="team-choice"><%= f.radio_button :team, 'Wales' %>Wales</div>
+        </div>
 
-  <div class="avatar d-none">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-      <%= f.input :avatar, as: :file %>
-    <% end %>
-  </div>
-
-  <div class="team d-none">
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <div class="long-turquiose-btn">
+        <%= f.button :submit, "Submit" %>
+      </div>
     </div>
+
   </div>
 
 <% end %>
