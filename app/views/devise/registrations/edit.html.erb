@@ -1,5 +1,7 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<div class="top_container">
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <div class="back_button"><%= link_to "BACK", :back %></div>
+</div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
@@ -11,7 +13,7 @@
     <% end %>
 
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                hint: "* optional *",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
@@ -21,18 +23,20 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+      <%= f.input :avatar, as: :file %>
+    <% end %>
+
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <br>
+  <div class="end_page_btns">
+    <div class="form_update">
+      <%= f.button :submit, "Update" %>
+    </div>
+    <div class="cancel_account">
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
+    </div>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<div class="d-flex align-items-center">
-  <div>Unhappy?</div>
-  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
-</div>
-
-<%= link_to "Back", :back %>
