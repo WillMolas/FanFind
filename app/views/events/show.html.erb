@@ -28,11 +28,11 @@
   <div>
     <%= submit_tag 'JOIN EVENT', class: "turquiose-btn" %>
   </div>
+  <% end %>
   <div>
-    <%= submit_tag 'CHATROOM', class: "turquiose-btn" %>
+    <%= link_to 'CHATROOM', matches_path, class: "turquiose-btn" %>
   </div>
   <div id="delete-event">
     <%= link_to "Delete Event", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "tqse-link" %>
   </div>
-  <% end %>
 </div>
