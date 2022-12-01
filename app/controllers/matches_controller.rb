@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @matches = Match.all
@@ -14,5 +15,4 @@ class MatchesController < ApplicationController
       format.text { render partial: "matches/list", locals: { matches: @matches }, formats: [:html] }
     end
   end
-
 end
