@@ -8,7 +8,7 @@
   </div>
 </div>
 <br>
-<div class="name_header">@username<%= current_user.first_name %></div>
+<div class="name_header">@<%= @user.username %></div>
 
 <div class="card profile">
   <%= link_to image_tag("https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg", class: "profile_img"), edit_user_path(current_user) %>
