@@ -4,16 +4,18 @@
   <div class="event-show-card">
     <div class="event-show-rectangle">
       <p class="event-italic"><%= @event.description %></p>
-      <p ><%= "#{@event.capacity} people" %></p>
-      <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %><p>
-      <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= @event.location.name %>
+      <% if @event.capacity.present? %>
+        <p><%= "#{@event.capacity} people" %></p>
+      <% end %>
+      <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %></p>
+      <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= @event.location.name %></p>
     </div>
     <div class="event-show-triangle">
     </div>
   </div>
 
   <div class="edit-btn-card">
-    <a class="edit-btn">Edit Details</a>
+    <%= link_to "Edit Details", edit_event_path(@event), class: "tqse-link" %>
   </div>
 
   <div class="locations-map"
@@ -23,6 +25,14 @@
   </div>
 
   <%= form_tag(event_event_bookings_path(@event), method: :post) do %>
-  <div><%= submit_tag 'JOIN EVENT', class: "turquiose-btn" %></div>
+  <div>
+    <%= submit_tag 'JOIN EVENT', class: "turquiose-btn" %>
+  </div>
+  <div>
+    <%= submit_tag 'CHATROOM', class: "turquiose-btn" %>
+  </div>
+  <div id="delete-event">
+    <%= link_to "Delete Event", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "tqse-link" %>
+  </div>
   <% end %>
 </div>

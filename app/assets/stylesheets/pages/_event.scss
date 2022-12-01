@@ -26,14 +26,17 @@ font-style: italic;
   margin-right: -0.5px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 .event-show-triangle {
   height: 100%;
   width: 0;
   border-top: 180px solid white;
-  border-right: 40px solid transparent;
+  border-right: 32px solid transparent;
 
 }
 
@@ -56,17 +59,23 @@ font-style: italic;
   flex-grow: 1;
 }
 
-.edit-btn {
-  text-decoration: none;
+.tqse-link {
   color: #0DFDCC;
-  text-align: right;
+  text-decoration: none;
 }
 
 .edit-btn-card {
-  margin-top: 8px;
+  text-align: right;
+  margin-top: 4px;
   width: 100%;
   padding-right: 15%;
   text-align: right;
+}
+
+#delete-event {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 16px;
 }
 
 .locations-map {

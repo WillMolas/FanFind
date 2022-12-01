@@ -32,6 +32,23 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    @event = @event.match
+    redirect_to event_path
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to matches_path, status: :see_other
+  end
+
   private
 
   def event_params
