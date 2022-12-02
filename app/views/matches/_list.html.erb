@@ -1,11 +1,4 @@
 <div data-search-matches-target="list">
-  <p class="match-subheader">
-    <% if params[:query].blank? %>
-      <%= pluralize matches.count, "match" %> available
-    <% else %>
-      <%= pluralize matches.count, "result" %> for <code><%= params[:query] %></code>
-    <% end %>
-  </p>
   <div class= "matches">
     <% @matches.each do |match| %>
     <a href="<%= match_events_path(match) %>">
