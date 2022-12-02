@@ -22,12 +22,12 @@
 # Location.create(name: "Bar Catalunya", address: "C. de Pere IV, 120, 08005 Barcelona")
 
 Match.destroy_all
+Location.destroy_all
 Event.destroy_all
 EventBooking.destroy_all
 User.destroy_all
 
 
-location = Location.create(name: "L'Ovella Negra Marina", address: "Carrer de Zamora, 78, 08018 Barcelona")
 counter = 0
 counter1 = 0
 10.times do
@@ -43,9 +43,13 @@ counter1 = 0
     stadium: ["al janoub", "al thumama", "khalifa international", "ahmad bin ali", "education city", "al bayt lusail", "stadium974"].sample,
     match_time: ["19/11/2022 16:00", "20/11/2022 16:00", "21/11/2022 16:00", "22/11/2022 16:00", "23/11/2022 16:00"].sample
   )
+  location = Location.create!(
+    name: ["L'Ovella Negra Marina", "Bar Àustria", "Bar Trafalgar 1", "Bar Restaurant Lleonès", "Bonavida Cocktail Bar", "Gracia's Bar", "Bar Level", "Aalaire rooftop", "Bar 201", "Bar Poble Sec"][counter],
+    adress: ["Carrer de Zamora, 78, 08018 Barcelona", "C/ d'Ausiàs Marc, 19, 08010 Barcelona", "C/ de Trafalgar, 1, 08010 Barcelona", "C. de Fontanella, 19, 08010 Barcelona", "Carrer de Casp, 22, 08010 Barcelona", "Carrer de Milà i Fontanals, 9, 08012 Barcelona", "Carrer del Rosselló, 206, 08008 Barcelona", "C/ de Mallorca, 246, 252, 08008 Barcelona", "C. de Villarroel, 201, 08036 Barcelona", "Av. del Paral·lel, 130, 08015 Barcelona"][counter]
+  )
   2.times do
     event = Event.create!(
-      name: ["Win or die at Ovella", "Win or loss, we will get drunk", "In Ovella we trust", "Where our hope ends"].sample,
+      name: ["Win or die at Ovella", "Let's join all together", "In them we trust", "Where our hope ends"].sample,
       description: ["Come watch the game with us", "Watching the game in a pub", "Watching the game on an outdoor screen"].sample,
       match_time: "15:00",
       location_id: location.id,
