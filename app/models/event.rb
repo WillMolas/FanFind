@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   has_many :users, through: :event_bookings
 
   validates :match_time, presence: true
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 50 }
   validates :description, presence: true
 
   after_create :create_chatroom
