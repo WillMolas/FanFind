@@ -14,9 +14,13 @@
     </div>
   </div>
 
-  <div class="edit-btn-card">
-    <%= link_to "Edit Details", edit_event_path(@event), class: "tqse-link" %>
-  </div>
+  <% if @event.user == current_user%>
+    <div class="edit-btn-card">
+      <%= link_to "Edit Details", edit_event_path(@event), class: "tqse-link" %>
+    </div>
+  <% else %>
+    <br>
+  <% end %>
 
   <div class="locations-map"
     data-controller="map"
@@ -26,20 +30,14 @@
 
   <% if @event.user == current_user%>
   <div>
-    <%= form_tag(event_chatroom_path(@event), method: :get) do %>
-    <%= submit_tag 'CHATROOM', class: "green-btn" %>
-    <% end %>
+      <%= link_to "CHATROOM", event_chatroom_path(@event, @event.chatroom), class: "green-btn chatroom-btn" %>
   </div>
     <div id="delete-event">
     <%= link_to "Delete Event", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "tqse-link" %>
   </div>
   <% else %>
     <% if @event.event_bookings.map(&:user_id).include? current_user.id %>
-    <div>
-      <%= form_tag(event_chatroom_path(@event), method: :get) do %>
-      <%= submit_tag 'CHATROOM', class: "green-btn" %>
-      <% end %>
-    </div>
+      <%= link_to "CHATROOM", event_chatroom_path(@event, @event.chatroom), class: "green-btn chatroom-btn" %>
     <div>
       <%= link_to 'Leave Event', event_booking_path(@event), data: { turbo_method: :delete}, class: "tqse-link" %>
     </div>
