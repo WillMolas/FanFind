@@ -5,6 +5,7 @@
 .messages {
   display: flex;
   flex-direction: column;
+  margin-top: 16px;
 }
 
 .message {
@@ -21,4 +22,19 @@
 
 #message-submit-container {
   margin-bottom: 16px;
+  margin-top: 8px;
+}
+
+#sticky-header {
+  position: sticky;
+  top: 0px;
+}
+
+#sticky-header-bar {
+  background-color: black;
+  padding-top: 75px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 144px;
+  position: auto 0;
 }
