@@ -4,10 +4,10 @@
     <div class="event-show-rectangle">
       <p class="event-italic"><%= @event.description %></p>
       <% if @event.capacity.present? %>
-        <p><strong>Capacity: </strong><%= "#{@event.capacity} people" %></p>
+        <p><i class="fa-solid fa-maximize"></i>&nbsp&nbsp&nbsp<%= "#{@event.capacity} people max" %></p>
       <% end %>
-      <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %></p>
-      <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= @event.location.name %></p>
+      <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %></p>
+      <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp&nbsp&nbsp<%= @event.location.name %></p>
       <p><i class="fa-solid fa-users"></i>&nbsp&nbsp<%= @event.event_bookings.count%></p>
     </div>
     <div class="event-show-triangle">
