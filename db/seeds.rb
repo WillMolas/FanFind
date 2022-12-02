@@ -27,6 +27,12 @@ Event.destroy_all
 EventBooking.destroy_all
 User.destroy_all
 
+# user2 = User.create!(
+#   username: "Alex Coma",
+#   email: "alexcoma@email.com",
+#   password: "123456",
+#   team:
+# )
 
 counter = 0
 counter1 = 0
