@@ -2,22 +2,23 @@
   <div>
     <div class="match-col">
       <div class="upcase-header">Matches</div>
-
-      <div data-controller="search-matches">
+      <div class="matches-search-form" data-controller="search-matches">
         <%= form_with url: matches_path,
           method: :get,
-          html: {class: "mb-4", data: {search_matches_target: "form"}} do |f|
+          html: {class: "search-form", data: {search_matches_target: "form"}} do |f|
         %>
           <%= f.text_field :query,
-            class: "form-control",
-            placeholder: "Look for a specific match",
+            class: "input",
+            placeholder: "Search Matches",
             value: params[:query],
             data: {
               search_matches_target: "input",
               action: "keyup->search-matches#update"
             }
           %>
+          <i class="fa fa-search"></i>
         <% end %>
+
         <%= render "list", matches: @matches %>
       </div>
     </div>
