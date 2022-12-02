@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   end
   resources :events, only: [:show, :edit, :update, :destroy] do
     resources :chatrooms, only: :show
-    resources :event_bookings, only: [:new, :create]
+    resources :event_bookings, only: [:create]
   end
+  resources :event_bookings, only: [:destroy]
   resources :locations, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
   end

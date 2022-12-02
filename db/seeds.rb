@@ -29,9 +29,10 @@ User.destroy_all
 
 location = Location.create(name: "L'Ovella Negra Marina", address: "Carrer de Zamora, 78, 08018 Barcelona")
 counter = 0
+counter1 = 0
 10.times do
   user = User.create!(
-    # username: ["Alex", "Emilia", "Jess", "Guillem"].sample,
+    username: ["Alex", "Emilia", "Jess", "Guillem", "Leo Messi", "Alex1", "Emilia1", "Jess1", "Guillem1", "Leo Messi1"][counter],
     email: ["email@email.com", "email1@email.com", "email2@email.com", "email3@email.com", "email4@email.com", "email5@email.com", "email6@email.com", "email7@email.com", "email8@email.com", "email9@email.com"][counter],
     password: "123456",
     team: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample
@@ -42,23 +43,27 @@ counter = 0
     stadium: ["al janoub", "al thumama", "khalifa international", "ahmad bin ali", "education city", "al bayt lusail", "stadium974"].sample,
     match_time: ["19/11/2022 16:00", "20/11/2022 16:00", "21/11/2022 16:00", "22/11/2022 16:00", "23/11/2022 16:00"].sample
   )
-
   2.times do
     event = Event.create!(
-      name: ["England game", "Germany game", "Wales game", "France game"].sample,
+      name: ["Win or die at Ovella", "Win or loss, we will get drunk", "In Ovella we trust", "Where our hope ends"].sample,
       description: ["Come watch the game with us", "Watching the game in a pub", "Watching the game on an outdoor screen"].sample,
       match_time: "15:00",
       location_id: location.id,
       user_id: user.id,
-      match_id: match.id
+      match_id: match.id,
+      capacity: [30..80].sample
     )
-
-    5.times do
+    user1 = User.create!(
+      username: ["Alex2", "Emilia2", "Jess2", "Guillem2", "Leo Messi2"][counter1],
+      email: ["alex@email.com", "emilia@email.com", "jess@email.com", "guillem@email.com", "leo@email.com","alex1@email.com", "emilia1@email.com", "jess1@email.com", "guillem1@email.com", "leo1@email.com","alex2@email.com", "emilia2@email.com", "jess2@email.com", "guillem2@email.com", "leo2@email.com","alex3@email.com", "emilia3@email.com", "jess3@email.com", "guillem3@email.com", "leo3@email.com"][counter1],
+      password: "123456",
+      team: ["Australia", "Belgium", "Brazil", "Cameroon", "Argentina"][counter1]
+    )
       EventBooking.create!(
-        user_id: user.id,
+        user_id: user1.id,
         event_id: event.id
     )
-    end
+    counter1 += 1
   end
   counter += 1
 end
