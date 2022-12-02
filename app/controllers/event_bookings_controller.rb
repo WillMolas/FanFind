@@ -12,6 +12,16 @@ class EventBookingsController < ApplicationController
     end
   end
 
+  def show
+    @event = Event.find(params[:event_id])
+    @event_booking.user = current_user
+    @event_booking.event = @event
+  end
+
+  def index
+    @event_booking.all
+  end
+
   def destroy
     @event = Event.find(params[:id])
     @event_bookings = @event.event_bookings
