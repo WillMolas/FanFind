@@ -14,21 +14,48 @@
   <%= link_to image_tag(url_for(current_user.avatar), class: "profile_img"), edit_user_path(current_user), class: "nav-link"%>
 
   <div class="profile_info">
+
+    <h3>title(real name)</h3>
+    <p>A few sentences about myself, my interests, and the teams I support.</p>
+
     <h3><strong>About Me</strong></h3>
     <p>A few sentences about myself, my interests, and the team I support.</p>
+
   </div>
 
 </div>
 
 <div class="upcoming-created-events">
   <div class="card" id="profile_card">
-    <h3>upcoming matches</h3>
-    <%# <div class="view-all-btn"><%= link_to 'View All', class: "upcoming-events" %></div> %>
+    <h3><strong>Booked Events</strong></h3>
+    <div class="bookings">
+      <ul class="user-bookings">
+        <% current_user.event_bookings.each do |booking|%>
+          <a href= "<%= event_path(booking.event) %>">
+            <div class="card-product-info">
+              <div>
+                  <li><strong><%= booking.event.name %></strong> by <%= booking.event.user.username %></li>
+              </div>
+            </div>
+          </a>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class="card" id="profile_card">
-    <h3>created events</h3>
-    <%# <div class="view-all-btn"><%= link_to 'View All', class: "created-events" %></div> %>
+    <h3><strong>Created Events</strong></h3>
+    <div class="created_events">
+      <ul class="created">
+        <% current_user.events.each do |event| %>
+          <a href= "<%= event_path(event) %>">
+            <div class="card_info">
+              <li><strong><%= event.name %></strong></li>
+            </div>
+          </a>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
-
+<br>
 <div class="navbar"></div>

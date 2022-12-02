@@ -8,9 +8,8 @@
     font-style: normal;
     font-weight: 500;
     font-size: 36px;
-    margin: 20px;
-  }
 
+  }
 }
 
 .back_button{
@@ -20,9 +19,8 @@
   text-align: center;
   width: 50px;
   height: 30px;
-  margin-left: 150px;
-  margin-top: 30px;
-  margin-right: 20px;
+  margin-top: 10px;
+  margin-left: 160px;
   padding-top: 4px;
   padding-bottom: 4px;
   a {
@@ -41,7 +39,8 @@
     // color: black;
     text-align: center;
     width: auto;
-    margin-left: 27px;
+    margin-left: 64px;
+
     button {
       text-decoration: none;
       color: black;
@@ -54,6 +53,9 @@
     // color: black;
     text-align: center;
     width: 100px;
-    margin-left: 25px;
   }
+}
+
+.content_form{
+  margin: 25px;
 }

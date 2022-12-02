@@ -1,0 +1,17 @@
+
+<div class="show_card"><h3><strong>Client: </strong><%= @booking.user.username %> </h3></div>
+<div>
+  <h1><strong><%= @booking.event.name %></strong></h1>
+</div>
+<br>
+<%= cl_image_tag @booking.event.photo.key, height: 300, width: 400, crop: :fill %>
+<br>
+
+<br>
+<ul>
+  <li><strong>From:  </strong><%= @booking.borrow_date %></li>
+  <br>
+  <li><strong>To:  </strong><%= @booking.return_date %></li>
+</ul>
+<button><%= link_to "Edit this booking", edit_booking_path(@booking) %></button>
+<button><%= link_to "Delete this booking", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
