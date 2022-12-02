@@ -1,43 +1,56 @@
-<br>
-<div class="container">
-  <button class="login_btn">
+<div class="profile-container">
+  <div class="edit-btn">
     <%= link_to 'EDIT', edit_user_registration_path %>
-  </button>
+  </div>
   <div class="bell_icon">
     <%= link_to "#", class: "notifications" do %>
       <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
     <% end %>
   </div>
 </div>
-<br>
 <div class="name_header">@<%= @user.username %></div>
 
 <div class="card profile">
   <%= link_to image_tag("https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg", class: "profile_img"), edit_user_path(current_user) %>
 
   <div class="profile_info">
-
-    <h3>biography : </h3>
-    <p>explaining a bit my situation, the team i support and the why i am suporting this team</p>
-
+    <h3>title(real name)</h3>
+    <p>A few sentences about myself, my interests, and the teams I support.</p>
   </div>
-</div>
-<br>
 
-<div class="card" id="profile_card">
-  <h3>upcoming matches</h3>
-  <%= link_to "users/show_booking", class: "upcoming events" do %>
-    <button><%= "View all" %></button>
-  <% end %>
 </div>
 
-<br>
-
-<div class="card" id="profile_card">
-  <h3>created events</h3>
-  <%= link_to "#", class: "events created" do %>
-    <button class="events_created"><%= "View all" %></button>
-  <% end %>
+<div class="upcoming-created-events">
+  <div class="card" id="profile_card">
+    <h3><strong>Booked Events</strong></h3>
+    <div class="bookings">
+      <ul class="user-bookings">
+        <% current_user.event_bookings.each do |booking|%>
+          <a href= "<%= event_path(booking.event) %>">
+            <div class="card-product-info">
+              <div>
+                  <li><strong><%= booking.event.name %></strong> by <%= booking.event.user.username %></li>
+              </div>
+            </div>
+          </a>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="card" id="profile_card">
+    <h3><strong>Created Events</strong></h3>
+    <div class="created_events">
+      <ul class="created">
+        <% current_user.events.each do |event| %>
+          <a href= "<%= event_path(event) %>">
+            <div class="card_info">
+              <li><strong><%= event.name %></strong></li>
+            </div>
+          </a>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
 <br>
 <div class="navbar"></div>
