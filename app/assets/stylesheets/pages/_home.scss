@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
+.content {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 body {
   background-color: black;
 }
