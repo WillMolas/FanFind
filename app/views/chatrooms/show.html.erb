@@ -11,7 +11,7 @@ data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
       <% end %>
   </div>
 
-    <div id="message-submit-container">
+    <div id="message-submit-container" class="position-sticky">
       <%= simple_form_for [@chatroom, @message],
       html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
       <%= f.input :content,

@@ -9,4 +9,10 @@ class Event < ApplicationRecord
   validates :match_time, presence: true
   validates :name, presence: true
   validates :description, presence: true
+
+  after_create :create_chatroom
+
+  def create_chatroom
+    Chatroom.create(event: self)
+  end
 end

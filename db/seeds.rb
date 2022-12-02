@@ -45,7 +45,7 @@ counter1 = 0
   )
   location = Location.create!(
     name: ["L'Ovella Negra Marina", "Bar Àustria", "Bar Trafalgar 1", "Bar Restaurant Lleonès", "Bonavida Cocktail Bar", "Gracia's Bar", "Bar Level", "Aalaire rooftop", "Bar 201", "Bar Poble Sec"][counter],
-    adress: ["Carrer de Zamora, 78, 08018 Barcelona", "C/ d'Ausiàs Marc, 19, 08010 Barcelona", "C/ de Trafalgar, 1, 08010 Barcelona", "C. de Fontanella, 19, 08010 Barcelona", "Carrer de Casp, 22, 08010 Barcelona", "Carrer de Milà i Fontanals, 9, 08012 Barcelona", "Carrer del Rosselló, 206, 08008 Barcelona", "C/ de Mallorca, 246, 252, 08008 Barcelona", "C. de Villarroel, 201, 08036 Barcelona", "Av. del Paral·lel, 130, 08015 Barcelona"][counter]
+    address: ["Carrer de Zamora, 78, 08018 Barcelona", "C/ d'Ausiàs Marc, 19, 08010 Barcelona", "C/ de Trafalgar, 1, 08010 Barcelona", "C. de Fontanella, 19, 08010 Barcelona", "Carrer de Casp, 22, 08010 Barcelona", "Carrer de Milà i Fontanals, 9, 08012 Barcelona", "Carrer del Rosselló, 206, 08008 Barcelona", "C/ de Mallorca, 246, 252, 08008 Barcelona", "C. de Villarroel, 201, 08036 Barcelona", "Av. del Paral·lel, 130, 08015 Barcelona"][counter]
   )
   2.times do
     event = Event.create!(
