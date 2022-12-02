@@ -4,19 +4,23 @@
     <div class="event-show-rectangle">
       <p class="event-italic"><%= @event.description %></p>
       <% if @event.capacity.present? %>
-        <p><strong>Capacity: </strong><%= "#{@event.capacity} people" %></p>
+        <p><i class="fa-solid fa-maximize"></i>&nbsp&nbsp&nbsp<%= "#{@event.capacity} people max" %></p>
       <% end %>
-      <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %></p>
-      <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= @event.location.name %></p>
+      <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %></p>
+      <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp&nbsp&nbsp<%= @event.location.name %></p>
       <p><i class="fa-solid fa-users"></i>&nbsp&nbsp<%= @event.event_bookings.count%></p>
     </div>
     <div class="event-show-triangle">
     </div>
   </div>
 
-  <div class="edit-btn-card">
-    <%= link_to "Edit Details", edit_event_path(@event), class: "tqse-link" %>
-  </div>
+  <% if @event.user == current_user%>
+    <div class="edit-btn-card">
+      <%= link_to "Edit Details", edit_event_path(@event), class: "tqse-link" %>
+    </div>
+  <% else %>
+    <br>
+  <% end %>
 
   <div class="locations-map"
     data-controller="map"
@@ -26,20 +30,14 @@
 
   <% if @event.user == current_user%>
   <div>
-    <%= form_tag(event_chatroom_path(@event), method: :get) do %>
-    <%= submit_tag 'CHATROOM', class: "green-btn" %>
-    <% end %>
+      <%= link_to "CHATROOM", event_chatroom_path(@event, @event.chatroom), class: "green-btn chatroom-btn" %>
   </div>
     <div id="delete-event">
     <%= link_to "Delete Event", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "tqse-link" %>
   </div>
   <% else %>
     <% if @event.event_bookings.map(&:user_id).include? current_user.id %>
-    <div>
-      <%= form_tag(event_chatroom_path(@event), method: :get) do %>
-      <%= submit_tag 'CHATROOM', class: "green-btn" %>
-      <% end %>
-    </div>
+      <%= link_to "CHATROOM", event_chatroom_path(@event, @event.chatroom), class: "green-btn chatroom-btn" %>
     <div>
       <%= link_to 'Leave Event', event_booking_path(@event), data: { turbo_method: :delete}, class: "tqse-link" %>
     </div>

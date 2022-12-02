@@ -55,17 +55,21 @@
   z-index: -1;
 
   .profile_img{
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     border-radius: 50%;
     margin-left: 5px;
     margin-top: 10px;
-    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    object-fit: cover;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
   }
 
   .profile_info{
     background-color: #CFFF0F;
-    border-radius: 4px;
     width: 65%;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -78,6 +82,9 @@
     padding-top: 20px;
     padding-bottom: 20px;
     z-index: -1;
+    font-family: 'Roboto';
+    font-style: italic;
+    font-size: 16px;
   }
 }
 

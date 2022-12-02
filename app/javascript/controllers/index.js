@@ -7,6 +7,9 @@ import { application } from "./application"
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 
+import CheckRadioButtonsController from "./check_radio_buttons_controller"
+application.register("check-radio-buttons", CheckRadioButtonsController)
+
 import DisableButtonController from "./disable_button_controller"
 application.register("disable-button", DisableButtonController)
 

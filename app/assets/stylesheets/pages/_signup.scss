@@ -46,7 +46,8 @@
   margin-block: 6px;
   background-color: white;
   border:3px solid black;
-  &:hover {
+  &:hover,
+  &.active {
     background-color: #CFFF0F;
   }
 }

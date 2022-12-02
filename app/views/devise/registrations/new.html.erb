@@ -42,10 +42,9 @@
 
       <div class="avatar-image" data-signup-visibility-target="photo"></div>
 
-      <%= f.input :avatar, as: :file, input_html: { data: {
+      <%= f.input :avatar, as: :file, label: false, input_html: { data: {
                         action: "change->signup-visibility#displayPhoto"
                       }}%>
-
 
       <div class="signup-btn-container">
         <div class="next-btn" data-action="click->signup-visibility#displayTeam">
@@ -57,101 +56,101 @@
     <div class="team d-none" data-signup-visibility-target="team">
       <div class="signup-header">Select your team</div>
         <div class="team-choice-list">
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Argentina' %>Argentina</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Argentina', "data-check-radio-buttons-target": "radioButton" %>Argentina</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Australia' %>Australia</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Australia', "data-check-radio-buttons-target": "radioButton" %>Australia</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Beligum' %>Belgium</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Beligum', "data-check-radio-buttons-target": "radioButton" %>Belgium</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Brazil' %>Brazil</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Brazil', "data-check-radio-buttons-target": "radioButton" %>Brazil</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Cameroom' %>Cameroon</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Cameroom', "data-check-radio-buttons-target": "radioButton" %>Cameroon</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Canada' %>Canada</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Canada', "data-check-radio-buttons-target": "radioButton" %>Canada</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Costa Rica' %>Costa Rica</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Costa Rica', "data-check-radio-buttons-target": "radioButton" %>Costa Rica</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Croatia' %>Croatia</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Croatia', "data-check-radio-buttons-target": "radioButton" %>Croatia</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Denmark' %>Denmark</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Denmark', "data-check-radio-buttons-target": "radioButton" %>Denmark</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Ecuador' %>Ecuador</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Ecuador', "data-check-radio-buttons-target": "radioButton" %>Ecuador</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'England' %>England</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'England', "data-check-radio-buttons-target": "radioButton" %>England</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'France' %>France</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'France', "data-check-radio-buttons-target": "radioButton" %>France</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Germany' %>Germany</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Germany', "data-check-radio-buttons-target": "radioButton" %>Germany</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Ghana' %>Ghana</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Ghana', "data-check-radio-buttons-target": "radioButton" %>Ghana</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Iran' %>Iran</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Iran', "data-check-radio-buttons-target": "radioButton" %>Iran</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Japan' %>Japan</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Japan', "data-check-radio-buttons-target": "radioButton" %>Japan</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Mexico' %>Mexico</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Mexico', "data-check-radio-buttons-target": "radioButton" %>Mexico</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Morocco' %>Morocco</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Morocco', "data-check-radio-buttons-target": "radioButton" %>Morocco</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Netherlands' %>Netherlands</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Netherlands', "data-check-radio-buttons-target": "radioButton" %>Netherlands</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Poland' %>Poland</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Poland', "data-check-radio-buttons-target": "radioButton" %>Poland</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Portugal' %>Portugal</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Portugal', "data-check-radio-buttons-target": "radioButton" %>Portugal</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Qatar' %>Qatar</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Qatar', "data-check-radio-buttons-target": "radioButton" %>Qatar</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Saudi Arabia' %>Saudia Arabia</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Saudi Arabia', "data-check-radio-buttons-target": "radioButton" %>Saudia Arabia</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Senegal' %>Senegal</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Senegal', "data-check-radio-buttons-target": "radioButton" %>Senegal</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Serbia' %>Serbia</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Serbia', "data-check-radio-buttons-target": "radioButton" %>Serbia</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'South Korea' %>South Korea</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'South Korea', "data-check-radio-buttons-target": "radioButton" %>South Korea</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Spain' %>Spain</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Spain', "data-check-radio-buttons-target": "radioButton" %>Spain</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Switzerland' %>Switzerland</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Switzerland', "data-check-radio-buttons-target": "radioButton" %>Switzerland</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Tunisia' %>Tunisia</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Tunisia', "data-check-radio-buttons-target": "radioButton" %>Tunisia</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Uruguay' %>Uruguay</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Uruguay', "data-check-radio-buttons-target": "radioButton" %>Uruguay</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'USA' %>USA</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'USA', "data-check-radio-buttons-target": "radioButton" %>USA</div>
           </div>
-          <div class="team-choice-box">
-            <div class="team-choice"><%= f.radio_button :team, 'Wales' %>Wales</div>
+          <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
+            <div class="team-choice"><%= f.radio_button :team, 'Wales', "data-check-radio-buttons-target": "radioButton" %>Wales</div>
           </div>
         </div>
 

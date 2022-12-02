@@ -3,10 +3,10 @@
 
   <%= simple_form_for [@match, @event] do |f| %>
     <div class="form-input">
-      <%= f.input :name, label: "Create a name for this event" %>
+      <%= f.input :name, label: "Event name" %>
     </div>
     <div class="form-input">
-      <%= f.input :description, label: "Enter description" %>
+      <%= f.input :description, label: "Event description" %>
     </div>
     <div class="inline-form">
       <div class="form-input form-input-time">
