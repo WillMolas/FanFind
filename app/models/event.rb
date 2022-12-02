@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   belongs_to :location
   belongs_to :match
   belongs_to :user
-  has_one :chatroom
+  has_one :chatroom, dependent: :destroy
   has_many :event_bookings, dependent: :destroy
   has_many :users, through: :event_bookings
 
