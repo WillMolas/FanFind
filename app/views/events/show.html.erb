@@ -25,28 +25,31 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <% if @event.event_bookings.map(&:user_id).include? current_user.id %>
-  <div>
-    <%= form_tag(event_booking_path(@event), method: :delete) do %>
-    <%= submit_tag 'UNJOIN EVENT', class: "turquiose-btn" %>
-    <% end %>
-  </div>
-
-  <div>
-    <%= link_to 'CHATROOM', matches_path, class: "turquiose-btn" %>
-  </div>
-
-  <% else %>
-  <div>
-    <%= form_tag(event_event_bookings_path(@event), method: :post) do %>
-    <%= submit_tag 'JOIN EVENT', class: "turquiose-btn" %>
-    <% end %>
-  </div>
-  <% end %>
-
   <% if @event.user == current_user%>
-  <div id="delete-event">
+  <div>
+    <%= form_tag(event_chatroom_path(@event), method: :get) do %>
+    <%= submit_tag 'CHATROOM', class: "green-btn" %>
+    <% end %>
+  </div>
+    <div id="delete-event">
     <%= link_to "Delete Event", event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "tqse-link" %>
   </div>
+  <% else %>
+    <% if @event.event_bookings.map(&:user_id).include? current_user.id %>
+    <div>
+      <%= form_tag(event_chatroom_path(@event), method: :get) do %>
+      <%= submit_tag 'CHATROOM', class: "green-btn" %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to 'Leave Event', event_booking_path(@event), data: { turbo_method: :delete}, class: "tqse-link" %>
+    </div>
+    <% else %>
+    <div>
+      <%= form_tag(event_event_bookings_path(@event), method: :post) do %>
+      <%= submit_tag 'JOIN EVENT', class: "turquiose-btn" %>
+      <% end %>
+    </div>
+    <% end %>
   <% end %>
 </div>

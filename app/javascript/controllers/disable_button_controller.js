@@ -5,6 +5,6 @@ export default class extends Controller {
   connect() {
     setTimeout(() => {
       this.element.click()
-    }, 3000)
+    }, 2000)
   }
 }
