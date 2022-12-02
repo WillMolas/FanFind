@@ -13,6 +13,11 @@ font-style: italic;
   width: 90%;
 }
 
+.edit-event-container, .new-event-container {
+  margin: 0 auto;
+  width: 90%;
+}
+
 .event-show-card {
   width: 100%;
   height: 180px;
@@ -84,8 +89,6 @@ font-style: italic;
 }
 
 .black-strip {
-  // width: 360px;
-  // margin-left: -12px;
   width: 100%;
   background-color: black;
   color: #0DFDCC;

@@ -1,6 +1,6 @@
 <div class="top_container">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
-  <div class="back_button"><%= link_to "BACK", :back %></div>
+  <div class="back_button"><%= link_to "BACK", user_path(current_user) %></div>
 </div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -34,7 +34,7 @@
       <%= f.button :submit, "Update" %>
     </div>
     <div class="cancel_account">
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-link" %>
     </div>
   </div>
 <% end %>

@@ -27,7 +27,6 @@ Event.destroy_all
 EventBooking.destroy_all
 User.destroy_all
 
-
 counter = 0
 counter1 = 0
 10.times do
@@ -38,14 +37,14 @@ counter1 = 0
     team: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample
   )
   match = Match.create!(
-    team_one: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample,
-    team_two: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample,
+    team_one: ["South Korea", "Ghana", "Serbia", "Brazil", "Netherlands", "Argentina", "France", "England", "Japan", "Morocco"][counter],
+    team_two: ["Portugal", "Uruguay", "Switzerland", "Cameroon", "USA", "Australia", "Poland", "Senegal", "Croatia", "Spain"][counter],
     stadium: ["al janoub", "al thumama", "khalifa international", "ahmad bin ali", "education city", "al bayt lusail", "stadium974"].sample,
-    match_time: ["19/11/2022 16:00", "20/11/2022 16:00", "21/11/2022 16:00", "22/11/2022 16:00", "23/11/2022 16:00"].sample
+    match_time: ["2/12/2022 16:00", "2/12/2022 16:00", "2/12/2022 20:00", "2/12/2022 20:00", "3/12/2022 16:00", "3/12/2022 20:00", "4/12/2022 16:00", "4/12/2022 20:00", "5/12/2022 16:00", "/12/2022 16:00"][counter]
   )
   location = Location.create!(
     name: ["L'Ovella Negra Marina", "Bar Àustria", "Bar Trafalgar 1", "Bar Restaurant Lleonès", "Bonavida Cocktail Bar", "Gracia's Bar", "Bar Level", "Aalaire rooftop", "Bar 201", "Bar Poble Sec"][counter],
-    adress: ["Carrer de Zamora, 78, 08018 Barcelona", "C/ d'Ausiàs Marc, 19, 08010 Barcelona", "C/ de Trafalgar, 1, 08010 Barcelona", "C. de Fontanella, 19, 08010 Barcelona", "Carrer de Casp, 22, 08010 Barcelona", "Carrer de Milà i Fontanals, 9, 08012 Barcelona", "Carrer del Rosselló, 206, 08008 Barcelona", "C/ de Mallorca, 246, 252, 08008 Barcelona", "C. de Villarroel, 201, 08036 Barcelona", "Av. del Paral·lel, 130, 08015 Barcelona"][counter]
+    address: ["Carrer de Zamora, 78, 08018 Barcelona", "C/ d'Ausiàs Marc, 19, 08010 Barcelona", "C/ de Trafalgar, 1, 08010 Barcelona", "C. de Fontanella, 19, 08010 Barcelona", "Carrer de Casp, 22, 08010 Barcelona", "Carrer de Milà i Fontanals, 9, 08012 Barcelona", "Carrer del Rosselló, 206, 08008 Barcelona", "C/ de Mallorca, 246, 252, 08008 Barcelona", "C. de Villarroel, 201, 08036 Barcelona", "Av. del Paral·lel, 130, 08015 Barcelona"][counter]
   )
   2.times do
     event = Event.create!(
@@ -71,6 +70,15 @@ counter1 = 0
   end
   counter += 1
 end
+
+
+
+# match = Match.create!(
+#   team_one: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample,
+#   team_two: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample,
+#   stadium: ["al janoub", "al thumama", "khalifa international", "ahmad bin ali", "education city", "al bayt lusail", "stadium974"].sample,
+#   match_time: ["19/11/2022 16:00", "20/11/2022 16:00", "21/11/2022 16:00", "22/11/2022 16:00", "23/11/2022 16:00"].sample
+# )
 
 # location = Location.create!(
 #   name: ["Bar Àustria", "Bar Trafalgar 1", "Bar Restaurant Lleonès", "Bonavida Cocktail Bar", "Gracia's Bar", "Bar Level", "Aalaire rooftop", "Bar 201", "Bar Poble Sec", "International Beer Bar", "Bar Lobo", ]

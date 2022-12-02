@@ -5,8 +5,8 @@
       <div class="match-row">
         <div class="match-card">
           <div class="match-info">
-            <div class="match-name-card"><%= match.team_one.upcase %> vs <%= match.team_two.upcase %></div>
-            <div class="match-time-card"><%= match.match_time %></div>
+            <div class="match-name-card"><%= match.team_one.upcase %> VS <%= match.team_two.upcase %></div>
+            <div class="match-time-card"><%= match.match_time.strftime("%B %d | %l:%M%P") %></div>
           </div>
         </div>
         <div class="match-triangle"></div>
