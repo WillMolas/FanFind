@@ -32,7 +32,7 @@
           <a href= "<%= event_path(booking.event) %>">
             <div class="card-product-info">
               <div>
-                <li class="first <%="passed_booking" if booking.event.match_time < Time.now %>"><strong><%= booking.event.name %></strong> by <%= booking.event.user.username %><br> <%= booking.event.match.match_time %></li>
+                <li class="first <%= "passed_booking" if booking.event.match.match_time < Time.now %>"><strong><%= booking.event.name %></strong> by <%= booking.event.user.username %><br> <%= booking.event.match.match_time %></li>
               </div>
             </div>
           </a>
@@ -48,7 +48,7 @@
         <% current_user.events.each do |event| %>
           <a href= "<%= event_path(event) %>">
             <div class="card_info">
-              <li class="second <%="passed_event" if event.match_time < Time.now %>"><strong><%= event.name %></strong> <%= event.match.match_time %></li>
+              <li class="second <%= "passed_event" if event.match.match_time < Time.now %>"><strong><%= event.name %></strong> <%= event.match.match_time %></li>
             </div>
           </a>
         <% end %>
