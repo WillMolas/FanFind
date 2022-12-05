@@ -1,3 +1,8 @@
+<div class="back-arrow" id="back-arrow-margin">
+  <%= link_to matches_path do %>
+    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+  <% end %>
+</div>
 <div class="events-index-container">
 
   <h1 class="upcase-header"><%= "#{@match.team_one.upcase} VS #{@match.team_two.upcase}" %></h1>

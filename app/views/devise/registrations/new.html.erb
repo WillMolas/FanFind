@@ -4,7 +4,7 @@
   <div class= "signup_simple_form" data-controller="signup-visibility">
 
     <div class="user-credentials" data-signup-visibility-target="credentials">
-      <div class="signup-header">Create your profile</div>
+      <div class="signup-header" id="credentials-header">Create your profile</div>
 
       <div class="form-inputs">
         <%= f.input :username,
@@ -38,6 +38,9 @@
     </div>
 
     <div class="avatar d-none" data-signup-visibility-target="avatar">
+      <div class="back-arrow">
+        <i class="fa-sharp fa-solid fa-arrow-left" data-action="click->signup-visibility#returnCredentials"></i>
+      </div>
       <div class="signup-header">Upload an image</div>
 
       <div class="avatar-image" data-signup-visibility-target="photo"></div>
@@ -54,6 +57,9 @@
     </div>
 
     <div class="team d-none" data-signup-visibility-target="team">
+      <div class="back-arrow">
+        <i class="fa-sharp fa-solid fa-arrow-left" data-action="click->signup-visibility#returnAvatar"></i>
+      </div>
       <div class="signup-header">Select your team</div>
         <div class="team-choice-list">
           <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
