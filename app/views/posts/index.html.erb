@@ -14,7 +14,7 @@
           <p><%= post.user.team %></p>
       </div>
       <div class="community-post-photo">
-
+        <img src="<%= cl_image_path post.photo.key %>">
       </div>
       <div class="community-post-feedback">
         <div class="community-post-comment">
@@ -24,7 +24,7 @@
         <i class="fa-regular fa-hand-point-up"></i>
       </div>
       <div class="post-links">
-        <p id="post-comment">View Comments</p>
+        <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
         <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-delete" %></p>
       </div>
     <% end %>

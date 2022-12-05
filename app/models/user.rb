@@ -6,9 +6,9 @@ class User < ApplicationRecord
   has_many :events
   has_many :event_bookings
   has_many :messages
-  has_many :posts
-  has_many :post_comments
-  has_many :post_likes
+  has_many :posts, dependent: :destroy
+  has_many :post_comments, dependent: :destroy
+  has_many :post_likes, dependent: :destroy
   has_many :location_reviews
   has_many :notifications, as: :recipient, dependent: :destroy
 
