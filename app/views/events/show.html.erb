@@ -1,9 +1,9 @@
-<div class="back-arrow" id="back-arrow-margin">
-  <%= link_to match_events_path(@event.match) do %>
-    <i class="fa-sharp fa-solid fa-arrow-left"></i>
-  <% end %>
-</div>
 <div class="events-show-container">
+  <div class="back-arrow" id="back-arrow-margin">
+    <%= link_to match_events_path(@event.match) do %>
+      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+    <% end %>
+  </div>
   <h1 class="upcase-header"><%= @event.name %></h1>
   <div class="event-show-card">
     <div class="event-show-rectangle">
