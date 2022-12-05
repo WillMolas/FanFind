@@ -19,6 +19,7 @@ export default class extends Controller {
     }
     reader.readAsDataURL(event.target.files[0]);
   }
+  
   returnCredentials() {
     this.avatarTarget.classList.add("d-none")
     this.credentialsTarget.classList.remove("d-none")

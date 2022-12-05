@@ -1,0 +1,18 @@
+.back-arrow {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  margin-top: 25px;
+}
+
+.fa-sharp {
+  color: #0DFDCC;
+  font-size: 20pt;
+  &:hover{
+    color: #CFFF0F;
+  }
+}
+
+#back-arrow-margin {
+  margin-left: 25px;
+}
