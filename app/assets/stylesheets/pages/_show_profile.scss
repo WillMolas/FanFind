@@ -100,6 +100,15 @@
 .upcoming-created-events{
   display: flex;
   flex-direction: column;
+
+  .passed_booking{
+    background-color: #e4f6a0 !important;
+  }
+
+  .passed_event{
+    background-color: #a9f7e7 !important;
+  }
+
   h3 {
     color: black;
     text-align: center;
