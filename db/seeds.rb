@@ -6,26 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
-
-# Location.create(name: "Bar Àustria", address: "C/ d'Ausiàs Marc, 19, 08010 Barcelona")
-# Location.create(name: "Bar Trafalgar 1", address: "C/ de Trafalgar, 1, 08010 Barcelona")
-# Location.create(name: "Bar Restaurant Lleonès", address: "C. de Fontanella, 19, 08010 Barcelona")
-# Location.create(name: "Bonavida Cocktail Bar", address: "Carrer de Casp, 22, 08010 Barcelona")
-# Location.create(name: "Gracia's Bar", address: "Carrer de Milà i Fontanals, 9, 08012 Barcelona")
-# Location.create(name: "Bar Level", address: "Carrer del Rosselló, 206, 08008 Barcelona")
-# Location.create(name: "Aalaire rooftop", address: "C/ de Mallorca, 246, 252, 08008 Barcelona")
-# Location.create(name: "Bar 201", address: "C. de Villarroel, 201, 08036 Barcelona")
-# Location.create(name: "Bar Poble Sec", address: "Av. del Paral·lel, 130, 08015 Barcelona")
-# Location.create(name: "International Beer Bar", address: "Carrer del Cardenal Casañas, 4, 08002 Barcelona")
-# Location.create(name: "Bar Lobo", address: "Carrer del Pintor Fortuny, 3, 08001 Barcelona")
-# Location.create(name: "Bar Catalunya", address: "C. de Pere IV, 120, 08005 Barcelona")
+require "open-uri"
 
 Match.destroy_all
 Location.destroy_all
 Event.destroy_all
 EventBooking.destroy_all
 User.destroy_all
+Post.destroy_all
 
 counter = 0
 counter1 = 0
@@ -62,15 +50,38 @@ counter1 = 0
       password: "123456",
       team: ["Australia", "Belgium", "Brazil", "Cameroon", "Argentina"][counter1]
     )
-      EventBooking.create!(
-        user_id: user1.id,
-        event_id: event.id
+    EventBooking.create!(
+      user_id: user1.id,
+      event_id: event.id
+    )
+    Post.create!(
+      content: ["Great game last night", "Big win!", "Celebrating the win"].sample,
+      user_id: user1.id,
+      created_at: ["2/12/2022 16:00"],
+      updated_at: ["2/12/2022 16:00"]
     )
     counter1 += 1
   end
   counter += 1
 end
 
+# Post.destroy_all
+
+# post1 = Post.create(content: "Celebrating last night", user_id: 95)
+# file = URI.open("https://files.slack.com/files-pri/T02NE0241-F04E3KWVD5X/fake-post-1.webp")
+# post1.photo.attach(io: file, filename: "celebrate.jpg", content_type: "image/jpg")
+
+# post2 = Post.create(content: "Football's coming home!", user_id: 96)
+# file = URI.open("https://files.slack.com/files-pri/T02NE0241-F04DAEL3KFZ/fake-post-2.webp")
+# post2.photo.attach(io: file, filename: "celebrate.jpg", content_type: "image/jpg")
+
+# post3 = Post.create(content: "Allez Les Bleus", user_id: 98)
+# file = URI.open("https://files.slack.com/files-pri/T02NE0241-F04E3KWVD5X/fake-post-1.webp")
+# post3.photo.attach(io: file, filename: "celebrate.jpg", content_type: "image/jpg")
+
+# post4 = Post.create(content: "Big win!", user_id: 99)
+# file = URI.open("https://files.slack.com/files-pri/T02NE0241-F04DAEL3KFZ/fake-post-2.webp")
+# post4.photo.attach(io: file, filename: "celebrate.jpg", content_type: "image/jpg")
 
 
 # match = Match.create!(
@@ -105,6 +116,20 @@ end
 #   )
 # end
 
+
+
+# Location.create(name: "Bar Àustria", address: "C/ d'Ausiàs Marc, 19, 08010 Barcelona")
+# Location.create(name: "Bar Trafalgar 1", address: "C/ de Trafalgar, 1, 08010 Barcelona")
+# Location.create(name: "Bar Restaurant Lleonès", address: "C. de Fontanella, 19, 08010 Barcelona")
+# Location.create(name: "Bonavida Cocktail Bar", address: "Carrer de Casp, 22, 08010 Barcelona")
+# Location.create(name: "Gracia's Bar", address: "Carrer de Milà i Fontanals, 9, 08012 Barcelona")
+# Location.create(name: "Bar Level", address: "Carrer del Rosselló, 206, 08008 Barcelona")
+# Location.create(name: "Aalaire rooftop", address: "C/ de Mallorca, 246, 252, 08008 Barcelona")
+# Location.create(name: "Bar 201", address: "C. de Villarroel, 201, 08036 Barcelona")
+# Location.create(name: "Bar Poble Sec", address: "Av. del Paral·lel, 130, 08015 Barcelona")
+# Location.create(name: "International Beer Bar", address: "Carrer del Cardenal Casañas, 4, 08002 Barcelona")
+# Location.create(name: "Bar Lobo", address: "Carrer del Pintor Fortuny, 3, 08001 Barcelona")
+# Location.create(name: "Bar Catalunya", address: "C. de Pere IV, 120, 08005 Barcelona")
 
 
 # Location.create(name: "", address: "")

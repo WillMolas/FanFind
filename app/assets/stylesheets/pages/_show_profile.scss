@@ -69,7 +69,7 @@
   }
 
   .profile_info{
-    background-color: #CFFF0F;
+    background-color: #d5f849;
     width: 65%;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -101,13 +101,23 @@
 .upcoming-created-events{
   display: flex;
   flex-direction: column;
-
+  h3 {
+    color: black;
+    text-align: center;
+  }
   #profile_card{
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
+    background-color: rgb(216, 215, 215);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
-  li{
+  .first{
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -120,8 +130,31 @@
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 5px;
+    border-radius: 7px;
+    border: solid;
+    border-color: #CFFF0F;
+    box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
   }
+
+  .second {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #60f4d6;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: -30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 7px;
+    border: solid;
+    border-color: #0DFDCC;
+    box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
+  }
+
   a{
     text-decoration: none;
   }

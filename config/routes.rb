@@ -17,7 +17,16 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update]
 
+  resources :users, only: [:show] do
+    resources :notifications, only: [:index]
+  end
+
   resources :chatrooms, only: [] do
     resources :messages, only: :create
+  end
+
+  resources :posts do
+    resources :post_comments, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :post_likes, only: [:new, :create, :destroy]
   end
 end
