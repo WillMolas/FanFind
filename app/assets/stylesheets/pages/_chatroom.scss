@@ -51,3 +51,20 @@
   color: black;
   margin-bottom: 8px;
 }
+
+.chatroom-avatar {
+  margin-right: 5px;
+  img {
+    width: 25px;
+    height: 25px;
+    border-radius: 150px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+
+.chatroom-user-info {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}

@@ -1,10 +1,10 @@
-<div class="back-arrow" id="back-arrow-margin">
-  <% @match.id = params[:match_id] %>
-  <%= link_to match_events_path(@match) do %>
-    <i class="fa-sharp fa-solid fa-arrow-left"></i>
-  <% end %>
-</div>
 <div class="new-event-container">
+  <div class="back-arrow" id="back-arrow-margin">
+    <% @match.id = params[:match_id] %>
+    <%= link_to match_events_path(@match) do %>
+      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+    <% end %>
+  </div>
   <h1 class="upcase-header">Create Event</h1>
 
   <%= simple_form_for [@match, @event] do |f| %>

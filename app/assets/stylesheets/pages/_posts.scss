@@ -4,8 +4,16 @@
   margin: 0 auto;
 }
 
-.community-post{
+.community-posts{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
+.community-post {
+  display: flex;
+  flex-direction: column;
 }
 
 .community-header {
@@ -25,8 +33,12 @@
   justify-content: space-between;
   padding: 8px;
   font-weight: 600;
+  margin-bottom: 10px;
   p {
+    font-family: 'Roboto';
+    font-style: italic;
     margin-bottom: 0px;
+    text-transform: uppercase;
   }
 }
 
@@ -35,22 +47,34 @@
   color: black;
   display: flex;
   justify-content: space-between;
-  padding: 4px;
+  margin-top: 10px;
   p {
     margin-bottom: 8px;
   }
 }
 
 .community-post-comment {
-
+  padding: 5px;
+  p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 12px;
+    padding: 5px;
+  }
 }
 
 .post-links {
   display: flex;
   justify-content: space-between;
   color: #CFFF0F;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  margin-top: 5px;
   a {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 10pt;
     text-decoration: none;
     color: #CFFF0F;
   }
@@ -68,4 +92,16 @@
   min-width: 100%;
   width: auto;
   height: auto;
+}
+
+.post-likes {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-right: 10px;
+}
+
+.likes-icon {
+  width: 43px;
+  height: 64px;
 }
