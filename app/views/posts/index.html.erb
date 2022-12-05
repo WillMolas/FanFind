@@ -1,0 +1,33 @@
+<div class="posts-index-container">
+
+  <div class="community-header">
+    <h1 id="community-upcase-header" class="upcase-header">Community</h1>
+    <%= link_to new_post_path do %>
+      <i class="fa-solid fa-circle-plus plus-button" id="event-add-button"></i>
+    <% end %>
+  </div>
+
+  <div class="community-post">
+    <% @posts.all.each do |post| %>
+      <div class="community-post-header">
+          <p><%= "@#{post.user.username}" %></p>
+          <p><%= post.user.team %></p>
+      </div>
+      <div class="community-post-photo">
+
+      </div>
+      <div class="community-post-feedback">
+        <div class="community-post-comment">
+          <p><%= post.content %></p>
+          <p><%= post.created_at.strftime("%d %b %y | %l:%M%P") %></p>
+        </div>
+        <i class="fa-regular fa-hand-point-up"></i>
+      </div>
+      <div class="post-links">
+        <p id="post-comment">View Comments</p>
+        <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-delete" %></p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
