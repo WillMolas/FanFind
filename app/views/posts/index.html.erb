@@ -30,6 +30,17 @@
           <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
           <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-delete" %></p>
         </div>
+
+        <div>
+          <%= link_to post_post_likes_path(post), data: { turbo_method: :post } do %>
+            <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="post-links">
+        <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
+        <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-delete" %></p>
+
       </div>
     <% end %>
   </div>
