@@ -3,21 +3,16 @@
     <h1 class="upcase-header" id="sticky-header-bar">Comments</h1>
   </div>
 
-  <div class="post_comments">
+  <div class="post-comments">
       <% @post.post_comments.each do |post_comment| %>
-          <%= render "./comment", post_comment: post_comment %>
+          <%= render "comment", post_comment: post_comment %>
       <% end %>
   </div>
 
   <div>
-    <%= simple_form_for [@post, @post_comment],
-    html: { data: { action: "turbo:submit-end->post-subscription#resetForm" }, class: "d-flex" } do |f| %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Add a comment",
-      wrapper_html: {class: "flex-grow-1 message-submit"}
-    %>
-    <%= f.submit "SEND", class: "small-turquiose-btn" %>
-    <% end %>
+      <%= simple_form_for [@post, @post_comment], html: { data: { action: "turbo:submit-end->post-subscription#resetForm" } }  do |f| %>
+        <%= f.input :content %>
+        <%= f.submit "SEND", class: "small-turquiose-btn" %>
+      <% end %>
   </div>
 </div>
