@@ -3,7 +3,7 @@
     <%= link_to 'EDIT', edit_user_registration_path %>
   </div>
   <div class="bell_icon">
-    <%= link_to "#", class: "notifications" do %>
+    <%= link_to user_notifications_path(current_user), class: "notifications" do %>
       <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
     <% end %>
   </div>
