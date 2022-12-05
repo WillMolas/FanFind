@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :post_comments
   has_many :post_likes
   has_many :location_reviews
+  has_many :notifications, as: :recipient, dependent: :destroy
 
   has_one_attached :avatar
 end
