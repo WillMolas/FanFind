@@ -10,6 +10,11 @@ class PostCommentsController < ApplicationController
   #   @post_comment = PostComment.new
   # end
 
+  # def show
+  #   @post_comments = PostComment.find(params[:id])
+  #   @post_comment = PostComment.new
+  # end
+
   def new
     @post = Post.find(params[:post_id])
     @post_comment = PostComment.new
@@ -46,4 +51,5 @@ class PostCommentsController < ApplicationController
   def post_comment_params
     params.require(:post_comment).permit(:content, :user_id, :post_id)
   end
+
 end
