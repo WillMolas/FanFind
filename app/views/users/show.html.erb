@@ -24,14 +24,14 @@
 
 <div class="upcoming-created-events">
   <div class="card" id="profile_card">
-    <h3><strong>Booked Events</strong></h3>
-    <div class="bookings">
+    <h3><strong>BOOKED EVENTS</strong></h3>
+    <div class="bookings" style="overflow:scroll; height:150px;">
       <ul class="user-bookings">
         <% current_user.event_bookings.each do |booking|%>
           <a href= "<%= event_path(booking.event) %>">
             <div class="card-product-info">
               <div>
-                  <li><strong><%= booking.event.name %></strong> by <%= booking.event.user.username %></li>
+                  <li class="first"><strong><%= booking.event.name %></strong> by <%= booking.event.user.username %> <br> <%= booking.event.match_time %></li>
               </div>
             </div>
           </a>
@@ -39,14 +39,15 @@
       </ul>
     </div>
   </div>
+  <br>
   <div class="card" id="profile_card">
-    <h3><strong>Created Events</strong></h3>
-    <div class="created_events">
+    <h3><strong>CREATED EVENTS</strong></h3>
+    <div class="created_events" style="overflow:scroll; height:150px;">
       <ul class="created">
         <% current_user.events.each do |event| %>
           <a href= "<%= event_path(event) %>">
             <div class="card_info">
-              <li><strong><%= event.name %></strong></li>
+              <li class="second"><strong><%= event.name %></strong> <%= event.match_time %></li>
             </div>
           </a>
         <% end %>
