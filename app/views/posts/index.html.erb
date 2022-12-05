@@ -7,25 +7,29 @@
     <% end %>
   </div>
 
-  <div class="community-post">
+  <div class="community-posts">
     <% @posts.all.each do |post| %>
-      <div class="community-post-header">
-          <p><%= "@#{post.user.username}" %></p>
-          <p><%= post.user.team %></p>
-      </div>
-      <div class="community-post-photo">
-        <img src="<%= cl_image_path post.photo.key %>">
-      </div>
-      <div class="community-post-feedback">
-        <div class="community-post-comment">
-          <p><%= post.content %></p>
-          <p><%= post.created_at.strftime("%d %b %y | %l:%M%P") %></p>
+      <div class="community-post">
+        <div class="community-post-header">
+            <p><%= "@#{post.user.username}" %></p>
+            <p><%= post.user.team %></p>
         </div>
-        <i class="fa-regular fa-hand-point-up"></i>
-      </div>
-      <div class="post-links">
-        <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
-        <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-delete" %></p>
+        <div class="community-post-photo">
+          <img src="<%= cl_image_path post.photo.key %>">
+        </div>
+        <div class="community-post-feedback">
+          <div class="community-post-comment">
+            <p><%= post.content %></p>
+            <p><small><%= post.created_at.strftime("%d %b %y | %l:%M%P") %></small></p>
+          </div>
+          <div class="post-likes">
+            <%= image_tag("icons/foam-finger-icon.png", class: "likes-icon") %>
+          </div>
+        </div>
+        <div class="post-links">
+          <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
+          <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-delete" %></p>
+        </div>
       </div>
     <% end %>
   </div>
