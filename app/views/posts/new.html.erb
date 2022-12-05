@@ -1,0 +1,13 @@
+<div class="edit-post-container">
+  <h1 class="upcase-header">Create New Post</h1>
+
+  <div>
+    <%= simple_form_for(@post) do |f| %>
+      <div class="name-input">
+        <%= f.input :content %>
+      </div>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "POST", class: "form-button" %>
+    <% end %>
+  </div>
+</div>

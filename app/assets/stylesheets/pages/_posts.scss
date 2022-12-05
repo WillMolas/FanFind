@@ -1,0 +1,65 @@
+.posts-index-container, .edit-post-container {
+  color: #0DFDCC;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.community-post{
+
+}
+
+.community-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 24px;
+}
+
+#event-add-button {
+  margin-top: 72px;
+}
+
+.community-post-header {
+  background-color: #0DFDCC;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  font-weight: 600;
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.community-post-feedback {
+  background-color: #0DFDCC;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.community-post-comment {
+
+}
+
+.post-links {
+  display: flex;
+  justify-content: space-between;
+  color: #CFFF0F;
+  a {
+    text-decoration: none;
+    color: #CFFF0F;
+  }
+}
+
+.fa-hand-point-up {
+  font-size: 32px;
+  margin: auto 0;
+}
+
+.community-post-photo {
+  height: 100px;
+}
