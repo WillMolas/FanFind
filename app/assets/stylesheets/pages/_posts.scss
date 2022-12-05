@@ -35,9 +35,9 @@
   color: black;
   display: flex;
   justify-content: space-between;
-  padding: 8px;
+  padding: 4px;
   p {
-    margin-bottom: 0px;
+    margin-bottom: 8px;
   }
 }
 
@@ -49,6 +49,7 @@
   display: flex;
   justify-content: space-between;
   color: #CFFF0F;
+  margin-bottom: 8px;
   a {
     text-decoration: none;
     color: #CFFF0F;
@@ -60,6 +61,11 @@
   margin: auto 0;
 }
 
-.community-post-photo {
-  height: 100px;
+.community-post-photo img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  width: auto;
+  height: auto;
 }
