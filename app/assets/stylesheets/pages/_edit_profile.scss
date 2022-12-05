@@ -1,6 +1,8 @@
 .top_container{
   display: flex;
   flex-direction: row;
+  margin-top: 30px;
+  margin-left: 20px;
 
   h2{
     color: #0DFDCC;
@@ -8,8 +10,13 @@
     font-style: normal;
     font-weight: 500;
     font-size: 36px;
-
   }
+}
+
+.simple_form{
+  display:flex;
+  position: top;
+  margin-bottom: 200px;
 }
 
 .back_button{
@@ -20,9 +27,10 @@
   width: 50px;
   height: 30px;
   margin-top: 10px;
-  margin-left: 160px;
+  margin-left: 168px;
   padding-top: 4px;
   padding-bottom: 4px;
+
   a {
     text-decoration: none;
     color: black;
@@ -33,13 +41,17 @@
 .end_page_btns{
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  margin-left: 35px;
+  margin-right: 35px;
   .cancel_account{
     background-color: #CFFF0F;
     border-radius: 10px;
     // color: black;
     text-align: center;
     width: auto;
-    margin-left: 64px;
+    margin-left: 70px;
 
     button {
       text-decoration: none;

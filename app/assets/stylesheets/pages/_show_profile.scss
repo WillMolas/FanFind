@@ -5,7 +5,7 @@
   justify-content: space-between;
   margin-left: 40px;
   margin-right: 40px;
-  margin-top: 40px;
+  margin-top: 30px;
 
   .notifications-icon {
     width: 40px;
@@ -13,16 +13,15 @@
   }
 
   .edit-btn {
-    background-color: #0DFDCC;
+    background-color: #CFFF0F;
     height: 40px;
     width: 75px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    &:hover {
-      background-color: #CFFF0F;
-    }
+    border-radius: 5px;
+
     a{
       font-family: 'Roboto';
       font-style: normal;
