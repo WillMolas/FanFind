@@ -1,11 +1,12 @@
-<div class="back-arrow" id="back-arrow-margin">
-  <%= link_to event_path(@chatroom.event) do %>
-    <i class="fa-sharp fa-solid fa-arrow-left"></i>
-  <% end %>
-</div>
 <div class="chatroom-container"
 data-controller="chatroom-subscription"
 data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+
+  <div class="back-arrow" id="back-arrow-margin">
+    <%= link_to event_path(@chatroom.event) do %>
+      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+    <% end %>
+  </div>
 
   <div id="sticky-header">
     <h1 class="upcase-header" id="sticky-header-bar"><%= "#{@chatroom.event.name} chat" %></h1>

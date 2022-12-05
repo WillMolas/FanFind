@@ -64,7 +64,7 @@ require "open-uri"
 #   end
 #   counter += 1
 # end
-
+User.destroy_all
 Post.destroy_all
 user1 = User.create!(username: "Alex", email: "alex@email.com", password: "123456", team: "Argentina")
 user2 = User.create!(username: "Emilia", email: "emilia@email.com", password: "123456", team: "Brazil")
