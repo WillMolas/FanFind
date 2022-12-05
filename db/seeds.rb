@@ -66,20 +66,25 @@ require "open-uri"
 # end
 
 Post.destroy_all
+user1 = User.create!(username: "Alex", email: "alex@email.com", password: "123456", team: "Argentina")
+user2 = User.create!(username: "Emilia", email: "emilia@email.com", password: "123456", team: "Brazil")
+user3 = User.create!(username: "Jess", email: "jess@email.com", password: "123456", team: "England")
+user4 = User.create!(username: "Guillem", email: "guillem@email.com", password: "123456", team: "Spain")
 
-post1 = Post.create(content: "Celebrating last night", user_id: 95)
+
+post1 = Post.create(content: "Celebrating last night", user_id: user1.id)
 file = URI.open("https://media.istockphoto.com/id/866626388/photo/crowd-clapping-on-the-podium-of-the-stadium.jpg?s=612x612&w=0&k=20&c=u_71P3Qe3eFp9Q8BYkszoJPJJni62nzk3ENktzV6eU4=")
 post1.photo.attach(io: file, filename: "celebrate.jpg", content_type: "image/jpg")
 
-post2 = Post.create(content: "Football's coming home!", user_id: 96)
+post2 = Post.create(content: "Football's coming home!", user_id: user2.id)
 file = URI.open("https://i.insider.com/5b4366099e2a1040008b4872?width=600&format=jpeg&auto=webp")
 post2.photo.attach(io: file, filename: "celebrate1.jpg", content_type: "image/jpg")
 
-post3 = Post.create(content: "Allez Les Bleus", user_id: 98)
+post3 = Post.create(content: "Allez Les Bleus", user_id: user3.id)
 file = URI.open("https://blog.lingoda.com/wp-content/uploads/2022/06/The-top-5-French-football-teams-e1655973934799.jpg")
 post3.photo.attach(io: file, filename: "celebrate2.jpg", content_type: "image/jpg")
 
-post4 = Post.create(content: "Big win!", user_id: 99)
+post4 = Post.create(content: "Big win!", user_id: user4.id)
 file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrQFkcmaLmtYOHhCsa85KCErYKrW55fHoU4Q&usqp=CAU")
 post4.photo.attach(io: file, filename: "celebrate3.jpg", content_type: "image/jpg")
 
