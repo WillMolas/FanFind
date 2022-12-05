@@ -1,0 +1,7 @@
+<div class="post_comment-<%= post_comment.post.id %> message" id="message-<%= post_comment.id %>">
+    <small>
+      <strong><%= post_comment.user.username %></strong>
+      <i><%= post_comment.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+    </small>
+    <p><%= post_comment.content %></p>
+</div>
