@@ -22,6 +22,9 @@ application.register("location-search", LocationSearchController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import PostCommentController from "./post_comment_controller"
+application.register("post-comment", PostCommentController)
+
 import SearchMatchesController from "./search_matches_controller"
 application.register("search-matches", SearchMatchesController)
 

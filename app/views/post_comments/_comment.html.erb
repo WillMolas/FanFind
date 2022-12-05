@@ -1,7 +1,13 @@
-<div class="post_comment-<%= post_comment.post.id %> message" id="message-<%= post_comment.id %>">
-    <small>
-      <strong><%= post_comment.user.username %></strong>
-      <i><%= post_comment.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-    </small>
-    <p><%= post_comment.content %></p>
+<div class="post-comment-<%= post_comment.user.id %> post-comment-message" id="message-<%= post_comment.id %>">
+    <div style="width: 100%">
+      <small>
+        <div class="own-post">
+          <strong><%= "@#{post_comment.user.username}" %></strong>
+          <% if post_comment.user == current_user %>
+            <%= link_to "Delete", post_comment_path(post_comment), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "black-link" %>
+          <% end %>
+        </div>
+      </small>
+      <p><%= post_comment.content %></p>
+    </div>
 </div>
