@@ -11,9 +11,9 @@ data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
     <h1 class="upcase-header" id="sticky-header-bar"><%= "#{@chatroom.event.name} chat" %></h1>
   </div>
   <div class="messages" data-chatroom-subscription-target="messages">
-      <% @chatroom.messages.each do |message| %>
+        <% @chatroom.messages.each do |message| %>
           <%= render "messages/message", message: message %>
-      <% end %>
+        <% end %>
   </div>
 
     <div id="message-submit-container" class="position-sticky">

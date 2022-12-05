@@ -8,12 +8,12 @@
 
 require "open-uri"
 
+# Post.destroy_all
 # Match.destroy_all
 # Location.destroy_all
 # Event.destroy_all
 # EventBooking.destroy_all
 # User.destroy_all
-# Post.destroy_all
 
 # counter = 0
 # counter1 = 0

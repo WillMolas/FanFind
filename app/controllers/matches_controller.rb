@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
 
   def index
     @matches = Match.all
-    @matches = Match.order(match_time: :desc)
+    @matches = Match.order(match_time: :asc)
 
     if params[:query].present?
       sql_query = 'team_one ILIKE :query OR team_two ILIKE :query'

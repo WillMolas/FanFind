@@ -1,18 +1,24 @@
-<div class="comments-container">
+<div class="comments-container" data-controller="post-comment">
   <div id="sticky-header">
     <h1 class="upcase-header" id="sticky-header-bar">Comments</h1>
   </div>
 
-  <div class="post-comments">
-      <% @post.post_comments.each do |post_comment| %>
-          <%= render "comment", post_comment: post_comment %>
-      <% end %>
-  </div>
+  <div data-post-comment-target="comments">
+    <div class="post-content">
+      <p><%= @post.content %></p>
+      <i class="fa-regular fa-hand-point-up"></i>
+    </div>
+    <div class="post-comments">
+        <% @post.post_comments.each do |post_comment| %>
+            <%= render "comment", post_comment: post_comment %>
+        <% end %>
+    </div>
 
-  <div>
-      <%= simple_form_for [@post, @post_comment], html: { data: { action: "turbo:submit-end->post-subscription#resetForm" } }  do |f| %>
-        <%= f.input :content %>
-        <%= f.submit "SEND", class: "small-turquiose-btn" %>
-      <% end %>
+    <div id="comment-form">
+        <%= simple_form_for [@post, @post_comment], html: { data: { action: "submit->post-comment#submitForm" } }  do |f| %>
+          <%= f.input :content, label: "Add Your Comment" %>
+          <%= f.submit "SEND", class: "small-turquiose-btn add-comment-btn" %>
+        <% end %>
+    </div>
   </div>
 </div>
