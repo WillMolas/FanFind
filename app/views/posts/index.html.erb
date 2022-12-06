@@ -11,11 +11,16 @@
     <% @posts.all.each do |post| %>
       <div class="community-post">
         <div class="community-post-header">
+          <div class="user-post-details">
+            <% if post.user.avatar.key %>
+              <%= cl_image_tag post.user.avatar.key, class: "avatar-small" %>
+            <% end %>
             <p><%= "@#{post.user.username}" %></p>
-            <p><%= post.user.team %></p>
+          </div>
+          <p><%= post.user.team %></p>
         </div>
         <div class="community-post-photo">
-          <img src="<%= cl_image_path post.photo.key %>">
+          <%= cl_image_tag post.photo.key %>
         </div>
         <div class="community-post-feedback">
           <div class="community-post-comment">
@@ -28,7 +33,10 @@
         </div>
         <div class="post-links">
           <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
-          <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-delete" %></p>
+          <div class="post-changes">
+            <p><%= link_to "Edit", edit_post_path(post), class: "post-delete" %></p>
+            <p><%= link_to "Delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-edit" %></p>
+          </div>
         </div>
 
         <div>
@@ -36,11 +44,6 @@
             <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
           <% end %>
         </div>
-      </div>
-      <div class="post-links">
-        <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
-        <p><%= link_to "Delete Post", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-delete" %></p>
-
       </div>
     <% end %>
   </div>
