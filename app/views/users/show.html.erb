@@ -12,7 +12,14 @@
 <div class="name_header">@<%= @user.username %></div>
 
 <div class="card profile">
-  <%= link_to image_tag(url_for(current_user.avatar), class: "profile_img"), edit_user_path(current_user), class: "nav-link"%>
+
+  <div class="display-user-avatar">
+    <% if current_user.avatar.attached? %>
+      <%= link_to image_tag(url_for(current_user.avatar), class: "profile_img"), edit_user_path(current_user), class: "nav-link"%>
+    <% else %>
+      <%= link_to image_tag('default_avatar.png', class: "profile_img") %>
+    <% end %>
+  </div>
 
   <div class="profile_info">
 
