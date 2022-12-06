@@ -19,7 +19,7 @@ class NewMessage < Noticed::Base
   # Define helper methods to make rendering easier.
   #
   def message
-    "You have a new message in one of your chatrooms"
+    "You have a new message in a chatroom"
   end
 
   #

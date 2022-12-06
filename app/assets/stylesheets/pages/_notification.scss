@@ -1,3 +1,53 @@
+.notification-container {
+  padding-bottom: 20px;
+  p {
+    margin: 0px auto 16px auto;
+  }
+}
+
+.notifications{
+  a {
+    text-decoration: none;
+  }
+}
+.notification-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.notification-card {
+  background-color: #CFFF0F;
+  width: 332px;
+  height: 60px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: -0.5px;
+}
+
+.notification-triangle {
+  height: 0;
+  width: 0;
+  border-top: 60px solid #CFFF0F;
+  border-right: 60px solid transparent;
+}
+
+.notification-info {
+  text-align: center;
+  margin-left: 10px;
+}
+
+.notification-name-card {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: left;
+  color: #000000;
+}
+
 .notification-card {
   div {
     color:black;

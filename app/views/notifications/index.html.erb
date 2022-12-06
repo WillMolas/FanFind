@@ -1,21 +1,21 @@
-<div class="match-container">
+<div class="notification-container">
     <div class="back-arrow" id="back-arrow-margin">
-        <%= link_to posts_path do %>
+        <%= link_to user_path(current_user) do %>
           <i class="fa-sharp fa-solid fa-arrow-left"></i>
         <% end %>
     </div>
 
   <h1 class="upcase-header-small-margin">Notifications</h1>
 
-  <div class= "matches">
+  <div class= "notifications">
       <% @notifications.each do |notification|%>
-        <div class="match-row">
-          <div class="match-card">
-            <div class="match-info">
-              <div class="notification-card"><%= link_to notification.to_notification.message, notification.to_notification.url %></div>
+        <div class="notification-row">
+          <div class="notification-card">
+            <div class="notification-info">
+              <div class="notification-name-card"><%= link_to notification.to_notification.message, notification.to_notification.url, class: "notification-name-card"%></div>
             </div>
           </div>
-          <div class="match-triangle"></div>
+          <div class="notification-triangle"></div>
         </div>
       <% end %>
   </div>
