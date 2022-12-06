@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 require "open-uri"
 
  Match.destroy_all
@@ -15,8 +7,8 @@ require "open-uri"
  User.destroy_all
  Post.destroy_all
 
- counter = 0
- counter1 = 0
+counter = 0
+counter1 = 0
   10.times do
     user = User.create!(
     username: ["Alex", "Emilia", "Jess", "Guillem", "Leo Messi", "Alex1", "Emilia1", "Jess1", "Guillem1", "Leo Messi1"][counter],
@@ -25,10 +17,10 @@ require "open-uri"
     team: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample
   )
    match = Match.create!(
-     team_one: ["South Korea", "Ghana", "Serbia", "Brazil", "Netherlands", "Argentina", "France", "England", "Japan", "Morocco"][counter],
-     team_two: ["Portugal", "Uruguay", "Switzerland", "Cameroon", "USA", "Australia", "Poland", "Senegal", "Croatia", "Spain"][counter],
+     team_one: ["Croatia", "Netherlands", "Morocco", "England", "Netherlands", "Argentina", "France", "England", "Japan", "Morocco"][counter],
+     team_two: ["Brasil", "Argentina", "Portugal", "France", "USA", "Australia", "Poland", "Senegal", "Croatia", "Spain"][counter],
      stadium: ["al janoub", "al thumama", "khalifa international", "ahmad bin ali", "education city", "al bayt lusail", "stadium974"].sample,
-     match_time: ["2/12/2022 16:00", "2/12/2022 16:00", "2/12/2022 20:00", "2/12/2022 20:00", "3/12/2022 16:00", "3/12/2022 20:00", "4/12/2022 16:00", "8/12/2022 20:00", "8/12/2022 16:00", "8/12/2022 16:00"][counter]
+     match_time: ["9/12/2022 16:00", "9/12/2022 20:00", "10/12/2022 16:00", "10/12/2022 20:00", "3/12/2022 16:00", "3/12/2022 20:00", "4/12/2022 16:00", "8/12/2022 20:00", "8/12/2022 16:00", "8/12/2022 16:00"][counter]
    )
   location = Location.create!(
     name: ["L'Ovella Negra Marina", "Bar Àustria", "Bar Trafalgar 1", "Bar Restaurant Lleonès", "Bonavida Cocktail Bar", "Gracia's Bar", "Bar Level", "Aalaire rooftop", "Bar 201", "Bar Poble Sec"][counter],
@@ -46,7 +38,7 @@ require "open-uri"
     )
     user1 = User.create!(
       username: ["Alex2", "Emilia2", "Jess2", "Guillem2", "Leo Messi2"][counter1],
-      email: ["alex@email.com", "emilia@email.com", "jess@email.com", "guillem@email.com", "leo@email.com","alex1@email.com", "emilia1@email.com", "jess1@email.com", "guillem1@email.com", "leo1@email.com","alex2@email.com", "emilia2@email.com", "jess2@email.com", "guillem2@email.com", "leo2@email.com","alex3@email.com", "emilia3@email.com", "jess3@email.com", "guillem3@email.com", "leo3@email.com"][counter1],
+      email: ["alex5@email.com", "emilia5@email.com", "jess5@email.com", "guillem5@email.com", "leo5@email.com","alex1@email.com", "emilia1@email.com", "jess1@email.com", "guillem1@email.com", "leo1@email.com","alex2@email.com", "emilia2@email.com", "jess2@email.com", "guillem2@email.com", "leo2@email.com","alex3@email.com", "emilia3@email.com", "jess3@email.com", "guillem3@email.com", "leo3@email.com"][counter1],
       password: "123456",
       team: ["Australia", "Belgium", "Brazil", "Cameroon", "Argentina"][counter1]
     )
@@ -59,16 +51,20 @@ require "open-uri"
   counter += 1
 end
 
-user1 = User.create!(username: "Alex", email: "alex1243@email.com", password: "123456", team: "Argentina")
-user2 = User.create!(username: "Emilia", email: "emilia54482@email.com", password: "123456", team: "Brazil")
-user3 = User.create!(username: "Jess", email: "jess6384@email.com", password: "123456", team: "England")
-user4 = User.create!(username: "Guillem", email: "guillem735@email.com", password: "123456", team: "Spain")
-# user5 = User.create!(username: "Paddington", email: "paddington2@email.com", password: "123123", team: "Peru")
-# file = URI.open("https://www.telegraph.co.uk/content/dam/news/2022/11/10/TELEMMGLPICT000262894633_trans_NvBQzQNjv4BqVqQ0VwP1HzlcNHhPVxTfJxa306WnPHVE_UdBq2uCdwc.jpeg")
-# user5.avatar.attach(io: file, filename: "paddington.jpg", content_type: "image/jpg")
+
+user1 = User.create!(username: "Alex", email: "alex@email.com", password: "123456", team: "Argentina")
+user2 = User.create!(username: "Jess", email: "jess@email.com", password: "123456", team: "England")
+user3 = User.create!(username: "Emilia", email: "emilia@email.com", password: "123456", team: "France")
+user4 = User.create!(username: "Guillem", email: "guillem@email.com", password: "123456", team: "Spain")
+user5 = User.create!(username: "Boris", email: "boris@email.com", password: "123456", team: "Croatia")
+user6 = User.create!(username: "Ronaldinho", email: "ronaldinho@email.com", password: "123456", team: "Brazil")
+user7 = User.create!(username: "Mohamed", email: "mohamed@email.com", password: "123456", team: "Morocco")
+user8 = User.create!(username: "Helen", email: "helen@email.com", password: "123456", team: "Netherlands")
+user9 = User.create!(username: "Penaldo", email: "penaldo@email.com", password: "123456", team: "Portugal")
+user10 = User.create!(username: "Yande", email: "yande@email.com", password: "123456", team: "Senegal")
 
 post1 = Post.create(content: "Celebrating last night", user_id: user1.id)
-file = URI.open("https://media.istockphoto.com/id/866626388/photo/crowd-clapping-on-the-podium-of-the-stadium.jpg?s=612x612&w=0&k=20&c=u_71P3Qe3eFp9Q8BYkszoJPJJni62nzk3ENktzV6eU4=")
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu-YrXeLzZ5ZzJ9G-KfGzITeABvNXROkw0bw&usqp=CAU")
 post1.photo.attach(io: file, filename: "celebrate.jpg", content_type: "image/jpg")
 
 post2 = Post.create(content: "Football's coming home!", user_id: user2.id)
@@ -79,57 +75,30 @@ post3 = Post.create(content: "Allez Les Bleus", user_id: user3.id)
 file = URI.open("https://blog.lingoda.com/wp-content/uploads/2022/06/The-top-5-French-football-teams-e1655973934799.jpg")
 post3.photo.attach(io: file, filename: "celebrate2.jpg", content_type: "image/jpg")
 
-post4 = Post.create(content: "Big win!", user_id: user4.id)
-file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrQFkcmaLmtYOHhCsa85KCErYKrW55fHoU4Q&usqp=CAU")
+post4 = Post.create(content: "Buabuabuabuabuaaaa!", user_id: user4.id)
+file = URI.open("https://resize.indiatvnews.com/en/resize/oldbucket/730_-/sportssoccer/FIFA-World-Cup-4920.jpg")
 post4.photo.attach(io: file, filename: "celebrate3.jpg", content_type: "image/jpg")
 
+post5 = Post.create(content: "Croatian hell", user_id: user5.id)
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnwYQND3XX0LY-TeyAnE9Z3YUhcxNIFwZQOA&usqp=CAU")
+post5.photo.attach(io: file, filename: "celebrate4.jpg", content_type: "image/jpg")
 
-# match = Match.create!(
-#   team_one: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample,
-#   team_two: ["Argentina", "Australia", "Belgium", "Brazil", "Cameroon", "Canada", "Costa Rica", "Croatia", "Denmark", "Ecuador", "England", "France", "Germany", "Ghana", "Iran", "Japan", "Mexico", "Morocco", "Netherlands", "Poland", "Portugal", "Qatar", "Saudi Arabia", "Senegal", "Serbia", "South Korea", "Spain", "Switzerland", "Tunisia", "Uruguay", "USA", "Wales"].sample,
-#   stadium: ["al janoub", "al thumama", "khalifa international", "ahmad bin ali", "education city", "al bayt lusail", "stadium974"].sample,
-#   match_time: ["19/11/2022 16:00", "20/11/2022 16:00", "21/11/2022 16:00", "22/11/2022 16:00", "23/11/2022 16:00"].sample
-# )
+post6 = Post.create(content: "Obrigado Korea!!!", user_id: user6.id)
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq4NyLpLSq7ob7qYZU222OADy_KBrD5T-cIA&usqp=CAU")
+post6.photo.attach(io: file, filename: "celebrate5.jpg", content_type: "image/jpg")
 
-# location = Location.create!(
-#   name: ["Bar Àustria", "Bar Trafalgar 1", "Bar Restaurant Lleonès", "Bonavida Cocktail Bar", "Gracia's Bar", "Bar Level", "Aalaire rooftop", "Bar 201", "Bar Poble Sec", "International Beer Bar", "Bar Lobo", ]
-#   address:
+post7 = Post.create(content: "This is Morocco, not Spain!", user_id: user7.id)
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVt8BNVJll9W6DLagvZZoIBqkrHrvdWKM-Gg&usqp=CAU")
+post7.photo.attach(io: file, filename: "celebrate6.jpg", content_type: "image/jpg")
 
-# )
-# Location.create!(
-#   name: "Le Wagon Barcelona",
-#   address: "Carrer del Bruc, 149",
-#   longitude: 2.163460,
-#   latitude: 41.398760
-# )
+post8 = Post.create(content: "Our luck hats worked", user_id: user8.id)
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA8sxV_Y8QFrSHOO7O1IfRvCvcBq_N795GXQ&usqp=CAU")
+post8.photo.attach(io: file, filename: "celebrate7.jpg", content_type: "image/jpg")
 
-# Event.destroy_all
+post9 = Post.create(content: "Super Shuuuuuuuuu!!!", user_id: user9.id)
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ZEv9eFcyB-pHxVIwN36vllNxNUQTzDp2Fg&usqp=CAU")
+post9.photo.attach(io: file, filename: "celebrate8.jpg", content_type: "image/jpg")
 
-# 3.times do
-#   Event.create!(
-#     name: ["England game", "Germany game", "Wales game", "France game"].sample,
-#     description: ["Come watch the game with us", "Watching the game in a pub", "Watching the game on an outdoor screen"].sample,
-#     match_time: "15:00",
-#     location_id: 1,
-#     user_id: 1,
-#     match_id: match
-#   )
-# end
-
-
-
-# Location.create(name: "Bar Àustria", address: "C/ d'Ausiàs Marc, 19, 08010 Barcelona")
-# Location.create(name: "Bar Trafalgar 1", address: "C/ de Trafalgar, 1, 08010 Barcelona")
-# Location.create(name: "Bar Restaurant Lleonès", address: "C. de Fontanella, 19, 08010 Barcelona")
-# Location.create(name: "Bonavida Cocktail Bar", address: "Carrer de Casp, 22, 08010 Barcelona")
-# Location.create(name: "Gracia's Bar", address: "Carrer de Milà i Fontanals, 9, 08012 Barcelona")
-# Location.create(name: "Bar Level", address: "Carrer del Rosselló, 206, 08008 Barcelona")
-# Location.create(name: "Aalaire rooftop", address: "C/ de Mallorca, 246, 252, 08008 Barcelona")
-# Location.create(name: "Bar 201", address: "C. de Villarroel, 201, 08036 Barcelona")
-# Location.create(name: "Bar Poble Sec", address: "Av. del Paral·lel, 130, 08015 Barcelona")
-# Location.create(name: "International Beer Bar", address: "Carrer del Cardenal Casañas, 4, 08002 Barcelona")
-# Location.create(name: "Bar Lobo", address: "Carrer del Pintor Fortuny, 3, 08001 Barcelona")
-# Location.create(name: "Bar Catalunya", address: "C. de Pere IV, 120, 08005 Barcelona")
-
-
-# Location.create(name: "", address: "")
+post10 = Post.create(content: "Remember our name", user_id: user10.id)
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOd7qHgcuxB_3EvACHyvZu494l1kSNDzdLkA&usqp=CAU")
+post10.photo.attach(io: file, filename: "celebrate9.jpg", content_type: "image/jpg")
