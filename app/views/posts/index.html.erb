@@ -11,12 +11,16 @@
     <% @posts.all.each do |post| %>
       <div class="community-post">
         <div class="community-post-header">
-
-          <p><%= "@#{post.user.username}" %></p>
+          <div class="user-post-details">
+            <% if post.user.avatar.key %>
+              <%= cl_image_tag post.user.avatar.key, class: "avatar-small" %>
+            <% end %>
+            <p><%= "@#{post.user.username}" %></p>
+          </div>
           <p><%= post.user.team %></p>
         </div>
         <div class="community-post-photo">
-          <img src="<%= cl_image_path post.photo.key %>">
+          <%= cl_image_tag post.photo.key %>
         </div>
         <div class="community-post-feedback">
           <div class="community-post-comment">

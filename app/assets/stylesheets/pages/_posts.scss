@@ -31,7 +31,8 @@
   color: black;
   display: flex;
   justify-content: space-between;
-  padding: 8px;
+  align-items: center;
+  padding: 4px 8px;
   font-weight: 600;
   margin-bottom: 10px;
   p {
@@ -110,5 +111,13 @@
   display: flex;
   p {
     margin-left: 16px;
+  }
+}
+
+.user-post-details {
+  display: flex;
+  align-items: center;
+  .avatar-small {
+    margin-right: 8px;
   }
 }
