@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def index
     @match = Match.find(params[:match_id])
     @events = @match.events
+    set_meta_tags title: "Events"
   end
 
   def show
@@ -13,6 +14,7 @@ class EventsController < ApplicationController
         lng: @event.location.longitude,
         # info_window: render_to_string(partial: "info_window", locals: {location: location})
       }]
+    set_meta_tags title: "#{@event.name}"
   end
 
   def new

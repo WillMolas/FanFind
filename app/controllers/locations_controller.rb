@@ -8,5 +8,6 @@ class LocationsController < ApplicationController
         # info_window: render_to_string(partial: "info_window", locals: {location: location})
       }
     end
+    set_meta_tags title: "Locations"
   end
 end

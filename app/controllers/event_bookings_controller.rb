@@ -20,6 +20,7 @@ class EventBookingsController < ApplicationController
 
   def index
     @event_booking.all
+    set_meta_tags title: "Bookings"
   end
 
   def destroy
