@@ -1,11 +1,13 @@
 <div class="message-<%= message.user.id %> chat-message" id="message-<%= message.id %>">
   <small class="chatroom-user-info">
     <div class="chatroom-avatar">
-      <%= cl_image_tag message.user.avatar.key %>
+      <% if message.user.avatar.key  %>
+        <%= cl_image_tag message.user.avatar.key %>
+      <% end %>
     </div>
     <div>
       <strong><%= message.user.username %></strong>
-      <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
     </div>
   </small>
   <p><%= message.content %></p>
