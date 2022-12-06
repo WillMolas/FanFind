@@ -27,6 +27,10 @@
 #sticky-header {
   position: sticky;
   top: 0px;
+  background-color: black;
+  position: auto 0;
+  padding-top: 25px;
+
 }
 
 #sticky-header-bar {
@@ -35,11 +39,9 @@
   align-items: center;
   padding-bottom: 16px;
   background-color: black;
-  padding-top: 25px;
   margin-top: 0px;
   margin-bottom: 0px;
   height: 84px;
-  position: auto 0;
 }
 
 .chatroom-btn {

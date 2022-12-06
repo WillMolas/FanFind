@@ -1,5 +1,12 @@
 <div class="new-post-container">
-  <h1 class="upcase-header">Edit Post</h1>
+
+  <div class="back-arrow" id="back-arrow-margin-top">
+    <%= link_to posts_path do %>
+      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+    <% end %>
+  </div>
+
+  <h1 class="upcase-header-small-margin">Edit Post</h1>
 
   <div>
     <%= simple_form_for(@post) do |f| %>
@@ -7,7 +14,9 @@
         <%= f.input :content %>
       </div>
       <%= f.input :photo, as: :file %>
-        <%= f.submit link_to "UPDATE", posts_path, class: "turquiose-btn", id: "event-create-btn"%>
+      <div class="button-container">
+        <%= f.submit "UPDATE", class: "turquiose-btn event-action-btn"%>
+      </div>
     <% end %>
   </div>
 </div>

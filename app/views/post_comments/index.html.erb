@@ -1,6 +1,14 @@
 <div class="comments-container" data-controller="post-comment">
   <div id="sticky-header">
-    <h1 class="upcase-header" id="sticky-header-bar">Comments</h1>
+    <div class="back-arrow" id="back-arrow-small-margin">
+      <%= link_to posts_path do %>
+        <i class="fa-sharp fa-solid fa-arrow-left"></i>
+      <% end %>
+    </div>
+
+    <div>
+      <h1 class="upcase-header" id="sticky-header-bar">Comments</h1>
+    </div>
   </div>
 
   <div data-post-comment-target="comments">

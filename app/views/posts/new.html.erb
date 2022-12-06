@@ -1,13 +1,22 @@
 <div class="new-post-container">
-  <h1 class="upcase-header">Create New Post</h1>
 
-  <div>
+  <div class="back-arrow" id="back-arrow-margin-top">
+    <%= link_to posts_path do %>
+      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+    <% end %>
+  </div>
+
+  <h1 class="upcase-header-small-margin">Create New Post</h1>
+
+  <div class="post-form">
     <%= simple_form_for(@post) do |f| %>
       <div class="name-input">
         <%= f.input :content %>
       </div>
       <%= f.input :photo, as: :file %>
-        <%= f.submit link_to "POST", posts_path, class: "turquiose-btn" %>
+      <div class="button-container">
+        <%= f.submit "POST", class: "turquiose-btn event-action-btn" %>
+      </div>
     <% end %>
   </div>
 </div>

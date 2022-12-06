@@ -2,15 +2,18 @@
 data-controller="chatroom-subscription"
 data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
 
-  <div class="back-arrow" id="back-arrow-margin">
-    <%= link_to event_path(@chatroom.event) do %>
-      <i class="fa-sharp fa-solid fa-arrow-left"></i>
-    <% end %>
+  <div id="sticky-header">
+    <div class="back-arrow" id="back-arrow-margin-left">
+      <%= link_to event_path(@chatroom.event) do %>
+        <i class="fa-sharp fa-solid fa-arrow-left"></i>
+      <% end %>
+    </div>
+
+    <div>
+      <h1 class="upcase-header-small-margin" id="sticky-header-bar"><%= "#{@chatroom.event.name} chat" %></h1>
+    </div>
   </div>
 
-  <div id="sticky-header">
-    <h1 class="upcase-header-small-margin" id="sticky-header-bar"><%= "#{@chatroom.event.name} chat" %></h1>
-  </div>
   <div class="messages" data-chatroom-subscription-target="messages">
         <% @chatroom.messages.each do |message| %>
           <%= render "messages/message", message: message %>
