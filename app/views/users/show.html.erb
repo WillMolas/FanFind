@@ -3,8 +3,14 @@
     <%= link_to 'EDIT', edit_user_registration_path %>
   </div>
   <div class="bell_icon">
-    <%= link_to user_notifications_path(current_user), class: "notifications" do %>
-      <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
+    <% if current_user.notifications.unread.present? %>
+      <%= link_to user_notifications_path(current_user), class: "notifications" do %>
+        <%= image_tag("icons/notifications_icon_red.PNG", class: "notifications-icon") %>
+      <% end %>
+    <% else %>
+      <%= link_to user_notifications_path(current_user), class: "notifications" do %>
+        <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
+      <% end %>
     <% end %>
   </div>
 </div>
