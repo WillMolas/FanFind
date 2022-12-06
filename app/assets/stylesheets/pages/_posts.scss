@@ -1,4 +1,4 @@
-.posts-index-container, .edit-post-container {
+.posts-index-container, .edit-post-container, .new-post-container {
   color: #0DFDCC;
   width: 90%;
   margin: 0 auto;
@@ -104,4 +104,11 @@
 .likes-icon {
   width: 43px;
   height: 64px;
+}
+
+.post-changes {
+  display: flex;
+  p {
+    margin-left: 16px;
+  }
 }

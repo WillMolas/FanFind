@@ -1,5 +1,5 @@
 <div class="new-post-container">
-  <h1 class="upcase-header">Create New Post</h1>
+  <h1 class="upcase-header">Edit Post</h1>
 
   <div>
     <%= simple_form_for(@post) do |f| %>
@@ -7,7 +7,7 @@
         <%= f.input :content %>
       </div>
       <%= f.input :photo, as: :file %>
-        <%= f.submit link_to "POST", posts_path, class: "turquiose-btn" %>
+        <%= f.submit link_to "UPDATE", posts_path, class: "turquiose-btn", id: "event-create-btn"%>
     <% end %>
   </div>
 </div>

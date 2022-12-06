@@ -69,7 +69,9 @@ user1 = User.create!(username: "Alex", email: "alex1243@email.com", password: "1
 user2 = User.create!(username: "Emilia", email: "emilia54482@email.com", password: "123456", team: "Brazil")
 user3 = User.create!(username: "Jess", email: "jess6384@email.com", password: "123456", team: "England")
 user4 = User.create!(username: "Guillem", email: "guillem735@email.com", password: "123456", team: "Spain")
-
+# user5 = User.create!(username: "Paddington", email: "paddington2@email.com", password: "123123", team: "Peru")
+# file = URI.open("https://www.telegraph.co.uk/content/dam/news/2022/11/10/TELEMMGLPICT000262894633_trans_NvBQzQNjv4BqVqQ0VwP1HzlcNHhPVxTfJxa306WnPHVE_UdBq2uCdwc.jpeg")
+# user5.avatar.attach(io: file, filename: "paddington.jpg", content_type: "image/jpg")
 
 post1 = Post.create(content: "Celebrating last night", user_id: user1.id)
 file = URI.open("https://media.istockphoto.com/id/866626388/photo/crowd-clapping-on-the-podium-of-the-stadium.jpg?s=612x612&w=0&k=20&c=u_71P3Qe3eFp9Q8BYkszoJPJJni62nzk3ENktzV6eU4=")
