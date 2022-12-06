@@ -1,6 +1,6 @@
 <h1>Notifications</h1>
 <% @notifications.each do |notification|%>
-
+<div>
 <%= link_to notification.to_notification.message, notification.to_notification.url %>
-
-<% end %>
+</div>
+ <% end %>

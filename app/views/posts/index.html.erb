@@ -28,7 +28,14 @@
             <p><small><%= post.created_at.strftime("%d %b %y | %l:%M%P") %></small></p>
           </div>
           <div class="post-likes">
-            <%= image_tag("icons/foam-finger-icon.png", class: "likes-icon") %>
+            <% if post.post_likes.map(&:user_id).include?current_user.id %>
+              <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
+            <%else%>
+              <%= link_to post_post_likes_path(post), data: { turbo_method: :post } do %>
+              <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
+              <% end %>
+            <% end %>
+           <%# <%= image_tag("icons/foam-finger-icon.png", class: "likes-icon") %>
           </div>
         </div>
         <div class="post-links">
@@ -37,12 +44,6 @@
             <p><%= link_to "Edit", edit_post_path(post), class: "post-delete" %></p>
             <p><%= link_to "Delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-edit" %></p>
           </div>
-        </div>
-
-        <div>
-          <%= link_to post_post_likes_path(post), data: { turbo_method: :post } do %>
-            <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
-          <% end %>
         </div>
       </div>
     <% end %>

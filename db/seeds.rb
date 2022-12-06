@@ -54,12 +54,6 @@ require "open-uri"
       user_id: user1.id,
       event_id: event.id
     )
-    Post.create!(
-      content: ["Great game last night", "Big win!", "Celebrating the win"].sample,
-      user_id: user1.id,
-      created_at: ["2/12/2022 16:00"],
-      updated_at: ["2/12/2022 16:00"]
-    )
     counter1 += 1
   end
   counter += 1

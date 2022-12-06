@@ -3,8 +3,14 @@
     <%= link_to 'EDIT', edit_user_registration_path %>
   </div>
   <div class="bell_icon">
-    <%= link_to user_notifications_path(current_user), class: "notifications" do %>
-      <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
+    <% if current_user.notifications.unread.present? %>
+      <%= link_to user_notifications_path(current_user), class: "notifications" do %>
+        <%= image_tag("icons/notifications_icon_red.PNG", class: "notifications-icon") %>
+      <% end %>
+    <% else %>
+      <%= link_to user_notifications_path(current_user), class: "notifications" do %>
+        <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -12,7 +18,14 @@
 <div class="name_header">@<%= @user.username %></div>
 
 <div class="card profile">
-  <%= link_to image_tag(url_for(current_user.avatar), class: "profile_img"), edit_user_path(current_user), class: "nav-link"%>
+
+  <div class="display-user-avatar">
+    <% if current_user.avatar.attached? %>
+      <%= link_to image_tag(url_for(current_user.avatar), class: "profile_img"), edit_user_path(current_user), class: "nav-link"%>
+    <% else %>
+      <%= link_to image_tag('default_avatar.png', class: "profile_img") %>
+    <% end %>
+  </div>
 
   <div class="profile_info">
 

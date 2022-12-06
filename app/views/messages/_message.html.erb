@@ -1,14 +1,16 @@
 <div class="message-<%= message.user.id %> chat-message" id="message-<%= message.id %>">
-  <small class="chatroom-user-info">
-    <div class="chatroom-avatar">
-      <% if message.user.avatar.key  %>
-        <%= cl_image_tag message.user.avatar.key %>
-      <% end %>
-    </div>
-    <div>
-      <strong><%= message.user.username %></strong>
-      <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
-    </div>
-  </small>
-  <p><%= message.content %></p>
+      <small class="chatroom-user-info">
+        <div class="chatroom-avatar">
+          <% if current_user.avatar.attached? %>
+            <%= link_to image_tag(url_for(current_user.avatar), class: "profile_img"), edit_user_path(current_user), class: "nav-link"%>
+          <% else %>
+            <%= link_to image_tag('default_avatar.png', class: "profile_img") %>
+          <% end %>
+        </div>
+        <div>
+          <strong><%= message.user.username %></strong>
+          <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
+        </div>
+      </small>
+      <p><%= message.content %></p>
 </div>

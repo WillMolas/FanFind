@@ -43,9 +43,15 @@
       </div>
       <div class="signup-header">Upload an image</div>
 
-      <div class="avatar-image" data-signup-visibility-target="photo"></div>
+      <div class="avatar-image" data-signup-visibility-target="photo">
+        <% if resource.avatar.attached? %>
+          <%= image_tag resource.avatar %>
+        <% else %>
+          <%= image_tag('default_avatar.png') %>
+        <% end %>
+      </div>
 
-      <%= f.input :avatar, as: :file, label: false, input_html: { data: {
+      <%= f.input :avatar, as: :file, label: false, required: false, input_html: { data: {
                         action: "change->signup-visibility#displayPhoto"
                       }}%>
 
