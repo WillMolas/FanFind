@@ -2,7 +2,7 @@
   <div>
     <div class="match-col">
       <div class="upcase-header">Matches</div>
-      <div class="matches-search-form" data-controller="search-matches">
+      <div class="matches-search-form" data-controller="search-matches" data-search-matches-team-value=<%=current_user.team%>>
         <%= form_with url: matches_path,
           method: :get,
           html: {class: "search-form", data: {search_matches_target: "form"}} do |f|
@@ -18,6 +18,10 @@
           %>
           <i class="fa fa-search"></i>
         <% end %>
+
+          <div data-action="click->search-matches#filter">
+            <p data-search-matches-target="teamFilter" class="green-btn">My Team<p>
+          </div>
 
         <%= render "list", matches: @matches %>
       </div>
