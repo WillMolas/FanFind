@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @posts = Post.order('updated_at DESC')
+    set_meta_tags title: 'Community'
   end
 
   def new

@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
+    set_meta_tags title: "#{@user.username.capitalize}"
   end
 
   def edit
     @user = current_user
+    set_meta_tags title: "Edit Profile"
   end
 
   def update

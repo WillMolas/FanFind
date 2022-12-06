@@ -3,6 +3,7 @@ class PostCommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_comments = @post.post_comments
     @post_comment = PostComment.new
+    set_meta_tags title: 'Post Comments'
   end
 
   def new

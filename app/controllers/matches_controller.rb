@@ -18,5 +18,7 @@ class MatchesController < ApplicationController
       format.html # Follow regular flow of Rails
       format.text { render partial: "matches/list", locals: { matches: @matches }, formats: [:html] }
     end
+
+    set_meta_tags title: "Matches"
   end
 end
