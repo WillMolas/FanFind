@@ -20,20 +20,20 @@
 // }
 
 .back_button{
+  background-color: #CFFF0F;
+  color: black;
   text-align: center;
   width: 50px;
   height: 30px;
   margin-top: 10px;
-  margin-left: 160px;
+  margin-left: 168px;
   padding-top: 4px;
   padding-bottom: 4px;
 
   a {
-    font-weight: bold;
-    font-size: larger;
     text-decoration: none;
     color: black;
-    color: #CFFF0F;
+    // font-weight: bold;
   }
 }
 
@@ -45,26 +45,24 @@
   margin-left: 35px;
   margin-right: 35px;
   .cancel_account{
+    background-color: #CFFF0F;
     text-decoration: none;
+    color: black;
     text-align: center;
     width: auto;
     margin-left: 70px;
 
-
     a {
       text-decoration: none;
-      color: #CFFF0F;
-      font-size: larger;
+      color: black;
+      // font-weight: bold;
     }
   }
   .form_update{
-
+    background-color: #CFFF0F;
+    // color: black;
     text-align: center;
     width: 100px;
-    .btn{
-      color: #CFFF0F;
-      font-size: larger;
-    }
   }
 }
 
