@@ -1,11 +1,12 @@
-<div class="posts-index-container">
+<div class="posts-index-container" >
 
   <div class="community-header">
-    <h1 id="community-upcase-header" class="upcase-header">Community</h1>
+    <h1 id="community-upcase-header" class="upcase-header" id="comunity-header">Community</h1>
     <%= link_to new_post_path do %>
       <i class="fa-solid fa-circle-plus plus-button" id="event-add-button"></i>
     <% end %>
   </div>
+
 
   <div class="community-posts">
     <% @posts.all.each do |post| %>
@@ -47,8 +48,32 @@
             <p><%= link_to "Delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-edit" %></p>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
 
+
+  <div class="community-posts" data-controller="search-posts" data-search-posts-team-value=<%= current_user.team ? "#{current_user.team}" : "nil" %> data-search-posts-user-value="<%= current_user.id %>" >
+    <%= form_with url: posts_path,
+      method: :get,
+      html: {class: "search-form", id: "search-form-posts", data: {search_posts_target: "posts"}} do |f|
+    %>
+    <%= f.text_field :query,
+      class: "input",
+      placeholder: "Search Posts",
+      value: params[:query],
+      data: {
+        search_posts_target: "search",
+        action: "keyup->search-posts#update"
+      }
+    %>
+      <i class="fa fa-search"></i>
+      <% end %>
+
+      <div class="post-filters">
+        <p data-action="click->search-posts#allFilter" data-search-posts-target="PostFilter" class="green-btn filter-btn-change filter-btn">All<p>
+        <p data-action="click->search-posts#teamFilter" data-search-posts-target="teamPostFilter" class="green-btn filter-btn-change post-filter-btn-margin-left filter-btn">Team<p>
+        <p data-action="click->search-posts#myFilter" data-search-posts-target="myPostFilter" class="green-btn filter-btn-change post-filter-btn-margin-left filter-btn">Me<p>
+
+      </div>
+
+    <%= render "feed", posts: @posts %>
+  </div>
 </div>

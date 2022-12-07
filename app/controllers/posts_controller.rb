@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    # @post = Post.find(params[:id])
     @posts = Post.order('updated_at DESC')
+
     set_meta_tags title: 'Community',
     description: 'Watch upcoming FIFA World Cup matches with like-minded fans who support your team.
     Find events near you or create your own.',
@@ -15,6 +17,25 @@ class PostsController < ApplicationController
       url: 'www.fan-find.com',
       image: 'metatag-photo.png'
     }
+
+    if params[:query].present?
+      sql_query = 'content ILIKE :query OR users.team ILIKE :query'
+      @posts = @posts.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    end
+
+    if params[:team].present?
+      @posts = @posts.where(user_id: params[:team])
+    end
+
+    if params[:user].present?
+      @posts = @posts.where(user_id: params[:user])
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "posts/feed", locals: { posts: @posts }, formats: [:html] }
+    end
+
   end
 
   def new

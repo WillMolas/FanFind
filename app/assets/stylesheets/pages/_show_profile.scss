@@ -141,7 +141,7 @@
     color: black;
     box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
     border: 2px solid;
-    border-color: #c8fa00;
+    border-color: #667f00;
     #one {
       text-decoration: bold;
       color: black;
@@ -166,7 +166,7 @@
     color: black;
     box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
     border: 2px solid;
-    border-color: #0DFDCC;
+    border-color: #00866b;
     #one {
       text-decoration: bold;
       color: black;
@@ -209,17 +209,29 @@
     border-radius: 5px;
   }
   .passed_booking{
-    background-color: #a1a1a1 !important;
+    background-color: #c8c8c8 !important;
+    border-color: #667f00;
     #a-card{
+
       background-color: #c8c8c8 !important;
       border-color: #a1a1a1 ;
+
+      background-color: #d5d5d5 !important;
+      border-color: #c8c8c8;
+
     }
   }
   .passed_event{
-    background-color: #a1a1a1 !important;
+    background-color: #c8c8c8 !important;
+    border-color: #00866b;
     #b-card{
+
       background-color: #c8c8c8 !important;
       border-color: #a1a1a1;
+
+      background-color: #d5d5d5 !important;
+      border-color: #c8c8c8;
+
     }
   }
 

@@ -27,11 +27,10 @@ export default class extends Controller {
 // if search bar empty, button="My Team", click puts team into search bar
 
   filter() {
-    let url = ""
+    let url = `/matches`
     // console.log(this.teamValue)
     if (this.teamFilterTarget.classList.contains("active-filter")) {
       this.teamFilterTarget.classList.remove("active-filter")
-      url = `/matches`
       this.teamFilterTarget.innerHTML = "My Team"
     } else {
       this.teamFilterTarget.classList.add("active-filter")
