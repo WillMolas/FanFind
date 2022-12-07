@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="signup-visibility"
 export default class extends Controller {
-  static targets = ["credentials", "avatar", "team", "photo"]
+  static targets = ["credentials", "avatar", "team", "photo", "disabled", "button", "skip", "upload", "disabledSubmit", "submit"]
 
   displayAvatar() {
     this.credentialsTarget.classList.add("d-none")
@@ -19,7 +19,7 @@ export default class extends Controller {
     }
     reader.readAsDataURL(event.target.files[0]);
   }
-  
+
   returnCredentials() {
     this.avatarTarget.classList.add("d-none")
     this.credentialsTarget.classList.remove("d-none")
@@ -28,5 +28,20 @@ export default class extends Controller {
   returnAvatar() {
     this.teamTarget.classList.add("d-none")
     this.avatarTarget.classList.remove("d-none")
+  }
+
+  activateButton () {
+    this.disabledTarget.classList.add("d-none")
+    this.buttonTarget.classList.remove("d-none")
+  }
+
+  revealButton () {
+    this.skipTarget.classList.add("d-none")
+    this.uploadTarget.classList.remove("d-none")
+  }
+
+  submitButton () {
+    this.disabledSubmitTarget.classList.add("d-none")
+    this.submitTarget.classList.remove("d-none")
   }
 }
