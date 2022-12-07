@@ -100,23 +100,15 @@
   display: flex;
   flex-direction: column;
 
-  .passed_booking{
-    background-color: #e4f6a0 !important;
-  }
-
-  .passed_event{
-    background-color: #a9f7e7 !important;
-  }
-
   h3 {
     color: black;
     text-align: center;
   }
-  #profile_card{
+  #booking_card{
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(216, 215, 215);
+    background-color: #f2ffc0;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
@@ -124,42 +116,113 @@
     margin-right: 30px;
   }
 
-  .first {
-    text-decoration: none;
+  #event_card{
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    background-color: #d5f849;
-    color: rgb(0, 0, 0);
-    margin-top: 10px;
-    margin-bottom: 5px;
-    margin-left: -30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    background-color: #c0fef2;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 7px;
-    border: solid;
-    border-color: #CFFF0F;
-    box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
+    padding-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
-  .second {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    background-color: #60f4d6;
-    color: rgb(0, 0, 0);
-    margin-top: 10px;
-    margin-bottom: 5px;
-    margin-left: -30px;
+  .event_info{
+    list-style-type: none;
+    margin: 10px;
+    margin-left: -25px;
+    border-radius: 7px;
+    background-color: #CFFF0F;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
+    border: 2px solid;
+    border-color: #c8fa00;
+    #one {
+      text-decoration: bold;
+      color: black;
+    }
+    .created{
+      text-decoration: none;
+    }
+  }
+
+  .card_info{
+    list-style-type: none;
+    margin: 10px;
+    margin-left: -25px;
     border-radius: 7px;
+    background-color: #0DFDCC;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
+    border: 2px solid;
+    border-color: #0DFDCC;
+    #one {
+      text-decoration: bold;
+      color: black;
+    }
+    .created{
+      text-decoration: none;
+    }
+
+  }
+  #b-card{
+    width: auto;
+    height: auto;
+    background-color: #c0fef2;
     border: solid;
     border-color: #0DFDCC;
-    box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -1px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  #a-card{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f2ffc0;
+    border: solid;
+    border-color: #c8fa00;
+    width: auto;
+    height: auto;
+    margin-left: -1px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  .passed_booking{
+    background-color: #a1a1a1 !important;
+    #a-card{
+      background-color: #a1a1a1 !important;
+      border-color: #c8c8c8 ;
+    }
+  }
+  .passed_event{
+    background-color: #a1a1a1 !important;
+    #b-card{
+      background-color: #a1a1a1 !important;
+      border-color: #c8c8c8;
+    }
   }
 
   a{
