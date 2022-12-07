@@ -37,15 +37,19 @@
 </div>
 
 <div class="upcoming-created-events">
-  <div class="card" id="profile_card">
+  <div class="card" id="booking_card">
     <h3><strong>BOOKED EVENTS</strong></h3>
-    <div class="bookings" style="overflow:scroll; height:150px;">
+    <div class="bookings" style="overflow:scroll; height:200px;">
       <ul class="user-bookings">
         <% current_user.event_bookings.each do |booking|%>
           <a href= "<%= event_path(booking.event) %>">
             <div class="card-product-info">
-              <div>
-                <li class="first <%= "passed_booking" if booking.event.match.match_time < Time.now %>"><strong><%= booking.event.name %></strong> by <%= booking.event.user.username %><br> <%= booking.event.match.match_time %></li>
+              <div class="event_info <%= "passed_booking" if booking.event.match.match_time < Time.now %>">
+                <li class="created" id="one"><strong><%= booking.event.name.upcase %></strong></li>
+                <li class="created" id="a-card"><%= booking.event.description %></li>
+                <li class="created" id="three"><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= booking.event.match.match_time.strftime("%d %B %Y") %><%= booking.event.match_time.strftime(" | %l:%M%P") %></li>
+                <li class="created" id="four"><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= booking.event.location.name %></li>
+                <li class="created" id="five"><i class="fa-solid fa-user"></i> | <%= booking.event.user.username %> |</li>
               </div>
             </div>
           </a>
@@ -54,14 +58,17 @@
     </div>
   </div>
   <br>
-  <div class="card" id="profile_card">
+  <div class="card" id="event_card">
     <h3><strong>CREATED EVENTS</strong></h3>
-    <div class="created_events" style="overflow:scroll; height:150px;">
+    <div class="created_events" style="overflow:scroll; height:200px;">
       <ul class="created">
         <% current_user.events.each do |event| %>
           <a href= "<%= event_path(event) %>">
-            <div class="card_info">
-              <li class="second <%= "passed_event" if event.match.match_time < Time.now %>"><strong><%= event.name %></strong> <%= event.match.match_time %></li>
+            <div class="card_info <%= "passed_event" if event.match.match_time < Time.now %>">
+              <li class="created" id="one"><strong><%= event.name.upcase %></strong></li>
+              <li class="created" id="b-card"><%= event.description %></li>
+              <li class="created" id="three"><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= event.match.match_time.strftime("%d %B %Y") %><%= event.match_time.strftime(" | %l:%M%P") %></li>
+              <li class="created" id="four"><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= event.location.name %></li>
             </div>
           </a>
         <% end %>

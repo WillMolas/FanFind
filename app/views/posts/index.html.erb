@@ -7,6 +7,7 @@
     <% end %>
   </div>
 
+
   <div class="community-posts" data-controller="search-posts" data-search-posts-team-value=<%= current_user.team ? "#{current_user.team}" : "nil" %> data-search-posts-user-value="<%= current_user.id %>" >
     <%= form_with url: posts_path,
       method: :get,
