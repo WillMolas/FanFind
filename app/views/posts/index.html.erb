@@ -21,7 +21,7 @@
           <p><%= post.user.team %></p>
         </div>
         <div class="community-post-photo">
-          <%= cl_image_tag post.photo.key.to_s %>
+          <%= cl_image_tag post.photo.key %>
         </div>
         <div class="community-post-feedback">
           <div class="community-post-comment">
@@ -77,3 +77,4 @@
     <%= render "feed", posts: @posts %>
   </div>
 </div>
+<% end %>
