@@ -3,7 +3,19 @@ class PostCommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_comments = @post.post_comments
     @post_comment = PostComment.new
-    set_meta_tags title: 'Post Comments'
+    set_meta_tags title: 'Post Comments',
+    description: 'Watch upcoming FIFA World Cup matches with like-minded fans who support your team.
+    Find events near you or create your own.',
+    keywords: 'world cup, FIFA, matches, fans, soccer, football,
+    soccer fans, football fans, events, meet up, find fans,
+    team, football team',
+    og: {
+      description: 'Team up to watch the FIFA World Cup. Find events near you or create your own,
+      chat with other fans, and share posts.',
+      type: 'mobile app',
+      url: 'www.fan-find.com',
+      image: 'metatag-photo.png'
+    }
   end
 
   def new
