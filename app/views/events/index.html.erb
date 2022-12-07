@@ -1,3 +1,4 @@
+
 <div class="events-index-container">
   <div class="back-arrow" id="back-arrow-margin">
     <%= link_to matches_path do %>
@@ -14,9 +15,25 @@
   <div class="events-container">
     <% @match.events.each do |event| %>
         <%= link_to event_path(event) do %>
+
+        <% team_one_users = 0 %>
+        <% team_one = event.match.team_one %>
+        <% team_two_users = 0 %>
+        <% team_two = event.match.team_two %>
+        <% team_other_users = 0 %>
+        <% event.users.each do |user| %>
+        <% if user.team == team_one %>
+          <% team_one_users += 1 %>
+        <% elsif user.team == team_two %>
+          <% team_two_users += 1 %>
+        <% else %>
+          <% team_other_users += 1 %>
+        <% end %>
+        <% end %>
+
         <div class="event-card">
           <li class="black-upcase-subheader event-card-header"><%= event.name.upcase %></li>
-          <li class="black-strip"><%= "proportion of supporters" %></li>
+          <li class="black-strip"><%= "Supporters: #{team_one.upcase[0, 3]} #{team_one_users} |  #{team_two.upcase[0, 3]} #{team_two_users} " %></li>
           <li><%= event.description %></li>
           <li><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= event.match.match_time.strftime("%d %B %Y") %><%= event.match_time.strftime(" | %l:%M%P") %></li>
           <li><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= event.location.name %></li>

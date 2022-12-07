@@ -11,9 +11,10 @@
       <% if @event.capacity.present? %>
         <p><i class="fa-solid fa-maximize"></i>&nbsp&nbsp&nbsp<%= "#{@event.capacity} people max" %></p>
       <% end %>
+      <p><i class="fa-solid fa-futbol"></i>&nbsp&nbsp&nbsp<%= "#{@event.match.team_one} vs #{@event.match.team_two}" %></p>
       <p><i class="fa-regular fa-calendar"></i>&nbsp&nbsp&nbsp<%= @event.match.match_time.strftime("%d %B %Y") %><%= @event.match_time.strftime(" | %l:%M%P") %></p>
       <p><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp&nbsp&nbsp<%= @event.location.name %></p>
-      <p><i class="fa-solid fa-users"></i>&nbsp&nbsp<%= @event.event_bookings.count%></p>
+      <p><i class="fa-solid fa-users"></i>&nbsp&nbsp<%= @event.event_bookings.count %></p>
     </div>
     <div class="event-show-triangle">
     </div>
