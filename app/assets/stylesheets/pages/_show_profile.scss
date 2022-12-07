@@ -13,20 +13,18 @@
   }
 
   .edit-btn {
-    background-color: #CFFF0F;
     height: 40px;
-    width: 75px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
 
     a{
+      font-weight: bold;
       font-family: 'Roboto';
       font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      color: black;
+      color: #CFFF0F;
+      font-size: larger;
       text-decoration: none;
       text-transform: uppercase;
     }
@@ -214,16 +212,26 @@
     background-color: #c8c8c8 !important;
     border-color: #667f00;
     #a-card{
+
+      background-color: #c8c8c8 !important;
+      border-color: #a1a1a1 ;
+
       background-color: #d5d5d5 !important;
       border-color: #c8c8c8;
+
     }
   }
   .passed_event{
     background-color: #c8c8c8 !important;
     border-color: #00866b;
     #b-card{
+
+      background-color: #c8c8c8 !important;
+      border-color: #a1a1a1;
+
       background-color: #d5d5d5 !important;
       border-color: #c8c8c8;
+
     }
   }
 
