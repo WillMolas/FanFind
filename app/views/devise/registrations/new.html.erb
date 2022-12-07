@@ -11,26 +11,29 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "username" },
-                    placeholder: "Username" %>
+                    placeholder: "Username"%>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" },
                     placeholder: "Email" %>
-
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" },
-                    placeholder: "Password"  %>
+                    placeholder: "Password" %>
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" },
-                    placeholder: "Confirm Password"  %>
+                    placeholder: "Confirm Password",
+                    input_html: { data: {action: "input->signup-visibility#activateButton"} }  %>
       </div>
 
       <div class="signup-btn-container">
-        <div class="next-btn" data-action="click->signup-visibility#displayAvatar">
+        <div class="disabled-btn" data-signup-visibility-target="disabled">
+          Next
+        </div>
+        <div class="next-btn d-none" data-action="click->signup-visibility#displayAvatar" data-signup-visibility-target="button">
           Next
         </div>
       </div>
@@ -52,11 +55,17 @@
       </div>
 
       <%= f.input :avatar, as: :file, label: false, required: false, input_html: { data: {
-                        action: "change->signup-visibility#displayPhoto"
+                        action: "
+                                change->signup-visibility#displayPhoto
+                                change->signup-visibility#revealButton
+                                "
                       }}%>
 
       <div class="signup-btn-container">
-        <div class="next-btn" data-action="click->signup-visibility#displayTeam">
+        <div class="skip-btn" data-action="click->signup-visibility#displayTeam">
+          Skip
+        </div>
+        <div class="next-btn d-none" data-action="click->signup-visibility#displayTeam" data-signup-visibility-target="upload">
           Upload
         </div>
       </div>
@@ -67,7 +76,7 @@
         <i class="fa-sharp fa-solid fa-arrow-left" data-action="click->signup-visibility#returnAvatar"></i>
       </div>
       <div class="signup-header">Select your team</div>
-        <div class="team-choice-list">
+        <div class="team-choice-list" data-action="click->signup-visibility#submitButton">
           <div class="team-choice-box" data-controller="check-radio-buttons" data-action="click->check-radio-buttons#select">
             <div class="team-choice"><%= f.radio_button :team, 'Argentina', "data-check-radio-buttons-target": "radioButton" %>Argentina</div>
           </div>
@@ -167,7 +176,10 @@
         </div>
 
       <div class="signup-btn-container">
-        <div class="submit-btn">
+        <div class="disabled-btn" data-signup-visibility-target="disabledSubmit">
+          Submit
+        </div>
+        <div class="submit-btn d-none" data-signup-visibility-target="submit">
           <%= f.button :submit, "Submit" %>
         </div>
       </div>
