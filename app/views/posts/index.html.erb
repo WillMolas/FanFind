@@ -7,6 +7,50 @@
     <% end %>
   </div>
 
+
+
+  <div class="community-posts">
+    <% @posts.all.each do |post| %>
+      <div class="community-post">
+        <div class="community-post-header">
+          <div class="user-post-details">
+            <% if post.user.avatar.key %>
+              <%= cl_image_tag post.user.avatar.key, class: "avatar-small" %>
+            <% end %>
+            <p><%= "@#{post.user.username}" %></p>
+          </div>
+          <p><%= post.user.team %></p>
+        </div>
+        <div class="community-post-photo">
+          <%= cl_image_tag post.photo.key %>
+        </div>
+        <div class="community-post-feedback">
+          <div class="community-post-comment">
+            <p><%= post.content %></p>
+            <p><small><%= post.created_at.strftime("%d %b %y | %l:%M%P") %></small></p>
+          </div>
+          <div class="post-likes">
+            <% if post.post_likes.map(&:user_id).include?current_user.id %>
+              <%= link_to post_like_path(post), class: "post-likes-link",data: { turbo_method: :delete } do %>
+              <div class="post-likes-number"><%= post.post_likes.count%><i class="fa-regular fa-hand-point-up"></i></div>
+              <% end %>
+            <%else%>
+              <%= link_to post_post_likes_path(post), class: "post-likes-link",data: { turbo_method: :post } do %>
+              <div class="post-likes-number"><%= post.post_likes.count%><i class="fa-regular fa-hand-point-up"></i></div>
+              <% end %>
+            <% end %>
+           <%# <%= image_tag("icons/foam-finger-icon.png", class: "likes-icon") %>
+          </div>
+        </div>
+        <div class="post-links">
+          <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
+          <div class="post-changes">
+            <p><%= link_to "Edit", edit_post_path(post), class: "post-delete" %></p>
+            <p><%= link_to "Delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-edit" %></p>
+          </div>
+        </div>
+
+
   <div class="community-posts" data-controller="search-posts" data-search-posts-team-value=<%= current_user.team ? "#{current_user.team}" : "nil" %> data-search-posts-user-value="<%= current_user.id %>" >
     <%= form_with url: posts_path,
       method: :get,
@@ -34,3 +78,4 @@
     <%= render "feed", posts: @posts %>
   </div>
 </div>
+<% end %>
