@@ -39,7 +39,7 @@
 <div class="upcoming-created-events">
   <div class="card" id="booking_card">
     <h3><strong>BOOKED EVENTS</strong></h3>
-    <div class="bookings" style="overflow:scroll; height:150px;">
+    <div class="bookings" style="overflow:scroll; height:200px;">
       <ul class="user-bookings">
         <% current_user.event_bookings.each do |booking|%>
           <a href= "<%= event_path(booking.event) %>">
@@ -60,7 +60,7 @@
   <br>
   <div class="card" id="event_card">
     <h3><strong>CREATED EVENTS</strong></h3>
-    <div class="created_events" style="overflow:scroll; height:150px;">
+    <div class="created_events" style="overflow:scroll; height:200px;">
       <ul class="created">
         <% current_user.events.each do |event| %>
           <a href= "<%= event_path(event) %>">
