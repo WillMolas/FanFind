@@ -9,15 +9,17 @@
         <%= image_tag("icons/football-icon.png", class: "matches-icon") %>
       <% end %>
     </div>
-    <% if current_user.notifications.unread.present? %>
-      <%= link_to user_path(current_user), class: "navbar-profile" do %>
-      <%= image_tag("icons/notifications_icon_red.PNG", class: "profile-icon") %>
-      <% end %>
+    <% if user_signed_in? %>
+      <% if current_user.notifications.unread.present? %>
+        <%= link_to user_path(current_user), class: "navbar-profile" do %>
+        <%= image_tag("icons/notifications_icon_red.PNG", class: "profile-icon") %>
+        <% end %>
+
     <% else %>
       <%= link_to user_path(current_user), class: "navbar-profile" do %>
       <%= image_tag("icons/user-icon.png", class: "profile-icon") %>
       <% end %>
     <% end %>
-
+    <% end %>
   </div>
 </div>
