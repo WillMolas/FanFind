@@ -28,5 +28,8 @@ application.register("post-comment", PostCommentController)
 import SearchMatchesController from "./search_matches_controller"
 application.register("search-matches", SearchMatchesController)
 
+import SearchPostsController from "./search_posts_controller"
+application.register("search-posts", SearchPostsController)
+
 import SignupVisibilityController from "./signup_visibility_controller"
 application.register("signup-visibility", SignupVisibilityController)

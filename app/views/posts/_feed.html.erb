@@ -1,0 +1,45 @@
+<div data-search-posts-target="index">
+  <div class="posts">
+    <% @posts.each do |post| %>
+    <div class="community-post">
+      <div class="community-post-header">
+        <div class="user-post-details">
+          <% if post.user.avatar.key %>
+            <%= cl_image_tag post.user.avatar.key, class: "avatar-small" %>
+          <% end %>
+          <p><%= "@#{post.user.username}" %></p>
+        </div>
+        <p><%= post.user.team %></p>
+      </div>
+      <div class="community-post-photo">
+        <%= cl_image_tag post.photo.key %>
+      </div>
+      <div class="community-post-feedback">
+        <div class="community-post-comment">
+          <p><%= post.content %></p>
+          <p><small><%= post.created_at.strftime("%d %b %y | %l:%M%P") %></small></p>
+        </div>
+        <div class="post-likes">
+          <% if post.post_likes.map(&:user_id).include?current_user.id %>
+            <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
+          <%else%>
+            <%= link_to post_post_likes_path(post), data: { turbo_method: :post } do %>
+            <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
+            <% end %>
+          <% end %>
+        <%# <%= image_tag("icons/foam-finger-icon.png", class: "likes-icon") %>
+        </div>
+      </div>
+      <div class="post-links">
+        <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
+        <% if post.user == current_user %>
+          <div class="post-changes">
+            <p><%= link_to "Edit", edit_post_path(post), class: "post-delete" %></p>
+            <p><%= link_to "Delete", post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "post-edit" %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
