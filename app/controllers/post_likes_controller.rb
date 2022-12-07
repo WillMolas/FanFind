@@ -10,4 +10,14 @@ class PostLikesController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.post_likes.each do |post_like|
+      if post_like.user_id == current_user.id
+        post_like.destroy
+        redirect_to posts_path, :notice => "Unliked the post"
+      end
+    end
+  end
+
 end
