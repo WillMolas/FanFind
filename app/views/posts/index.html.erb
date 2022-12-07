@@ -31,7 +31,7 @@
             <% if post.post_likes.map(&:user_id).include?current_user.id %>
               <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
             <%else%>
-              <%= link_to post_post_likes_path(post), data: { turbo_method: :post } do %>
+              <%= link_to post_post_likes_path(post), class: "post-likes",data: { turbo_method: :post } do %>
               <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= post.post_likes.count%></i>
               <% end %>
             <% end %>

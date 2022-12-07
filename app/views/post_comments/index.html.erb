@@ -14,7 +14,7 @@
   <div data-post-comment-target="comments">
     <div class="post-content">
       <p><%= @post.content %></p>
-      <i class="fa-regular fa-hand-point-up"></i>
+      <i class="fa-regular fa-hand-point-up">&nbsp&nbsp<%= @post.post_likes.count%></i>
     </div>
     <div class="post-comments">
         <% @post.post_comments.each do |post_comment| %>
