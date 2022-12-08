@@ -1,7 +1,12 @@
 <div class="top_container">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
-  <div class="back_button"><%= link_to "BACK", user_path(current_user) %></div>
+   <div class="back-arrow" id="edit-back-arrow">
+    <%= link_to user_path(@user) do %>
+      <i class="fa-sharp fa-solid fa-arrow-right"></i>
+    <% end %>
+  </div>
 </div>
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 <div class="content_form">
@@ -23,16 +28,17 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-      <%= f.input :avatar, as: :file %>
-    <% end %>
+    <%= f.input :avatar, as: :file %>
+
   </div>
 
   <br>
   <div class="end_page_btns">
+
     <div class="form_update">
       <%= f.button :submit, "Update" %>
     </div>
+
     <div class="cancel_account">
       <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-link" %>
     </div>

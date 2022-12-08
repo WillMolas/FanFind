@@ -1,11 +1,21 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile-container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 20px;
+  padding-top: 15px;
 
   .notifications-icon {
     width: 40px;
@@ -14,15 +24,11 @@
 
   .edit-btn {
     height: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
 
     a{
       font-weight: bold;
       font-family: 'Roboto';
-      font-style: normal;
+      font-style: italic;
       color: #CFFF0F;
       font-size: larger;
       text-decoration: none;
@@ -31,28 +37,20 @@
   }
 }
 
-.name_header{
-  color: #0DFDCC;
-  background-color: black;
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 36px;
-  text-align: center;
+#username-header {
+  margin-top: 25px;
 }
 
-.profile {
+.profile-info-container {
   display: flex;
   flex-direction: row;
-  margin-left: 20px;
-  margin-right: 0px;
-  margin-top: 5px;
-  background-color: black;
-  z-index: -1;
+  justify-content: space-between;
+  margin-left: 25px;
+  margin-right: 25px;
 
-  .profile_img{
-    width: 125px;
-    height: 125px;
+  .profile_img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     margin-left: 5px;
     margin-top: 10px;
@@ -63,179 +61,154 @@
                 0 8px 8px rgba(0,0,0,0.12),
                 0 16px 16px rgba(0,0,0,0.12);
   }
+}
 
-  .profile_info{
-    background-color: #d5f849;
-    width: 65%;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    height: auto;
-    margin-right: 5px;
-    margin-left: -35px;
-    margin-right: -30px;
-    padding-left: 45px;
-    padding-right: 25px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    z-index: -1;
+.user-profile-avatar {
+  z-index: 1;
+  margin-right: -50px;
+}
+
+.profile-info-card{
+  display: flex;
+  flex-direction: row;
+  margin-top: 34px;
+}
+
+.profile-info {
+  width: 190px;
+  height: 90px;
+  background-color: #CFFF0F;
+  margin-right: -0.5px;
+  padding: 15px;
+  padding-left: 52px;
+}
+
+.profile-info-triangle {
+  height: 0;
+  width: 0;
+  border-top: 90px solid #CFFF0F;
+  border-right: 35px solid transparent;
+}
+
+.profile-info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  .user-about {
     font-family: 'Roboto';
     font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .user-team {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
     font-size: 16px;
   }
 }
 
-#profile_card{
-  color: #0DFDCC;
-  background-color: black;
-  margin-left: 40px;
-  margin-right: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.upcoming-created-events{
+.profile-events {
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
   display: flex;
   flex-direction: column;
+}
 
-  h3 {
-    color: black;
-    text-align: center;
-  }
-  #booking_card{
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    background-color: #f2ffc0;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
-  }
+.user-booked-events {
+  background-color: white;
+  height: 175px;
+  margin-bottom: 10px;
+}
 
-  #event_card{
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    background-color: #c0fef2;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
-  }
+.user-my-events {
+  background-color: white;
+  height: 175px;
+  margin-bottom: 10px;
+}
 
-  .event_info{
-    list-style-type: none;
-    margin: 10px;
-    margin-left: -25px;
-    border-radius: 7px;
-    background-color: #CFFF0F;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    flex-direction: column;
-    color: black;
-    box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
-    border: 2px solid;
-    border-color: #667f00;
-    #one {
-      text-decoration: bold;
-      color: black;
-    }
-    .created{
-      text-decoration: none;
-    }
-  }
+.user-events-list {
+  overflow: scroll;
+}
 
-  .card_info{
-    list-style-type: none;
-    margin: 10px;
-    margin-left: -25px;
-    border-radius: 7px;
-    background-color: #0DFDCC;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    flex-direction: column;
-    color: black;
-    box-shadow: 0px 5px 5px 0px  rgba(0,0,0,0.12);
-    border: 2px solid;
-    border-color: #00866b;
-    #one {
-      text-decoration: bold;
-      color: black;
-    }
-    .created{
-      text-decoration: none;
-    }
+.booked-event-info {
+  background-color: #0DFDCC;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
+}
 
-  }
-  #b-card{
-    width: auto;
-    height: auto;
-    background-color: #c0fef2;
-    border: solid;
-    border-color: #0DFDCC;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: -1px;
-    margin-right: 1px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    border-radius: 5px;
-  }
-  #a-card{
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #f2ffc0;
-    border: solid;
-    border-color: #c8fa00;
-    width: auto;
-    height: auto;
-    margin-left: -1px;
-    margin-right: 1px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    border-radius: 5px;
-  }
-  .passed_booking{
-    background-color: #c8c8c8 !important;
-    border-color: #667f00;
-    #a-card{
+.past-booked-event-info{
+  background-color: #0DFDCC;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 10px;
+  opacity: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
+}
 
-      background-color: #c8c8c8 !important;
-      border-color: #a1a1a1 ;
+.my-event-info {
+  background-color: #CFFF0F;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
+}
 
-      background-color: #d5d5d5 !important;
-      border-color: #c8c8c8;
+.past-my-event-info {
+  background-color: #CFFF0F;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 10px;
+  opacity: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
+}
 
-    }
-  }
-  .passed_event{
-    background-color: #c8c8c8 !important;
-    border-color: #00866b;
-    #b-card{
+.user-event-name {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  color: black;
+}
 
-      background-color: #c8c8c8 !important;
-      border-color: #a1a1a1;
+.user-event-date {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  color: black;
+}
 
-      background-color: #d5d5d5 !important;
-      border-color: #c8c8c8;
-
-    }
-  }
-
-  a{
-    text-decoration: none;
-  }
+.user-event-location {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  color: black;
 }
