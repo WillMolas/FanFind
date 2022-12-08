@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="signup-visibility"
 export default class extends Controller {
-  static targets = ["credentials", "avatar", "team", "photo", "disabled", "button", "skip", "upload", "disabledSubmit", "submit"]
+  static targets = ["credentials", "avatar", "team", "photo", "disabled", "button", "skip", "upload", "disabledSubmit", "submit", "input"]
 
   displayAvatar() {
     this.credentialsTarget.classList.add("d-none")
@@ -30,9 +30,18 @@ export default class extends Controller {
     this.avatarTarget.classList.remove("d-none")
   }
 
-  activateButton () {
-    this.disabledTarget.classList.add("d-none")
-    this.buttonTarget.classList.remove("d-none")
+  activateButton() {
+    const checkInput = this.inputTargets.every((element) => {
+      return element.value != ''
+    })
+
+    if (checkInput) {
+      this.disabledTarget.classList.add("d-none")
+      this.buttonTarget.classList.remove("d-none")
+    } else {
+      this.disabledTarget.classList.remove("d-none")
+      this.buttonTarget.classList.add("d-none")
+    }
   }
 
   revealButton () {

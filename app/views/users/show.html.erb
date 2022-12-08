@@ -58,7 +58,7 @@
             booked events
           </div>
           <div class="user-events-list">
-            <% current_user.event_bookings.each do |booking|%>
+            <% @bookings.each do |booking|%>
               <a href= "<%= event_path(booking.event) %>" style= "text-decoration: none">
                 <div class="booked-event-info <%= "past-booked-event-info" if booking.event.match.match_time < Time.now %>">
                   <div class="user-event-name">
@@ -83,7 +83,7 @@
             my events
           </div>
           <div class="user-events-list">
-            <% current_user.events.each do |event| %>
+            <% @events.each do |event| %>
               <a href= "<%= event_path(event) %>" style= "text-decoration: none">
                   <div class="my-event-info <%= "past-my-event-info" if event.match.match_time < Time.now %>">
                     <div class="user-event-name">

@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
 
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :avatar, :team])
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "www.fan-find.com" }
+  end
 end
