@@ -22,28 +22,28 @@
   flex-grow: 1;
 }
 
-.post-comment-message {
-  width: 100%;
-  background-color: white;
-  height: 100px;
-  margin-bottom: 12px;
-}
-
-
 .post-content {
   background-color: #0DFDCC;
   margin-bottom: 16px;
   height: 80px;
   justify-content: space-between;
+  padding: 4px 8px;
 }
 
 .post-content, .post-comment-message {
-  padding: 4px 8px;
   display: flex;
   align-items: center;
   p {
     margin: 0px;
   }
+}
+
+.post-comment-message {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 12px;
+  padding: 12px 8px;
+  overflow-wrap: break-word;
 }
 
 .black-link {

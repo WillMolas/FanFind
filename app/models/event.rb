@@ -8,7 +8,7 @@ class Event < ApplicationRecord
 
   validates :match_time, presence: true
   validates :name, presence: true, length: { maximum: 50 }
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 80 }
 
   after_create :create_chatroom
 
