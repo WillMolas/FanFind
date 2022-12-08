@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
+  resources :events, only: [] do
+    resources :users, only: :index
+  end
+
   resources :posts do
     resources :post_comments, only: [:index, :new, :create]
     resources :post_likes, only: [:create]

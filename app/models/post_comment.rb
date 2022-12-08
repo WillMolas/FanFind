@@ -5,11 +5,11 @@ class PostComment < ApplicationRecord
 
   validates :content, presence: true, length: { maximum: 130 }
 
-
   after_create_commit :notify_post_creator
 
   def notify_post_creator
-    CommentNotification.with(post: self.post).deliver(self.post.user)
-  end
 
+      CommentNotification.with(post: self.post).deliver(self.post.user)
+
+  end
 end

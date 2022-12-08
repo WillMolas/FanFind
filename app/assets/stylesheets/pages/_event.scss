@@ -71,10 +71,13 @@ font-style: italic;
 }
 
 .edit-btn-card {
+  display: flex;
+  justify-content: space-between;
   text-align: right;
   margin-top: 4px;
   width: 100%;
   padding-right: 15%;
+  padding-left: 8px;
   text-align: right;
 }
 

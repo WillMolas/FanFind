@@ -1,0 +1,35 @@
+.supporters-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.supporters-card {
+  min-height: 180px;
+  background-color: white;
+  border-style: #CFFF0F;
+  list-style: none;
+  margin-top: 24px;
+  padding: 8px;
+  border: 3px solid #CFFF0F;
+  p {
+    margin: 0px;
+  }
+}
+
+.supporters-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+// .supporter-teams {
+//   display: flex;
+//   min-height: 300px;
+//   justify-content: space-between;
+// }
+
+
+.black-strip-supporters {
+  height: 24px;
+  margin-bottom: 8px;
+}

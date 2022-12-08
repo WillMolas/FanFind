@@ -1,0 +1,54 @@
+<div class="supporters-container">
+  <div class="back-arrow" id="back-arrow-margin-top">
+    <%= link_to event_path(@event) do %>
+      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+    <% end %>
+  </div>
+  <h1 class="upcase-header-small-margin">Supporters</h1>
+
+  <div class="supporters-card home-away-card">
+    <h3 class="black-upcase-subheader"><%= @event.match.team_one.downcase %></h3>
+    <div class="black-strip black-strip-supporters"></div>
+    <div class="supporters-list">
+      <% @event.users.each do |user| %>
+        <% if user.team == @event.match.team_one %>
+          <p><%= "#{user.username}" %></p>
+        <% end %>
+      <% end %>
+      <% if @event.user.team == @event.match.team_one %>
+        <p><%= @event.user.username %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="supporters-card">
+    <h3 class="black-upcase-subheader home-away-card"><%= @event.match.team_two.downcase %></h3>
+    <div class="black-strip black-strip-supporters"></div>
+    <div class="supporters-list">
+      <% @event.users.each do |user| %>
+        <% if user.team == @event.match.team_two %>
+          <p><%= "#{user.username}" %></p>
+        <% end %>
+      <% end %>
+      <% if @event.user.team == @event.match.team_two %>
+        <p><%= @event.user.username %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="supporters-card">
+    <h3 class="black-upcase-subheader">neutrals</h3>
+    <div class="black-strip black-strip-supporters"></div>
+    <div class="supporters-list">
+      <% @event.users.each do |user| %>
+        <% if user.team != @event.match.team_one && user.team != @event.match.team_two %>
+          <p><%= "#{user.username}" %></p>
+        <% end %>
+      <% end %>
+      <% if @event.user.team != @event.match.team_one && @event.user.team != @event.match.team_two %>
+        <p><%= @event.user.username %></p>
+      <% end %>
+    </div>
+  </div>
+
+</div>
