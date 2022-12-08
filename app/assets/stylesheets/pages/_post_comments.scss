@@ -25,9 +25,15 @@
 .post-content {
   background-color: #0DFDCC;
   margin-bottom: 16px;
-  height: 80px;
+  height: 68px;
   justify-content: space-between;
   padding: 4px 8px;
+  p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+  }
 }
 
 .post-content, .post-comment-message {

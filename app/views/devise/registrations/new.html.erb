@@ -10,23 +10,34 @@
         <%= f.input :username,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "username" },
+                    input_html: { autocomplete: "username",
+                    data: {
+                      signup_visibility_target: "input",
+                      action: "input->signup-visibility#activateButton"} },
                     placeholder: "Username"%>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email" },
+                    input_html: { autocomplete: "email",
+                    data: {
+                      signup_visibility_target: "input",
+                      action: "input->signup-visibility#activateButton"} },
                     placeholder: "Email" %>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" },
+                    input_html: { autocomplete: "new-password",
+                    data: {
+                      signup_visibility_target: "input",
+                      action: "input->signup-visibility#activateButton"} },
                     placeholder: "Password" %>
         <%= f.input :password_confirmation,
                     required: true,
-                    input_html: { autocomplete: "new-password" },
-                    placeholder: "Confirm Password",
-                    input_html: { data: {action: "input->signup-visibility#activateButton"} }  %>
+                    input_html: { autocomplete: "new-password",
+                    data: {
+                      signup_visibility_target: "input",
+                      action: "input->signup-visibility#activateButton"} },
+                    placeholder: "Confirm Password" %>
       </div>
 
       <div class="signup-btn-container">
