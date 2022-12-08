@@ -97,6 +97,14 @@ post1 = Post.create!(content: "Celebrating last night", user_id: user1.id)
 file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu-YrXeLzZ5ZzJ9G-KfGzITeABvNXROkw0bw&usqp=CAU")
 post1.photo.attach(io: file, filename: "celebrate.jpg", content_type: "image/jpg")
 
+post14 = Post.create!(content: "Ese es mi Messi querido!!!", user_id: user26.id)
+file = URI.open("https://netstorage-sportsbrief.akamaized.net/images/5339a815bfa09edb.jpg?imwidth=900")
+post14.photo.attach(io: file, filename: "celebrate14.jpg", content_type: "image/jpg")
+
+post15 = Post.create!(content: "Ready for next match!!!", user_id: user17.id)
+file = URI.open("https://news.agrofystatic.com/dia-mate-argentina-2021-196978.jpg?d=620x375")
+post15.photo.attach(io: file, filename: "celebrate15.jpg", content_type: "image/jpg")
+
 post2 = Post.create!(content: "Football's coming home!", user_id: user2.id)
 file = URI.open("https://i.insider.com/5b4366099e2a1040008b4872?width=600&format=jpeg&auto=webp")
 post2.photo.attach(io: file, filename: "celebrate1.jpg", content_type: "image/jpg")
@@ -104,6 +112,10 @@ post2.photo.attach(io: file, filename: "celebrate1.jpg", content_type: "image/jp
 post3 = Post.create!(content: "Allez Les Bleus", user_id: user3.id)
 file = URI.open("https://blog.lingoda.com/wp-content/uploads/2022/06/The-top-5-French-football-teams-e1655973934799.jpg")
 post3.photo.attach(io: file, filename: "celebrate2.jpg", content_type: "image/jpg")
+
+post13 = Post.create!(content: "Let's ducking go!!!", user_id: user35.id)
+file = URI.open("https://www.bing.com/images/blob?bcid=qOlX6Qkn0vsEGA")
+post13.photo.attach(io: file, filename: "celebrate13.jpg", content_type: "image/jpg")
 
 post13 = Post.create!(content: "Un puchito a vuestra salud guachos!!!", user_id: user13.id)
 file = URI.open("https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2021-03/210311-maradona-argentina-mb-1430-0ccf29.jpg")
