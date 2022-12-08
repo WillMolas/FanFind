@@ -111,16 +111,29 @@
   margin-left: 2px;
 }
 .post-likes-number {
+  width: 43px;
+  height: 64px;
+  margin-bottom: -5px;
+  background-image: url(icons/foam-finger-icon.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   text-decoration: none;
-  color: black;
-  margin-bottom: 5px;
-  margin-left: 10px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  color: white;
   font-size: 22px;
+  text-align: center;
+  &:hover {
+    color: #CFFF0F;
+  }
 }
 
 .likes-icon {
   width: 43px;
   height: 64px;
+  z-index: -1;
 }
 
 .post-changes {
