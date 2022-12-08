@@ -27,6 +27,11 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def index
+    @event = Event.find(params[:event_id])
+    @users = @event.users
+  end
+
   private
 
   def user_params

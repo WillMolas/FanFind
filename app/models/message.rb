@@ -7,6 +7,6 @@ class Message < ApplicationRecord
 
 
   def notify_message_recipient
-    NewMessage.with(chatroom: self.chatroom).deliver(self.chatroom.event.users)
+    NewMessage.with(chatroom: self.chatroom).deliver(self.chatroom.event.users - [self.user])
   end
 end

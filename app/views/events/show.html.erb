@@ -20,13 +20,14 @@
     </div>
   </div>
 
-  <% if @event.user == current_user%>
     <div class="edit-btn-card">
+    <%= link_to "Supporters", event_users_path(@event), class: "tqse-link" %>
+    <% if @event.user == current_user%>
       <%= link_to "Edit Details", edit_event_path(@event), class: "tqse-link" %>
+    <% else %>
+      <br>
+    <% end %>
     </div>
-  <% else %>
-    <br>
-  <% end %>
 
   <div class="locations-map"
     data-controller="map"

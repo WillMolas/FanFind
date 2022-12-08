@@ -18,7 +18,7 @@ counter1 = 0
   )
    match = Match.create!(
      team_one: ["Croatia", "Portugal", "Morocco", "England", "Netherlands", "Argentina", "France", "England", "Japan", "Morocco"][counter],
-     team_two: ["Brasil", "Switzerland", "Portugal", "France", "USA", "Australia", "Poland", "Senegal", "Croatia", "Spain"][counter],
+     team_two: ["Brazil", "Switzerland", "Portugal", "France", "USA", "Australia", "Poland", "Senegal", "Croatia", "Spain"][counter],
      stadium: ["al janoub", "al thumama", "khalifa international", "ahmad bin ali", "education city", "Al bayt lusail", "stadium974"].sample,
      match_time: ["9/12/2022 16:00", "6/12/2022 20:00", "10/12/2022 16:00", "10/12/2022 20:00", "3/12/2022 16:00", "3/12/2022 20:00", "4/12/2022 16:00", "8/12/2022 20:00", "8/12/2022 16:00", "8/12/2022 16:00"][counter]
    )
@@ -92,8 +92,6 @@ user37 = User.create!(username: "Philip", email: "philip@email.com", password: "
 user38 = User.create!(username: "Camila", email: "camila@email.com", password: "123456", team: "Brazil")
 user39 = User.create!(username: "Lucia", email: "lucia@email.com", password: "123456", team: "Netherlands")
 user40 = User.create!(username: "Daniela", email: "dani@email.com", password: "123456", team: "Netherlands")
-
-
 
 post1 = Post.create!(content: "Celebrating last night", user_id: user1.id)
 file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu-YrXeLzZ5ZzJ9G-KfGzITeABvNXROkw0bw&usqp=CAU")
