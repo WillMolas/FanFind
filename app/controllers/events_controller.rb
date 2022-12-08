@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def index
     @match = Match.find(params[:match_id])
     @events = @match.events
+
     set_meta_tags title: "Events",
     description: 'Watch upcoming FIFA World Cup matches with like-minded fans who support your team.
     Find events near you or create your own.',
