@@ -20,17 +20,20 @@
           <p><small><%= post.created_at.strftime("%d %b %y | %l:%M%P") %></small></p>
         </div>
         <div class="post-likes">
-          <% if post.post_likes.map(&:user_id).include?current_user.id %>
-            <%= link_to post_like_path(post), class: "post-likes-link",data: { turbo_method: :delete } do %>
-            <div class="post-likes-number"><%= post.post_likes.count%><i class="fa-regular fa-hand-point-up"></i></div>
+            <% if post.post_likes.map(&:user_id).include?current_user.id %>
+              <%= link_to post_like_path(post), class: "post-likes-link",data: { turbo_method: :delete } do %>
+              <div class="post-likes-number">
+                <%= post.post_likes.count%>
+              </div>
+              <% end %>
+            <%else%>
+              <%= link_to post_post_likes_path(post), class: "post-likes-link",data: { turbo_method: :post } do %>
+              <div class="post-likes-number">
+                <%= post.post_likes.count%>
+              </div>
+              <% end %>
             <% end %>
-          <%else%>
-            <%= link_to post_post_likes_path(post), class: "post-likes-link",data: { turbo_method: :post } do %>
-            <div class="post-likes-number"><%= post.post_likes.count%><i class="fa-regular fa-hand-point-up"></i></div>
-            <% end %>
-          <% end %>
-          <%# <%= image_tag("icons/foam-finger-icon.png", class: "likes-icon") %>
-        </div>
+          </div>
       </div>
       <div class="post-links">
         <p id="post-comment"><%= link_to "View Comments", post_post_comments_path(post) %></p>
