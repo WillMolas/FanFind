@@ -1,6 +1,7 @@
 .top_container{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-top: 30px;
   margin-left: 20px;
 
@@ -19,22 +20,10 @@
 //   margin-bottom: 200px;
 // }
 
-.back_button{
-  text-align: center;
-  width: 50px;
-  height: 30px;
-  margin-top: 10px;
-  margin-left: 160px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-
-  a {
-    font-weight: bold;
-    font-size: larger;
-    text-decoration: none;
-    color: black;
-    color: #CFFF0F;
-  }
+#edit-back-arrow {
+  margin-right: 25px;
+  align-content: center;
+  margin-top: 13px;
 }
 
 .end_page_btns{
@@ -70,4 +59,14 @@
 
 .content_form{
   margin: 25px;
+  padding-bottom: 75px;
+}
+
+
+.user-booked-events {
+  overflow: scroll;
+}
+
+.user-my-events {
+  overflow: scroll;
 }

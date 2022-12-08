@@ -36,14 +36,14 @@ counter1 = 0
       match_id: match.id,
       capacity: [30..80].sample
     )
-    user1 = User.create!(
+    user41 = User.create!(
       username: ["Alex2", "Emilia2", "Jess2", "Guillem2", "Leo Messi2"][counter1],
       email: ["alex5@email.com", "emilia5@email.com", "jess5@email.com", "guillem5@email.com", "leo5@email.com","alex1@email.com", "emilia1@email.com", "jess1@email.com", "guillem1@email.com", "leo1@email.com","alex2@email.com", "emilia2@email.com", "jess2@email.com", "guillem2@email.com", "leo2@email.com","alex3@email.com", "emilia3@email.com", "jess3@email.com", "guillem3@email.com", "leo3@email.com"][counter1],
       password: "123456",
       team: ["Australia", "Belgium", "Brazil", "Cameroon", "Argentina"][counter1]
     )
     EventBooking.create!(
-      user_id: user1.id,
+      user_id: user41.id,
       event_id: event.id
     )
     counter1 += 1
@@ -92,6 +92,7 @@ user37 = User.create!(username: "Philip", email: "philip@email.com", password: "
 user38 = User.create!(username: "Camila", email: "camila@email.com", password: "123456", team: "Brazil")
 user39 = User.create!(username: "Lucia", email: "lucia@email.com", password: "123456", team: "Netherlands")
 user40 = User.create!(username: "Daniela", email: "dani@email.com", password: "123456", team: "Netherlands")
+
 post1 = Post.create!(content: "Celebrating last night", user_id: user1.id)
 file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu-YrXeLzZ5ZzJ9G-KfGzITeABvNXROkw0bw&usqp=CAU")
 post1.photo.attach(io: file, filename: "celebrate.jpg", content_type: "image/jpg")
