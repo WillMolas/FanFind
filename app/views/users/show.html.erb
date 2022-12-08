@@ -1,80 +1,108 @@
-<div class="profile-container">
-  <div class="edit-btn">
-    <%= link_to 'edit', edit_user_registration_path %>
-  </div>
-  <div class="bell_icon">
-    <% if current_user.notifications.unread.present? %>
-      <%= link_to user_notifications_path(current_user), class: "notifications" do %>
-        <%= image_tag("icons/notifications_icon_red.PNG", class: "notifications-icon") %>
-      <% end %>
-    <% else %>
-      <%= link_to user_notifications_path(current_user), class: "notifications" do %>
-        <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-<br>
-<div class="name_header">@<%= @user.username %></div>
+<div class="profile">
+  <div class="profile-container">
 
-<div class="card profile">
+    <div class="profile-buttons">
+      <div class="edit-btn">
+        <%= link_to 'edit', edit_user_registration_path %>
+      </div>
 
-  <div class="display-user-avatar">
-    <% if current_user.avatar.attached? %>
-      <%= link_to image_tag(url_for(current_user.avatar), class: "profile_img"), edit_user_path(current_user), class: "nav-link"%>
-    <% else %>
-      <%= link_to image_tag('default_avatar.png', class: "profile_img") %>
-    <% end %>
-  </div>
-
-  <div class="profile_info">
-
-    <h3><strong>About Me</strong></h3>
-    <p>A few sentences about myself, my interests, and the team I support.</p>
-
-  </div>
-
-</div>
-
-<div class="upcoming-created-events">
-  <div class="card" id="booking_card">
-    <h3><strong>BOOKED EVENTS</strong></h3>
-    <div class="bookings" style="overflow:scroll; height:200px;">
-      <ul class="user-bookings">
-        <% current_user.event_bookings.each do |booking|%>
-          <a href= "<%= event_path(booking.event) %>">
-            <div class="card-product-info">
-              <div class="event_info <%= "passed_booking" if booking.event.match.match_time < Time.now %>">
-                <li class="created" id="one"><strong><%= booking.event.name.upcase %></strong></li>
-                <li class="created" id="a-card"><%= booking.event.description %></li>
-                <li class="created" id="three"><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= booking.event.match.match_time.strftime("%d %B %Y") %><%= booking.event.match_time.strftime(" | %l:%M%P") %></li>
-                <li class="created" id="four"><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= booking.event.location.name %></li>
-                <li class="created" id="five"><i class="fa-solid fa-user"></i> | <%= booking.event.user.username %> |</li>
-              </div>
-            </div>
-          </a>
+      <div class="bell_icon">
+        <% if current_user.notifications.unread.present? %>
+          <%= link_to user_notifications_path(current_user), class: "notifications" do %>
+            <%= image_tag("icons/notifications_icon_red.PNG", class: "notifications-icon") %>
+          <% end %>
+        <% else %>
+          <%= link_to user_notifications_path(current_user), class: "notifications" do %>
+            <%= image_tag("icons/notifications_icon.png", class: "notifications-icon") %>
+          <% end %>
         <% end %>
-      </ul>
+      </div>
+    </div>
+
+
+    <div class="downcase-header" id="username-header">
+      @<%= @user.username %>
+    </div>
+
+    <div class="profile-info-container">
+      <div class="user-profile-avatar">
+        <% if current_user.avatar.attached? %>
+          <%= link_to image_tag(url_for(current_user.avatar), class: "profile_img"), edit_user_path(current_user), class: "nav-link"%>
+        <% else %>
+          <%= link_to image_tag('default_avatar.png', class: "profile_img") %>
+        <% end %>
+      </div>
+
+      <div class="profile-info-card">
+
+        <div class="profile-info">
+          <div class="profile-info-text">
+            <div class="user-about">
+              My Team
+            </div>
+            <div class="user-team">
+              <%= @user.team %>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-info-triangle"></div>
+      </div>
+
+    </div>
+
+    <div class="profile-events">
+
+      <% unless current_user.event_bookings.empty? %>
+        <div class="user-booked-events">
+          <div class="user-events-header">
+            booked events
+          </div>
+          <div class="user-events-list">
+            <% current_user.event_bookings.each do |booking|%>
+              <a href= "<%= event_path(booking.event) %>" style= "text-decoration: none">
+                <div class="booked-event-info <%= "past-booked-event-info" if booking.event.match.match_time < Time.now %>">
+                  <div class="user-event-name">
+                    <%= booking.event.name.upcase %>
+                  </div>
+                  <div class="user-event-date">
+                    <i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= booking.event.match.match_time.strftime("%d %B %Y") %><%= booking.event.match_time.strftime(" | %l:%M%P") %>
+                  </div>
+                  <div class="user-event-location">
+                    <i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= booking.event.location.name %>
+                  </div>
+                </div>
+              </a>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <% unless current_user.events.empty? %>
+        <div class="user-my-events">
+          <div class="user-events-header">
+            my events
+          </div>
+          <div class="user-events-list">
+            <% current_user.events.each do |event| %>
+              <a href= "<%= event_path(event) %>" style= "text-decoration: none">
+                  <div class="my-event-info <%= "past-my-event-info" if event.match.match_time < Time.now %>">
+                    <div class="user-event-name">
+                      <%= event.name.upcase %>
+                    </div>
+                    <div class="user-event-date">
+                      <i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= event.match.match_time.strftime("%d %B %Y") %><%= event.match_time.strftime(" | %l:%M%P") %>
+                    </div>
+                    <div class="user-event-location">
+                      <i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= event.location.name %>
+                    </div>
+                  </div>
+              </a>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
-  <br>
-  <div class="card" id="event_card">
-    <h3><strong>CREATED EVENTS</strong></h3>
-    <div class="created_events" style="overflow:scroll; height:200px;">
-      <ul class="created">
-        <% current_user.events.each do |event| %>
-          <a href= "<%= event_path(event) %>">
-            <div class="card_info <%= "passed_event" if event.match.match_time < Time.now %>">
-              <li class="created" id="one"><strong><%= event.name.upcase %></strong></li>
-              <li class="created" id="b-card"><%= event.description %></li>
-              <li class="created" id="three"><i class="fa-regular fa-calendar"></i>&nbsp&nbsp<%= event.match.match_time.strftime("%d %B %Y") %><%= event.match_time.strftime(" | %l:%M%P") %></li>
-              <li class="created" id="four"><i class="fa-solid fa-location-dot"></i>&nbsp&nbsp<%= event.location.name %></li>
-            </div>
-          </a>
-        <% end %>
-      </ul>
-    </div>
-  </div>
 </div>
-<br>
-<div class="navbar"></div>
