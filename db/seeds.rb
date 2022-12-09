@@ -114,7 +114,7 @@ counter1 = 0
   post3.photo.attach(io: file, filename: "celebrate2.jpg", content_type: "image/jpg")
 
   post13 = Post.create!(content: "Let's ducking go!!!", user_id: user35.id)
-  file = URI.open("https://www.bing.com/images/blob?bcid=qOlX6Qkn0vsEGA")
+  file = URI.open("https://cdn11.bigcommerce.com/s-nf2x4/images/stencil/1280x1280/products/739/8896/Soccer-Player-Boy-Rubber-Duck-Schanbels-2__96663.1599340628.jpg?c=2")
   post13.photo.attach(io: file, filename: "celebrate13.jpg", content_type: "image/jpg")
 
   post25 = Post.create!(content: "Un puchito a vuestra salud guachos!!!", user_id: user13.id)
