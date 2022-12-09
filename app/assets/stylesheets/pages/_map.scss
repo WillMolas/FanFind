@@ -8,4 +8,14 @@
   height: 300px;
   width: 300px;
   border-radius: 50%;
+  overflow: hidden;
+}
+
+.locations-map-box {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  overflow: hidden !important;
+  z-index: 10;
+  margin-bottom: 16px;
 }
