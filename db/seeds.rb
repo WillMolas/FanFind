@@ -69,7 +69,7 @@ counter1 = 0
   user15 = User.create!(username: "Francois", email: "fran@email.com", password: "123456", team: "France")
   user16 = User.create!(username: "Oscar", email: "oscar@email.com", password: "123456", team: "Argentina")
   user17 = User.create!(username: "Santiago", email: "santi@email.com", password: "123456", team: "Argentina")
-  user18 = User.create!(username: "Harrison", email: "harri@email.com", password: "123456", team: "USA")
+  user18 = User.create!(username: "Harrison", email: "harri@email.com", password: "123456", team: "Netherlands")
   user19 = User.create!(username: "Sara", email: "sara@email.com", password: "123456", team: "Spain")
   user20 = User.create!(username: "Dilmer", email: "dilmer@email.com", password: "123456", team: "Netherlands")
   user21 = User.create!(username: "Hippo", email: "hippo@email.com", password: "123456", team: "Argentina")
@@ -167,6 +167,22 @@ counter1 = 0
     EventBooking.create!(
       user_id: users[counter3].id,
       event_id: main_event.id
-  )
-  counter3 += 1
-end
+    )
+    counter3 += 1
+  end
+
+  Location.create!(name: "Aalaire rooftop", address: "C/ de Mallorca, 252, 08008 Barcelona")
+  Location.create!(name: "Bar 201", address: "C. de Villarroel, 201, 08036 Barcelona")
+  Location.create!(name: "Bar Poble Sec", address: "Av. del Paral·lel, 130, 08015 Barcelona")
+  Location.create!(name: "The George Payne Irish Pub", address: "Pl. d'Urquinaona, 5, 08010 Barcelona")
+  Location.create!(name: "Razzmatazz", address: "C/ dels Almogàvers, 122, 08018 Barcelona")
+  Location.create!(name: "Sonora Sport Tavern", address: "C/ de Pamplona, 96, 08018 Barcelona")
+  Location.create!(name: "Sports Bar - Barceloneta", address: "Pg. de Joan de Borbó, 29, 08003 Barcelona")
+  Location.create!(name: "@L13 Sports Bar", address: "Carrer del Taulat, 1, 08005 Barcelona")
+  Location.create!(name: "Bulldog Sport Bar & Grill", address: "C/ de Mallorca, 464, 08013 Barcelona")
+  Location.create!(name: "Lennox the Pub - Ferran", address: "Carrer de Ferran, 7, 08002 Barcelona")
+  Location.create!(name: "The Wild Rover", address: "Carrer de Santa Mònica, 2, 08001 Barcelona")
+  Location.create!(name: "Irish Pub Temple Bar", address: "Carrer de Ferran, 6, 08002 Barcelona")
+  Location.create!(name: "POOL&BEER", address: "Carrer de Casp, 186, 08013 Barcelona")
+  Location.create!(name: "Dublin Sports Tavern", address: "Plaça de Joan Llongueras, 5, 08021 Barcelona")
+  Location.create!(name: "CocoVail Beer Hall", address: "C/ d'Aragó, 284, 08009 Barcelona")
