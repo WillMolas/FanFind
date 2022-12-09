@@ -6,7 +6,7 @@
       <i class="fa-solid fa-circle-plus plus-button" id="event-add-button"></i>
     <% end %>
   </div>
-  
+
   <div class="community-posts" data-controller="search-posts" data-search-posts-team-value=<%= current_user.team ? "#{current_user.team}" : "nil" %> data-search-posts-user-value="<%= current_user.id %>" >
     <%= form_with url: posts_path,
       method: :get,
@@ -26,7 +26,7 @@
 
       <div class="post-filters">
         <p data-action="click->search-posts#allFilter" data-search-posts-target="PostFilter" class="green-btn filter-btn-change filter-btn">All<p>
-        <p data-action="click->search-posts#teamFilter" data-search-posts-target="teamPostFilter" class="green-btn filter-btn-change post-filter-btn-margin-left filter-btn">Team<p>
+        <p data-action="click->search-posts#teamFilter" data-search-posts-target="teamPostFilter" class="green-btn filter-btn-change post-filter-btn-margin-left filter-btn">My Team<p>
         <p data-action="click->search-posts#myFilter" data-search-posts-target="myPostFilter" class="green-btn filter-btn-change post-filter-btn-margin-left filter-btn">Me<p>
 
       </div>
